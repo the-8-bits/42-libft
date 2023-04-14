@@ -10,10 +10,10 @@
   </picture>
 </p>
 
-# <p style="text-align: center;">**Libft**</p>
-<p style="text-align: center;">Your very first own library</p>
+# <p align="center">**Libft**</p>
+<p align="center">Your very first own library</p>
 </br>
-<p style="text-align: center;"> <i>Summary:</br>
+<p align="center"> <i>Summary:</br>
       This project is about coding a C library.</br>
       It will contain a lot of general purpose functions your programs will rely upon.</br>
       Version: 15</i></br>
