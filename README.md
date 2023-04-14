@@ -1,4 +1,4 @@
-﻿>  Copied directly from [`42Porto`](https://www.42porto.com/) all rights reserved </br> If you spot somethig that isn't right, please open an [Issue](https://docs.github.com/pt/issues/tracking-your-work-with-issues/creating-an-issue)
+﻿>  Copied directly from [`42Porto`](https://www.42porto.com/) all rights reserved </br> If you spot somethig that isn't right, please open an [Issue](https://github.com/the-8-bits/42-libft/issues/new)
 
 </br>
 </br>
