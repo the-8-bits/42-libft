@@ -106,28 +106,29 @@ To begin, you must redo a set of functions from the libc. Your functions will ha
 
 You must write your own function implementing the following original ones. They do not require any external functions:
 
-
-0. isalpha
-0. isdigit
-0. isalnum
-0. isascii
-0. isprint
-0. strlen
-0. memset
-0. bzero
-0. memcpy
-0. memmove
-0. strlcpy
-0. strlcat
-0. toupper
-0. tolower
-0. strchr
-0. strrchr
-0. strncmp
-0. memchr
-0. memcmp
-0. strnstr
-0. atoi
+|ft_*   |done|
+|-------|----|
+|isalpha|✅|
+|isdigit|✅|
+|isalnum|✅|
+|isascii|:x:|
+|isprint|✅|
+|strlen |✅|
+|memset |:x:|
+|bzero  |:x:|
+|memcpy |:x:|
+|memmove|:x:|
+|strlcpy|✅|
+|strlcat|✅|
+|toupper|✅|
+|tolower|✅|
+|strchr |:x:|
+|strrchr|:x:|
+|strncmp|✅|
+|memchr |:x:|
+|memcmp |:x:|
+|strnstr|:x:|
+|atoi   |✅|
 
 
 In order to implement the two following functions, you will use malloc():
