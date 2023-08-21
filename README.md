@@ -1,4 +1,12 @@
-﻿>  Copied directly from [`42Porto`](https://www.42porto.com/) all rights reserved </br> If you spot somethig that isn't right, please open an [Issue](https://github.com/the-8-bits/42-libft/issues/new)
+---
+title: lib_ft
+tags: 42, CommonCore, programação
+use: README, Documentation
+languages: C
+dependences: NULL
+---
+
+>  Copied directly from [`42Porto`](https://www.42porto.com/) all rights reserved </br> If you spot somethig that isn't right, please open an [Issue](https://github.com/the-8-bits/42-libft/issues/new)
 
 </br>
 </br>
@@ -25,15 +33,24 @@
 
 </br>
 
-# **Contents**
-1. [__Chapter I - Introduction__](#_bookmark0)
-2. [__Chapter II - Common Instructions__](#_bookmark1)
-3. [__Chapter III - Mandatory part__](#_bookmark2)
-   1. [Technical considerations ](#_bookmark3)
-   2. [Part 1 - Libc functions](#_bookmark4)
-   3. [Part 2 - Additional functions](#_bookmark5)
-4. [__Chapter IV - Bonus part__](#_bookmark6)
-5. [__Chapter v - Submission and peer-evaluation__](#_bookmark7)
+<details><summary>Table of Contents 🔖</summary>
+
+- [**Libft**](#libft)
+- [**Chapter I**](#chapter-i)
+	- [**Introduction**](#introduction)
+- [**Chapter II**](#chapter-ii)
+	- [**Common Instructions**](#common-instructions)
+- [**Chapter III**](#chapter-iii)
+	- [**Mandatory part**](#mandatory-part)
+	- [**Technical considerations**](#technical-considerations)
+	- [**Part 1 - Libc functions**](#part-1---libc-functions)
+	- [**Part 2 - Additional functions**](#part-2---additional-functions)
+- [**Chapter IV**](#chapter-iv)
+	- [**Bonus part**](#bonus-part)
+- [**Chapter V**](#chapter-v)
+	- [**Submission and peer-evaluation**](#submission-and-peer-evaluation)
+
+</details>
 
 </br>
 
@@ -72,13 +89,13 @@ after your peer-evaluations. If an error happens in any section of your work dur
 # **Chapter III**
 ## <a name="mandatory_part"></a><a name="_bookmark2"></a>**Mandatory part**
 
-|**Program name**|libft.a|
-| :- | :- |
-|**Turn in files**|Makefile, libft.h, ft\_\*.c|
-|**Makefile**|NAME, all, clean, fclean, re|
-|**External functs.**|Detailed below|
-|**Libft authorized**|n/a|
-|**Description**|<p>Write your own library: a collection of functions</p><p>that will be a useful tool for your cursus.</p>|
+| **Program name**     | libft.a                                                                                                    |
+|:-------------------- |:---------------------------------------------------------------------------------------------------------- |
+| **Turn in files**    | Makefile, libft.h, ft\_\*.c                                                                                |
+| **Makefile**         | NAME, all, clean, fclean, re                                                                               |
+| **External functs.** | Detailed below                                                                                             |
+| **Libft authorized** | n/a                                                                                                        |
+| **Description**      | <p>Write your own library: a collection of functions</p><p>that will be a useful tool for your cursus.</p> |
 
 
 ## <a name="technical_considerations"></a><a name="_bookmark3"></a>**Technical considerations**
@@ -106,38 +123,52 @@ To begin, you must redo a set of functions from the libc. Your functions will ha
 
 You must write your own function implementing the following original ones. They do not require any external functions:
 
-|ft_*   |done|
-|-------|----|
-|isalpha|✅|
-|isdigit|✅|
-|isalnum|✅|
-|isascii|:x:|
-|isprint|✅|
-|strlen |✅|
-|memset |:x:|
-|bzero  |:x:|
-|memcpy |:x:|
-|memmove|:x:|
-|strlcpy|✅|
-|strlcat|✅|
-|toupper|✅|
-|tolower|✅|
-|strchr |:x:|
-|strrchr|:x:|
-|strncmp|✅|
-|memchr |:x:|
-|memcmp |:x:|
-|strnstr|:x:|
-|atoi   |✅|
+| ft_*    | done |
+| ------- | ---- |
+| isalpha | ✅   |
+| isdigit | ✅   |
+| isalnum | ✅   |
+| isascii | :x:  |
+| isprint | ✅   |
+| strlen  | ✅   |
+| memset  | :x:  |
+| bzero   | :x:  |
+| memcpy  | :x:  |
+| memmove | :x:  |
+| strlcpy | ✅   |
+| strlcat | ✅   |
+| toupper | ✅   |
+| tolower | ✅   |
+| strchr  | :x:  |
+| strrchr | :x:  |
+| strncmp | ✅   |
+| memchr  | :x:  |
+| memcmp  | :x:  |
+| strnstr | :x:  |
+| atoi    | ✅   |
 
 
 In order to implement the two following functions, you will use malloc():
 
-0. calloc
-0. strdup
+1. calloc
+2. strdup
 
 ## <a name="part_2_-_additional_functions"></a><a name="_bookmark5"></a>**Part 2 - Additional functions**
 In this second part, you must develop a set of functions that are either not in the libc, or that are part of it but in a different form.
+
+| ft_*       | #   |
+| ---------- | --- |
+| substr     | :x: |
+| strjoin    | :x: |
+| strtrim    | :x: |
+| split      | :x: |
+| itoa       | :x: |
+| strmapi    | :x: |
+| striteri   | :x: |
+| putchar_fd | :x: |
+| putstr_fd  | :x: |
+| putendl_fd | :x: |
+| putnbr_fd  | :x: |
 
 <p align="center">
   <picture>
@@ -145,116 +176,161 @@ In this second part, you must develop a set of functions that are either not in 
   </picture>
 </p>
 
-|**Function name**|ft\_substr|
-| :- | :- |
-|**Prototype**|<p>char \*ft\_substr(char const \*s, unsigned int start,</p><p>size\_t len);</p>|
-|**Turn in files**|-|
-|**Parameters**|<p>s: The string from which to create the substring.</p><p>start: The start index of the substring in the string ’s’.</p><p>len: The maximum length of the substring.</p>|
-|**Return value**|<p>The substring.</p><p>NULL if the allocation fails.</p>|
-|**External functs.**|malloc|
-|**Description**|<p>Allocates (with malloc(3)) and returns a substring</p><p>from the string ’s’.</p><p>The substring begins at index ’start’ and is of maximum size ’len’.</p>|
+<details>
+	<summary> ft_substr </summary>
+
+| **Function name**    | ft\_substr                                                                                                                                                                |
+|:-------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | <p>char \*ft\_substr(char const \*s, unsigned int start,</p><p>size\_t len);</p>                                                                                          |
+| **Turn in files**    | -                                                                                                                                                                         |
+| **Parameters**       | <p>s: The string from which to create the substring.</p><p>start: The start index of the substring in the string ’s’.</p><p>len: The maximum length of the substring.</p> |
+| **Return value**     | <p>The substring.</p><p>NULL if the allocation fails.</p>                                                                                                                 |
+| **External functs.** | malloc                                                                                                                                                                    |
+| **Description**      | <p>Allocates (with malloc(3)) and returns a substring</p><p>from the string ’s’.</p><p>The substring begins at index ’start’ and is of maximum size ’len’.</p>            |
+
+</details>
 
 
-|**Function name**|ft\_strjoin|
-| :- | :- |
-|**Prototype**|char \*ft\_strjoin(char const \*s1, char const \*s2);|
-|**Turn in files**|-|
-|**Parameters**|<p>s1: The prefix string.</p><p>s2: The suffix string.</p>|
-|**Return value**|<p>The new string.</p><p>NULL if the allocation fails.</p>|
-|**External functs.**|malloc|
-|**Description**|<p>Allocates (with malloc(3)) and returns a new</p><p>string, which is the result of the concatenation of ’s1’ and ’s2’.</p>|
+<details>
+	<summary> ft_strjoin </summary>
 
+| **Function name**    | ft\_strjoin                                                                                                                  |
+|:-------------------- |:---------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | char \*ft\_strjoin(char const \*s1, char const \*s2);                                                                        |
+| **Turn in files**    | -                                                                                                                            |
+| **Parameters**       | <p>s1: The prefix string.</p><p>s2: The suffix string.</p>                                                                   |
+| **Return value**     | <p>The new string.</p><p>NULL if the allocation fails.</p>                                                                   |
+| **External functs.** | malloc                                                                                                                       |
+| **Description**      | <p>Allocates (with malloc(3)) and returns a new</p><p>string, which is the result of the concatenation of ’s1’ and ’s2’.</p> |
 
-|**Function name**|ft\_strtrim|
-| :- | :- |
-|**Prototype**|char \*ft\_strtrim(char const \*s1, char const \*set);|
-|**Turn in files**|-|
-|**Parameters**|<p>s1: The string to be trimmed.</p><p>set: The reference set of characters to trim.</p>|
-|**Return value**|<p>The trimmed string.</p><p>NULL if the allocation fails.</p>|
-|**External functs.**|malloc|
-|**Description**|<p>Allocates (with malloc(3)) and returns a copy of</p><p>’s1’ with the characters specified in ’set’ removed from the beginning and the end of the string.</p>|
+</details>
 
+<details>
+	<summary> ft_strtrim </summary>
 
-|**Function name**|ft\_split|
-| :- | :- |
-|**Prototype**|char \*\*ft\_split(char const \*s, char c);|
-|**Turn in files**|-|
-|**Parameters**|<p>s: The string to be split.</p><p>c: The delimiter character.</p>|
-|**Return value**|<p>The array of new strings resulting from the split.</p><p>NULL if the allocation fails.</p>|
-|**External functs.**|malloc, free|
-|**Description**|<p>Allocates (with malloc(3)) and returns an array</p><p>of strings obtained by splitting ’s’ using the character ’c’ as a delimiter. The array must end with a NULL pointer.</p>|
+| **Function name**    | ft\_strtrim                                                                                                                                                     |
+|:-------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | char \*ft\_strtrim(char const \*s1, char const \*set);                                                                                                          |
+| **Turn in files**    | -                                                                                                                                                               |
+| **Parameters**       | <p>s1: The string to be trimmed.</p><p>set: The reference set of characters to trim.</p>                                                                        |
+| **Return value**     | <p>The trimmed string.</p><p>NULL if the allocation fails.</p>                                                                                                  |
+| **External functs.** | malloc                                                                                                                                                          |
+| **Description**      | <p>Allocates (with malloc(3)) and returns a copy of</p><p>’s1’ with the characters specified in ’set’ removed from the beginning and the end of the string.</p> |
 
+</details>
 
-|**Function name**|ft\_itoa|
-| :- | :- |
-|**Prototype**|char \*ft\_itoa(int n);|
-|**Turn in files**|-|
-|**Parameters**|n: the integer to convert.|
-|**Return value**|<p>The string representing the integer.</p><p>NULL if the allocation fails.</p>|
-|**External functs.**|malloc|
-|**Description**|<p>Allocates (with malloc(3)) and returns a string</p><p>representing the integer received as an argument. Negative numbers must be handled.</p>|
+<details>
+	<summary> ft_split </summary>
+  
+| **Function name**    | ft\_split                                                                                                                                                                         |
+|:-------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | char \*\*ft\_split(char const \*s, char c);                                                                                                                                       |
+| **Turn in files**    | -                                                                                                                                                                                 |
+| **Parameters**       | <p>s: The string to be split.</p><p>c: The delimiter character.</p>                                                                                                               |
+| **Return value**     | <p>The array of new strings resulting from the split.</p><p>NULL if the allocation fails.</p>                                                                                     |
+| **External functs.** | malloc, free                                                                                                                                                                      |
+| **Description**      | <p>Allocates (with malloc(3)) and returns an array</p><p>of strings obtained by splitting ’s’ using the character ’c’ as a delimiter. The array must end with a NULL pointer.</p> |
 
+</details>
 
-|**Function name**|ft\_strmapi|
-| :- | :- |
-|**Prototype**|<p>char \*ft\_strmapi(char const \*s, char (\*f)(unsigned</p><p>int, char));</p>|
-|**Turn in files**|-|
-|**Parameters**|<p>s: The string on which to iterate.</p><p>f: The function to apply to each character.</p>|
-|**Return value**|<p>The string created from the successive applications</p><p>of ’f’.</p><p>Returns NULL if the allocation fails.</p>|
-|**External functs.**|malloc|
-|**Description**|<p>Applies the function ’f’ to each character of the</p><p>string ’s’, and passing its index as first argument to create a new string (with malloc(3)) resulting from successive applications of ’f’.</p>|
+<details>
+	<summary> ft_itoa </summary>
 
+| **Function name**    | ft\_itoa                                                                                                                                         |
+|:-------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Prototype**        | char \*ft\_itoa(int n);                                                                                                                          |
+| **Turn in files**    | -                                                                                                                                                |
+| **Parameters**       | n: the integer to convert.                                                                                                                       |
+| **Return value**     | <p>The string representing the integer.</p><p>NULL if the allocation fails.</p>                                                                  |
+| **External functs.** | malloc                                                                                                                                           |
+| **Description**      | <p>Allocates (with malloc(3)) and returns a string</p><p>representing the integer received as an argument. Negative numbers must be handled.</p> |
 
-|**Function name**|ft\_striteri|
-| :- | :- |
-|**Prototype**|<p>void ft\_striteri(char \*s, void (\*f)(unsigned int,</p><p>char\*));</p>|
-|**Turn in files**|-|
-|**Parameters**|<p>s: The string on which to iterate.</p><p>f: The function to apply to each character.</p>|
-|**Return value**|None|
-|**External functs.**|None|
-|**Description**|<p>Applies the function ’f’ on each character of</p><p>the string passed as argument, passing its index as first argument. Each character is passed by address to ’f’ to be modified if necessary.</p>|
+</details>
 
+<details>
+	<summary> ft_strmapi </summary>
 
-|**Function name**|ft\_putchar\_fd|
-| :- | :- |
-|**Prototype**|void ft\_putchar\_fd(char c, int fd);|
-|**Turn in files**|-|
-|**Parameters**|<p>c: The character to output.</p><p>fd: The file descriptor on which to write.</p>|
-|**Return value**|None|
-|**External functs.**|write|
-|**Description**|<p>Outputs the character ’c’ to the given file</p><p>descriptor.</p>|
+| **Function name**    | ft\_strmapi                                                                                                                                                                                               |
+|:-------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | <p>char \*ft\_strmapi(char const \*s, char (\*f)(unsigned</p><p>int, char));</p>                                                                                                                          |
+| **Turn in files**    | -                                                                                                                                                                                                         |
+| **Parameters**       | <p>s: The string on which to iterate.</p><p>f: The function to apply to each character.</p>                                                                                                               |
+| **Return value**     | <p>The string created from the successive applications</p><p>of ’f’.</p><p>Returns NULL if the allocation fails.</p>                                                                                      |
+| **External functs.** | malloc                                                                                                                                                                                                    |
+| **Description**      | <p>Applies the function ’f’ to each character of the</p><p>string ’s’, and passing its index as first argument to create a new string (with malloc(3)) resulting from successive applications of ’f’.</p> |
 
+</details>
 
-|**Function name**|ft\_putstr\_fd|
-| :- | :- |
-|**Prototype**|void ft\_putstr\_fd(char \*s, int fd);|
-|**Turn in files**|-|
-|**Parameters**|<p>s: The string to output.</p><p>fd: The file descriptor on which to write.</p>|
-|**Return value**|None|
-|**External functs.**|write|
-|**Description**|<p>Outputs the string ’s’ to the given file</p><p>descriptor.</p>|
+<details>
+	<summary> ft_striteri </summary>
 
+| **Function name**    | ft\_striteri                                                                                                                                                                                           |
+|:-------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Prototype**        | <p>void ft\_striteri(char \*s, void (\*f)(unsigned int,</p><p>char\*));</p>                                                                                                                            |
+| **Turn in files**    | -                                                                                                                                                                                                      |
+| **Parameters**       | <p>s: The string on which to iterate.</p><p>f: The function to apply to each character.</p>                                                                                                            |
+| **Return value**     | None                                                                                                                                                                                                   |
+| **External functs.** | None                                                                                                                                                                                                   |
+| **Description**      | <p>Applies the function ’f’ on each character of</p><p>the string passed as argument, passing its index as first argument. Each character is passed by address to ’f’ to be modified if necessary.</p> |
 
-|**Function name**|ft\_putendl\_fd|
-| :- | :- |
-|**Prototype**|void ft\_putendl\_fd(char \*s, int fd);|
-|**Turn in files**|-|
-|**Parameters**|<p>s: The string to output.</p><p>fd: The file descriptor on which to write.</p>|
-|**Return value**|None|
-|**External functs.**|write|
-|**Description**|<p>Outputs the string ’s’ to the given file descriptor</p><p>followed by a newline.</p>|
+</details>
 
+<details>
+	<summary> ft_putchar </summary>
 
-|**Function name**|ft\_putnbr\_fd|
-| :- | :- |
-|**Prototype**|void ft\_putnbr\_fd(int n, int fd);|
-|**Turn in files**|-|
-|**Parameters**|<p>n: The integer to output.</p><p>fd: The file descriptor on which to write.</p>|
-|**Return value**|None|
-|**External functs.**|write|
-|**Description**|<p>Outputs the integer ’n’ to the given file</p><p>descriptor.</p>|
+| **Function name**    | ft\_putchar\_fd                                                                     |
+|:-------------------- |:----------------------------------------------------------------------------------- |
+| **Prototype**        | void ft\_putchar\_fd(char c, int fd);                                               |
+| **Turn in files**    | -                                                                                   |
+| **Parameters**       | <p>c: The character to output.</p><p>fd: The file descriptor on which to write.</p> |
+| **Return value**     | None                                                                                |
+| **External functs.** | write                                                                               |
+| **Description**      | <p>Outputs the character ’c’ to the given file</p><p>descriptor.</p>                |
 
+</details>
 
+<details>
+	<summary> ft_putstr </summary>
+
+| **Function name**    | ft\_putstr\_fd                                                                   |
+|:-------------------- |:-------------------------------------------------------------------------------- |
+| **Prototype**        | void ft\_putstr\_fd(char \*s, int fd);                                           |
+| **Turn in files**    | -                                                                                |
+| **Parameters**       | <p>s: The string to output.</p><p>fd: The file descriptor on which to write.</p> |
+| **Return value**     | None                                                                             |
+| **External functs.** | write                                                                            |
+| **Description**      | <p>Outputs the string ’s’ to the given file</p><p>descriptor.</p>                |
+
+</details>
+
+<details>
+	<summary> ft_putendl </summary>
+
+| **Function name**    | ft\_putendl\_fd                                                                         |
+|:-------------------- |:--------------------------------------------------------------------------------------- |
+| **Prototype**        | void ft\_putendl\_fd(char \*s, int fd);                                                 |
+| **Turn in files**    | -                                                                                       |
+| **Parameters**       | <p>s: The string to output.</p><p>fd: The file descriptor on which to write.</p>        |
+| **Return value**     | None                                                                                    |
+| **External functs.** | write                                                                                   |
+| **Description**      | <p>Outputs the string ’s’ to the given file descriptor</p><p>followed by a newline.</p> |
+
+</details>
+
+<details>
+	<summary> ft_putnbr </summary>
+
+| **Function name**    | ft\_putnbr\_fd                                                                    |
+|:-------------------- |:--------------------------------------------------------------------------------- |
+| **Prototype**        | void ft\_putnbr\_fd(int n, int fd);                                               |
+| **Turn in files**    | -                                                                                 |
+| **Parameters**       | <p>n: The integer to output.</p><p>fd: The file descriptor on which to write.</p> |
+| **Return value**     | None                                                                              |
+| **External functs.** | write                                                                             |
+| **Description**      | <p>Outputs the integer ’n’ to the given file</p><p>descriptor.</p>                |
+
+</details>
+</br>
 
 # **Chapter IV**
 ## <a name="bonus_part"></a><a name="_bookmark6"></a>**Bonus part**
@@ -290,94 +366,132 @@ In your Makefile, add a make bonus rule to add the bonus functions to your libft
 
 Implement the following functions in order to easily use your lists.
 
-|**Function name**|ft\_lstnew|
-| :- | :- |
-|**Prototype**|t\_list \*ft\_lstnew(void \*content);|
-|**Turn in files**|-|
-|**Parameters**|content: The content to create the node with.|
-|**Return value**|The new node|
-|**External functs.**|malloc|
-|**Description**|<p>Allocates (with malloc(3)) and returns a new node.</p><p>The member variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL.</p>|
+<details>
+	<summary> ft_lstnew </summary>
 
-|**Function name**|ft\_lstadd\_front|
-| :- | :- |
-|**Prototype**|void ft\_lstadd\_front(t\_list \*\*lst, t\_list \*new);|
-|**Turn in files**|-|
-|**Parameters**|<p>lst: The address of a pointer to the first link of</p><p>a list.</p><p>new: The address of a pointer to the node to be added to the list.</p>|
-|**Return value**|None|
-|**External functs.**|None|
-|**Description**|Adds the node ’new’ at the beginning of the list.|
+| **Function name**    | ft\_lstnew                                                                                                                                                                                          |
+|:-------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | t\_list \*ft\_lstnew(void \*content);                                                                                                                                                               |
+| **Turn in files**    | -                                                                                                                                                                                                   |
+| **Parameters**       | content: The content to create the node with.                                                                                                                                                       |
+| **Return value**     | The new node                                                                                                                                                                                        |
+| **External functs.** | malloc                                                                                                                                                                                              |
+| **Description**      | <p>Allocates (with malloc(3)) and returns a new node.</p><p>The member variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL.</p> |
 
+</details>
 
-|**Function name**|ft\_lstsize|
-| :- | :- |
-|**Prototype**|int ft\_lstsize(t\_list \*lst);|
-|**Turn in files**|-|
-|**Parameters**|lst: The beginning of the list.|
-|**Return value**|The length of the list|
-|**External functs.**|None|
-|**Description**|Counts the number of nodes in a list.|
+<details>
+	<summary> ft_lstadd </summary>
 
+| **Function name**    | ft\_lstadd\_front                                                                                                                                |
+|:-------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Prototype**        | void ft\_lstadd\_front(t\_list \*\*lst, t\_list \*new);                                                                                          |
+| **Turn in files**    | -                                                                                                                                                |
+| **Parameters**       | <p>lst: The address of a pointer to the first link of</p><p>a list.</p><p>new: The address of a pointer to the node to be added to the list.</p> |
+| **Return value**     | None                                                                                                                                             |
+| **External functs.** | None                                                                                                                                             |
+| **Description**      | Adds the node ’new’ at the beginning of the list.                                                                                                |
 
-|**Function name**|ft\_lstlast|
-| :- | :- |
-|**Prototype**|t\_list \*ft\_lstlast(t\_list \*lst);|
-|**Turn in files**|-|
-|**Parameters**|lst: The beginning of the list.|
-|**Return value**|Last node of the list|
-|**External functs.**|None|
-|**Description**|Returns the last node of the list.|
+</details>
 
+<details>
+	<summary> ft_lstsize </summary>
 
-|**Function name**|ft\_lstadd\_back|
-| :- | :- |
-|**Prototype**|void ft\_lstadd\_back(t\_list \*\*lst, t\_list \*new);|
-|**Turn in files**|-|
-|**Parameters**|<p>lst: The address of a pointer to the first link of</p><p>a list.</p><p>new: The address of a pointer to the node to be added to the list.</p>|
-|**Return value**|None|
-|**External functs.**|None|
-|**Description**|Adds the node ’new’ at the end of the list.|
+| **Function name**    | ft\_lstsize                           |
+|:-------------------- |:------------------------------------- |
+| **Prototype**        | int ft\_lstsize(t\_list \*lst);       |
+| **Turn in files**    | -                                     |
+| **Parameters**       | lst: The beginning of the list.       |
+| **Return value**     | The length of the list                |
+| **External functs.** | None                                  |
+| **Description**      | Counts the number of nodes in a list. |
 
+</details>
 
-|**Function name**|ft\_lstdelone|
-| :- | :- |
-|**Prototype**|<p>void ft\_lstdelone(t\_list \*lst, void (\*del)(void</p><p>\*));</p>|
-|**Turn in files**|-|
-|**Parameters**|<p>lst: The node to free.</p><p>del: The address of the function used to delete the content.</p>|
-|**Return value**|None|
-|**External functs.**|free|
-|**Description**|<p>Takes as a parameter a node and frees the memory of</p><p>the node’s content using the function ’del’ given as a parameter and free the node. The memory of ’next’ must not be freed.</p>|
+<details>
+	<summary> ft_lstlast </summary>
 
+| **Function name**    | ft\_lstlast                           |
+|:-------------------- |:------------------------------------- |
+| **Prototype**        | t\_list \*ft\_lstlast(t\_list \*lst); |
+| **Turn in files**    | -                                     |
+| **Parameters**       | lst: The beginning of the list.       |
+| **Return value**     | Last node of the list                 |
+| **External functs.** | None                                  |
+| **Description**      | Returns the last node of the list.    |
 
-|**Function name**|ft\_lstclear|
-| :- | :- |
-|**Prototype**|<p>void ft\_lstclear(t\_list \*\*lst, void (\*del)(void</p><p>\*));</p>|
-|**Turn in files**|-|
-|**Parameters**|<p>lst: The address of a pointer to a node.</p><p>del: The address of the function used to delete the content of the node.</p>|
-|**Return value**|None|
-|**External functs.**|free|
-|**Description**|<p>Deletes and frees the given node and every</p><p>successor of that node, using the function ’del’ and free(3).</p><p>Finally, the pointer to the list must be set to NULL.</p>|
+</details>
 
+<details>
+	<summary> ft_lstadd </summary>
 
-|**Function name**|ft\_lstiter|
-| :- | :- |
-|**Prototype**|void ft\_lstiter(t\_list \*lst, void (\*f)(void \*));|
-|**Turn in files**|-|
-|**Parameters**|<p>lst: The address of a pointer to a node.</p><p>f: The address of the function used to iterate on the list.</p>|
-|**Return value**|None|
-|**External functs.**|None|
-|**Description**|<p>Iterates the list ’lst’ and applies the function</p><p>’f’ on the content of each node.</p>|
+| **Function name**    | ft\_lstadd\_back                                                                                                                                 |
+|:-------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Prototype**        | void ft\_lstadd\_back(t\_list \*\*lst, t\_list \*new);                                                                                           |
+| **Turn in files**    | -                                                                                                                                                |
+| **Parameters**       | <p>lst: The address of a pointer to the first link of</p><p>a list.</p><p>new: The address of a pointer to the node to be added to the list.</p> |
+| **Return value**     | None                                                                                                                                             |
+| **External functs.** | None                                                                                                                                             |
+| **Description**      | Adds the node ’new’ at the end of the list.                                                                                                      |
 
+</details>
 
-|**Function name**|ft\_lstmap|
-| :- | :- |
-|**Prototype**|<p>t\_list \*ft\_lstmap(t\_list \*lst, void \*(\*f)(void \*),</p><p>void (\*del)(void \*));</p>|
-|**Turn in files**|-|
-|**Parameters**|<p>lst: The address of a pointer to a node.</p><p>f: The address of the function used to iterate on the list.</p><p>del: The address of the function used to delete the content of a node if needed.</p>|
-|**Return value**|<p>The new list.</p><p>NULL if the allocation fails.</p>|
-|**External functs.**|malloc, free|
-|**Description**|<p>Iterates the list ’lst’ and applies the function</p><p>’f’ on the content of each node. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of a node if needed.</p>|
+<details>
+	<summary> ft_lstdelone </summary>
 
+| **Function name**    | ft\_lstdelone                                                                                                                                                                                |
+|:-------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | <p>void ft\_lstdelone(t\_list \*lst, void (\*del)(void</p><p>\*));</p>                                                                                                                       |
+| **Turn in files**    | -                                                                                                                                                                                            |
+| **Parameters**       | <p>lst: The node to free.</p><p>del: The address of the function used to delete the content.</p>                                                                                             |
+| **Return value**     | None                                                                                                                                                                                         |
+| **External functs.** | free                                                                                                                                                                                         |
+| **Description**      | <p>Takes as a parameter a node and frees the memory of</p><p>the node’s content using the function ’del’ given as a parameter and free the node. The memory of ’next’ must not be freed.</p> |
+
+</details>
+
+<details>
+	<summary> ft_lstclear </summary>
+
+| **Function name**    | ft\_lstclear                                                                                                                                                                      |
+|:-------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | <p>void ft\_lstclear(t\_list \*\*lst, void (\*del)(void</p><p>\*));</p>                                                                                                           |
+| **Turn in files**    | -                                                                                                                                                                                 |
+| **Parameters**       | <p>lst: The address of a pointer to a node.</p><p>del: The address of the function used to delete the content of the node.</p>                                                    |
+| **Return value**     | None                                                                                                                                                                              |
+| **External functs.** | free                                                                                                                                                                              |
+| **Description**      | <p>Deletes and frees the given node and every</p><p>successor of that node, using the function ’del’ and free(3).</p><p>Finally, the pointer to the list must be set to NULL.</p> |
+
+</details>
+
+<details>
+	<summary> ft_lstiter </summary>
+  
+| **Function name**    | ft\_lstiter                                                                                                       |
+|:-------------------- |:----------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | void ft\_lstiter(t\_list \*lst, void (\*f)(void \*));                                                             |
+| **Turn in files**    | -                                                                                                                 |
+| **Parameters**       | <p>lst: The address of a pointer to a node.</p><p>f: The address of the function used to iterate on the list.</p> |
+| **Return value**     | None                                                                                                              |
+| **External functs.** | None                                                                                                              |
+| **Description**      | <p>Iterates the list ’lst’ and applies the function</p><p>’f’ on the content of each node.</p>                    |
+
+</details>
+
+<details>
+	<summary> ft_lstmap </summary>
+
+| **Function name**    | ft\_lstmap                                                                                                                                                                                                                                            |
+|:-------------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**        | <p>t\_list \*ft\_lstmap(t\_list \*lst, void \*(\*f)(void \*),</p><p>void (\*del)(void \*));</p>                                                                                                                                                       |
+| **Turn in files**    | -                                                                                                                                                                                                                                                     |
+| **Parameters**       | <p>lst: The address of a pointer to a node.</p><p>f: The address of the function used to iterate on the list.</p><p>del: The address of the function used to delete the content of a node if needed.</p>                                              |
+| **Return value**     | <p>The new list.</p><p>NULL if the allocation fails.</p>                                                                                                                                                                                              |
+| **External functs.** | malloc, free                                                                                                                                                                                                                                          |
+| **Description**      | <p>Iterates the list ’lst’ and applies the function</p><p>’f’ on the content of each node. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of a node if needed.</p> |
+
+</details>
+</br>
 
 # **Chapter V**
 ## <a name="submission_and_peer-evaluation"></a><a name="_bookmark7"></a>**Submission and peer-evaluation**
