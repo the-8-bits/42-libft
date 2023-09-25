@@ -1,13 +1,18 @@
-#include <unistd.h>
+#include "../libft.h"
 
-int ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	i;
+	unsigned int	counter;
 
-	i = 0;
-	while(s1[i] != '\0' && s1[i] == s2[i] && i < n)
-		i++;
-	if (i >= n)
+	counter = 0;
+	while (n > 0 && s1[counter] != '\0' && s1[counter] == s2[counter])
+	{
+		counter++;
+		n--;
+	}
+
+	if (n == 0 || (s1[counter] == '\0' && s2[counter] == '\0'))
 		return (0);
-	return(s1[i]-s2[i]);
+
+	return (int)(s1[counter] - s2[counter]);
 }

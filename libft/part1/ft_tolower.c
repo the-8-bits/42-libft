@@ -1,15 +1,15 @@
-#include <unistd.h>
+#include "../libft.h"
 
 char	*ft_tolower(char *str)
 {
-	int	i;
+	int	counter;
 
-	i = 0;
-	while (str[i] != '\0')
+	counter = 0;
+	while (str[counter] != '\0')
 	{
-		if (str[i] >= 'A' &&  str[i] <= 'Z' )
-			str[i] += 32;
-		i++;
+		if (str[counter] >= 'A' &&  str[counter] <= 'Z' )
+			str[counter] += 32; // Convert uppercase letter to lowercase
+		counter++;
 	}
 	return (str);
 }

@@ -1,15 +1,12 @@
-#include <unistd.h>
+#include "../libft.h"
 
-int ft_str_is_alpha(char *str)
+int	ft_isalpha(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if ((str[i] <= 'a' || str[i] >='z') && (str[i] <= 'A' || str[i] >= 'Z'))
+		if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }

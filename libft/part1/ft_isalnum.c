@@ -1,17 +1,13 @@
-#include <unistd.h>
+#include "../libft.h"
 
-int ft_isalnum(char *str)
+int	ft_isalnum(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if (((str[i] <= 'a' || str[i] >= 'z') &&
-			(str[i] <= 'A' || str[i] >= 'Z')) ||
-			(str[i] <= '0' || str[i] >= '9'))
+		if (!(((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')) ||
+			  (*str >= '0' && *str <= '9')))
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }

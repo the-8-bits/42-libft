@@ -1,15 +1,12 @@
-#include <unistd.h>
+#include "../libft.h"
 
-int ft_isdigit(char *str)
+int	ft_isdigit(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if (str[i] <= '0' || str[i] >= '9')
+		if (!(*str >= '0' && *str <= '9'))
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }

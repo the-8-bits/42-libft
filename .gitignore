@@ -1,0 +1,4 @@
+# Output files of Makefile
+
+*.o
+*.a

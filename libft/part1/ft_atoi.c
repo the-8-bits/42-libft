@@ -1,32 +1,30 @@
-int		ft_atoi(char *str)
-{
-	int		count;
-	int		negative;
-	int		number;
+#include "../libft.h"
 
-	count = 0;
-	negative = 0;
-	number = 0;
-	//verifica a ocorrencia de elem especiais
-	while ((str[count] > 8 && str[count] < 14) || (str[count] == 32))
-		count++;
-	//verifica a ocorrencia de +-(usado em teste logico)
-	while ((str[count] != '\0') && (str[count] == '+' || str[count] == '-'))
+int	ft_atoi(char *str)
+{
+	int	sign;
+	int	result;
+	
+	sign = 1; // Initialize sign to positive
+	result = 0;
+
+	// Skip leading whitespace characters
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+
+	// Handle the sign of the number
+	if (*str == '-' || *str == '+')
 	{
-		if (str[count] == '-')
-			negative++;
-		count++;
+		if (*str == '-')
+			sign = -1; // Negative sign
+		str++;
 	}
-	//verifica se esta dentro da escala dos numer
-	while ((str[count] != '\0') && (str[count] >= 48 && str[count] <= 57))
+
+	// Convert the digits to an integer
+	while (*str >= '0' && *str <= '9')
 	{
-		//subtrai 48(0) p/ buscar a distancia p/ o 0
-		//no prox ciclo o numero passado vai aumentar uma dezena
-		number = number * 10 + str[count] - 48;
-		count++;
+		result = result * 10 + (*str - '0');
+		str++;
 	}
-	//se a quant de +- for par, o numero e positivo
-	if (negative % 2 != 0)
-		return (number * -1);
-	return (number);
+	return (result * sign);
 }

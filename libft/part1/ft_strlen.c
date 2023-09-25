@@ -1,11 +1,13 @@
-#include <unistd.h>
+#include "../libft.h"
 
-int ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
-	
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return(i);
+	const char *ptr;
+
+	ptr = str;
+	while (*ptr)
+	{
+		ptr++;
+	}
+	return (unsigned int)(ptr - str);
 }

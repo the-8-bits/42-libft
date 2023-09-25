@@ -1,27 +1,21 @@
-#include <unistd.h>
+#include "../libft.h"
 
-unsigned int	ft_strlen(char *str)
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
-	int	i;
+	if (size == 0)
+		return ft_strlen(src);
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	i = 0;
-	if (size != 0)
+	char *d = dest;
+	const char *s = src;
+	
+	while (*s && (size - 1) > 0)
 	{
-		while (src [i] != '\0' && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		*d++ = *s++;
+		size--;
 	}
-	return (ft_strlen(src));
+
+	*d = '\0';
+
+	// Calculate the length of the source string
+	return ft_strlen(src);
 }
