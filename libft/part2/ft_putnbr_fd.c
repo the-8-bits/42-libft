@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/03 15:48:29 by gabrodri          #+#    #+#             */
+/*   Updated: 2023/10/03 17:55:34 by gabrodri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char str[13];  // Sufficient space for an int and possible sign
-	int is_neg = (n < 0);
-	int length = 0;
-
-	ft_bzero(str, 13); // Initialize the string buffer with zeros
-
+	int		is_neg;
+	int		length;
+	char	str[13]; // Sufficient space for an int and possible sign
+	length = 0;
+	is_neg = (n < 0);
+	ft_bzero(str, 13); // Initialize the string buff with zeros
 	if (n == 0)
 	{
 		str[0] = '0';
@@ -15,21 +27,18 @@ void ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		// Ensure there's enough space in the buffer and handle integer conversion
-		while (n != 0 && length < 13) // Prevent buffer overflow
+		// Ensure there's enough space in the buff and handle int conversion
+		while (n != 0 && length < 13) // Prevent buff overflower conversion
 		{
 			str[length++] = '0' + ft_abs(n % 10);
 			n = n / 10;
 		}
-
-		// If the buffer is full and n is not zero, indicate buffer overflow
-		if (n != 0)
+		if (n != 0) // If the buff is full, indicate bufferoverflow
 		{
 			write(fd, "Buffer Overflow", 15);
-			return;
+			return ;
 		}
 	}
-
 	if (is_neg)
 	{
 		if (length < 13)
@@ -37,10 +46,9 @@ void ft_putnbr_fd(int n, int fd)
 		else
 		{
 			write(fd, "Buffer Overflow", 15);
-			return;
+			return ;
 		}
 	}
-
 	while (length > 0)
 	{
 		write(fd, &str[--length], 1); // Write each character of the string
