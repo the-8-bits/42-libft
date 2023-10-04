@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:22 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:49:48 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:48:06 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,12 @@ char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		is_inside_word;
-	size_t	num_words;
 	size_t	char_index;
 	size_t	split_index;
 
 	if (!s)
 		return (NULL);
-	num_words = ft_count_words(s, c);
-	**split = (char **)malloc(sizeof(char *) * (num_words + 1));
+	**split = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!split)
 		return (NULL);
 	char_index = 0;

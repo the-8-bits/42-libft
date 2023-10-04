@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:16 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:39:02 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:39:17 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_itoa(int n)
 	length = 0;
 	is_negative = (n < 0);
 	// Assuming int has 32 bits, so 12 characters max
-	str = char *)malloc(12 + is_negative)
+	str = char *)malloc(12 + is_negative);
 	if (!(str))
 		return (NULL);
 	if (n == 0)
