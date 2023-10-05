@@ -55,7 +55,7 @@ I'll divide the code explanations in each Part's folder, to reduce the amount of
 | ft_isalpha                        | ✔️  | ft_substr                         | ✔️  | ft_lstnew                       | ✔️  | ft_strcat       |
 | ft_isdigit                        | ✔️  | ft_strjoin                        | ✔️  | ft_lstadd_front                 | ✔️  | ft_strncpy      |
 | ft_isalnum                        | ✔️  | ft_strtrim                        | ✔️  | ft_lstsize                      | ✔️  | ft_abs          |
-| ft_isascii                        | ✔️  | ft_split                          | ✔️  | ft_lstlast                      | ✔️  |                 |
+| ft_isascii                        | ✔️  | ft_split                          | ✔️  | ft_lstlast                      | ✔️  | ft_strndup      |
 | ft_isprint                        | ✔️  | ft_itoa                           | ✔️  | ft_lstadd_back                  | ✔️  |                 |
 | ft_strlen                         | ✔️  | ft_strmapi                        | ✔️  | ft_lstdelone                    | ✔️  |                 |
 | ft_memset                         | ✔️  | ft_striteri                       | ✔️  | ft_lstclear                     | ✔️  |                 |
@@ -79,9 +79,8 @@ I'll divide the code explanations in each Part's folder, to reduce the amount of
 Are defined inside the "main" functions, maybe I'll add to the `libft.h` file as independent functions.
 
 - Inside of `ft_split`
-  - `static size_t ft_count_words(const char *s, char c)`, counts the number of words in a given input string `s` based on a specified delimiter character `c`. It iterates through the characters in the input string and increments a count whenever it encounters the beginning of a new word, defined as a sequence of characters not equal to `c`. It returns the total count of words found in the string.
-
-  - `static char *ft_strndup(const char *src, size_t length)`, duplicates the first `length` characters from the input string `src` and returns a new dynamically allocated string containing this substring. It allocates memory for the new string, copies the specified characters from `src` to the new string, adds a null-terminator, and then returns the newly created string. If memory allocation fails, it returns `NULL`. Note that there's a typo in the code; it should be `char *dst` instead of `*dst`.
+  - `static size_t h_count_words(const char *s, char c)`, counts the number of words in a given input string `s` based on a specified delimiter character `c`. It iterates through the characters in the input string and increments a count whenever it encounters the beginning of a new word, defined as a sequence of characters not equal to `c`. It returns the total count of words found in the string.
+  - `void	h_actual_split(s, c, split, split_index)`, is responsible for splitting the input string `s` at a delimiter character `c` and storing the resulting substring in the `split` array at the specified `split_index`.
 
 - Inside of `ft_strtrim`
   - `static int	ft_char_in_set(char c, const char *set)`, checks if a given character `c` is present in a provided set of characters specified by the string `set`. It iterates through the characters in the `set` string and returns `1` if it finds a match with the character `c`, indicating that `c` is in the set. If no match is found after checking all characters in the `set`, it returns `0`, indicating that `c` is not in the set.

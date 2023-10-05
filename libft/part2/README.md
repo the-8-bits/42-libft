@@ -102,7 +102,7 @@ How it Works:
 - The function first checks if either `s1` or `set` is NULL. If either is NULL, it returns `NULL` to indicate an error condition.
 
   ```c
-  if (!s1 || !set)
+	if (!s1 || !set)
 		return (NULL); // Return NULL if either s1 or set is NULL
   ```
 
@@ -112,7 +112,7 @@ How it Works:
   - The first while loop (starting from the beginning of `s1`) increments `start` while the characters in `s1` match characters in the `set`. This effectively skips leading characters that should be removed.
 
   ```c
-  // Find the start position by skipping characters in set from the beginning of s1
+	// Find the start position by skipping characters in set from the beginning of s1
 	while (s1[start] && ft_char_in_set(s1[start], set))
 		start++;
   ```
@@ -130,7 +130,7 @@ How it Works:
 - It then allocates memory for the trimmed string plus a null terminator using `malloc`. If memory allocation fails, it returns `NULL`.
   
   ```c
-  // Allocate memory for the trimmed string plus a null terminator
+	// Allocate memory for the trimmed string plus a null terminator
 	char *str = (char *)malloc(trimmed_len + 1);
 	
 	if (!str)
@@ -140,7 +140,7 @@ How it Works:
 - Using a `counter` variable, the function copies the trimmed characters from `s1` to the newly allocated `str`.
 
   ```c
-  // Copy the trimmed characters from s1 to str
+	// Copy the trimmed characters from s1 to str
 	counter = 0;
 	while (start < end)
 		str[counter++] = s1[start++];
@@ -160,122 +160,87 @@ Certainly! Let's break down the functionality of each function within the code:
 1. `ft_count_words` Function:
    - This function counts the number of words in a given string `s` where words are separated by a specified character `c`.
 
-   ```c
-   static size_t ft_count_words(const char *s, char c)
-   {
-    size_t idx;
-    size_t count;
-    int is_inside_word;
-	
-    idx = 0;
-    count = 0;
-    is_inside_word = 0;
-    while (s[idx])
-    {
-	    if (s[idx] != c && !is_inside_word)
-		{
-	        is_inside_word = 1;
-	        count++;
-	    }
-	    else if (s[idx] == c && is_inside_word)
+	```c
+	static size_t ft_count_words(const char *s, char c)
+	{
+	    size_t	count;
+	    int		is_inside_word;
+		
+	    count = 0;
+	    is_inside_word = 0;
+	    while (*s)
 	    {
-			is_inside_word = 0;
+		    if (*s == c)
+		        is_inside_word = 0;
+		    else if (!is_inside_word)
+		    {
+		        is_inside_word = 1;
+		        count++;
+		    }
+		    s++;
 	    }
-        idx++;
-    }
-    return (count);
-   }
-   ```
+	    return (count);
+	}
+	```
 
-   - It uses a loop to check whether the character at index `idx` is the delimiter character `c` or not. Depending on whether it is part of a word or not, it updates the `is_inside_word` flag and increments the `count` variable accordingly..
+   - It uses a loop to check whether the character at `*s` is the delimiter character `c` or not. Depending on whether it is part of a word or not, it updates the `is_inside_word` flag and increments the `count` variable accordingly..
    - It keeps track of whether it is currently inside a word (meaning it has encountered non-`c` characters).
    - Whenever it encounters a non-`c` character and is not inside a word, it increments the `count` to indicate the start of a new word.
    - When it encounters a `c` character and is inside a word, it sets `is_inside_word` to `0` to mark the end of the current word.
    - The function returns the total count of words found in the string.
 
-2. `ft_strndup` Function:
-   - This function duplicates a specified portion of a string up to a given `length` and returns a newly allocated string containing that portion.
-
-   ```c
-	static char *ft_strndup(const char *src, size_t length)
-	{
-		char *dst;
-		
-        *dst = (char *)malloc(length + 1);
-	    if (!dst)
-           return (NULL);
-		
-	    ft_strncpy(dst, src, length);
-	    dst[length] = '\0';
-		
-	    return (dst);
-	}
-   ```
-
-   - It allocates memory for a new string `dst` with a length of `length + 1` to account for the null terminator.
-   - It then uses `ft_strncpy` to copy the first `length` characters from the source string `src` into the new string `dst`.
-   - Finally, it adds a null terminator `'\0'` at the end of the copied portion, ensuring that `dst` is a valid C string.
-   - The function returns a pointer to the newly created string.
-
-3. `ft_split` Function:
+2. `ft_split` Function:
    - This function splits a given string `s` into an array of words based on the separator character `c`.
 
 	```c
 	char **ft_split(char const *s, char c)
-    {
-        if (!s)
-            return (NULL);
+	{
+		char	**split; // Array of strings
+	    size_t	split_index; // Index of the current string in the array
 		
-        size_t num_words;
-        char **split;
-        size_t char_index;
-        size_t split_index;
-        int is_inside_word;
-		
-        num_words = ft_count_words(s, c);
-        **split = (char **)malloc(sizeof(char *) * (num_words + 1));
-		
-        if (!split)
-            return (NULL);
-		
-        char_index = 0;
-        split_index = 0;
-        is_inside_word = 0;
-		
-        while (s[char_index])
-        {
-            if (s[char_index] != c && !is_inside_word)
-            {
-                is_inside_word = 1;
-                split[split_index++] = ft_strndup(s + char_index, 1);
-            }
-            else if (s[char_index] == c && is_inside_word)
-            {
-                is_inside_word = 0;
-            }
-            char_index++;
-        }
-		
-        split[split_index] = NULL;
-        return (split);
-    }
+	    if (!s)
+		    return (NULL);
+	    split = (char **)malloc(sizeof(char *) * (h_count_words(s, c) + 1));
+	    if (!split)
+	      return (NULL);
+	    split_index = 0;
+	    while (*s)
+	    {
+	      if (*s != c)
+	        h_actual_split(s, c, split, split_index)
+	      else
+	        s++;
+	    }
+	    split[split_index] = NULL;
+	    return (split);
+	}
 	```
 
-   - It first checks if the input string `s` is not NULL; if it is NULL, it returns NULL to indicate an error.
+   - As required by 42 Norm, the variables are declared in the begening of the function.
+   - Then it checks if the input string `s` is not NULL; if it is NULL, it returns NULL to indicate an error.
+   - It calculates the number of words in the string `s` by calling the `h_count_words` function.
+   - It allocates memory for an array of strings `split` to store the words. The size of the array is `num_words` + $1$ to account for the NULL pointer at the end.
+   - Then starts a loop that iterates through the characters of the input string `s` until it reaches the null terminator, which marks the end of the string. Inside the loop:
+     - `if (*s != c)`: This condition checks if the current character `*s` is not equal to the delimiter character `c`. If it's not, it means the current character is part of a word, and the `h_actual_split` function (not shown in the provided code) is called to split the string at this point and store the substring in the `split` array at the `split_index` position.
+     - `else`: If the current character is the delimiter character `c`, it is skipped by incrementing the `s` pointer.
 
-   - It calculates the number of words in the string `s` by calling the `ft_count_words` function.
+   - After the loop completes, `split[split_index] = NULL;` sets the last element of the `split` array to `NULL` to indicate the end of the array of strings.
 
-   - It allocates memory for an array of strings `split` to store the words. The size of the array is `(num_words + 1)` to account for the null pointer at the end.
-
-   - The function uses two loop counters, `char_index` and `split_index`, to iterate through the characters in the string `s`. It also keeps track of whether it is currently inside a word (`is_inside_word`).
-
-   - Inside the loop, when it encounters a non-`c` character and is not inside a word, it sets `is_inside_word` to `1` to mark the start of a new word. It then uses `ft_strndup` to create a duplicate of the character and store it in the `split` array.
-
-   - When it encounters a `c` character and is inside a word, it sets `is_inside_word` to `0` to mark the end of the current word.
-
-   - Finally, it adds a null pointer at the end of the `split` array to terminate it.
-
-   - The function returns a pointer to the array of strings containing the split words.
+3. `h_actual_split` helper function:
+  - Is responsible for determining the length of the current word, creating a duplicate of that word, and storing it in the `split` array at the appropriate index. It also updates the `s` pointer to point to the next portion of the string to be processed. This function plays a crucial role in the overall behavior of the `ft_split` implementation for splitting a string into substrings based on a delimiter character.
+  
+  ```c
+  void	h_actual_split(s, c, split, split_index)
+  {
+    size_t	word_length; // Length of the current word.
+	
+    word_length = 0;
+    while (s[word_length] && s[word_length] != c)
+      word_length++;
+    split[split_index++] = ft_strndup(s, word_length);
+    s += word_length;
+  }
+  ```
 
 ## [ft_itoa](./ft_itoa.c)
 
@@ -600,20 +565,6 @@ The two functions `ft_putnbr` from Piscine and `ft_putnbr_fd` serve a similar pu
    - `ft_putnbr`: This function writes the string representation of the integer to the standard output (typically the console or terminal).
    - `ft_putnbr_fd`: This function writes the string representation of the integer to a specified file descriptor `fd`. It allows you to direct the output to a file or other output stream, not just the standard output.
 
-2. **Buffer and Overflow Handling**:
-   - `ft_putnbr`: This function does not use a buffer and handles overflow by recursively calling itself. It converts the integer to a string representation directly in memory without worrying about buffer size limitations. If the buffer exceeds its size, it will not write "Buffer Overflow" but may exhibit unexpected behavior due to stack overflow.
-   - `ft_putnbr_fd`: This function uses a character array `str` as a buffer to store the string representation of the integer. It actively checks for buffer overflow and writes "Buffer Overflow" to the specified file descriptor if the buffer is about to overflow.
-
-3. **Sign Handling**:
-   - `ft_putnbr`: This function handles the sign of the integer by checking if it's negative and printing a '-' character accordingly.
-   - `ft_putnbr_fd`: Similarly, it handles the sign, but it also checks for buffer space before adding the '-' character and writes "Buffer Overflow" if there's not enough space.
-
-4. **Recursion vs. Iteration**:
-   - `ft_putnbr`: It uses recursion to convert the integer to its string representation. It repeatedly divides the integer by 10 and prints the last digit until the integer becomes zero.
-   - `ft_putnbr_fd`: It uses a while loop to iteratively convert the integer into a string representation, appending digits to the buffer in reverse order.
-
-5. **Size Limitation**:
+2. **Size Limitation**:
    - `ft_putnbr`: This function does not have a fixed buffer size, but it relies on the stack for memory allocation during recursion. This can lead to a stack overflow if the integer is too large.
-   - `ft_putnbr_fd`: It uses a fixed-size buffer (`str[13]`) to store the string representation. If the integer is too large to fit within this buffer, it writes "Buffer Overflow" to the specified file descriptor.
-
-So just to recap, `ft_putnbr` is a recursive function that writes the string representation of an integer to the standard output, while `ft_putnbr_fd` is an iterative function that writes to a specified file descriptor and actively checks for buffer overflow. `ft_putnbr_fd` is generally safer in terms of buffer management and can be used for directing output to different destinations, while `ft_putnbr` may be simpler but has limitations related to stack overflow for large integers and doesn't offer the same level of error handling.
+   - `ft_putnbr_fd`: It uses a fixed-size buffer (`str[13]`) to store the string representation.

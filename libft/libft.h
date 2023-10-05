@@ -174,7 +174,7 @@ char			*ft_strjoin(const char *s1, const char *s2);
  * be sanitized */
 char			*ft_strtrim(const char *s1, const char *set);
 
-/* Works together with `ft_count_words` and `ft_strndup` to split a string into
+/* Works together with `h_count_words` and `ft_strndup` to split a string into
  * an array of words based on a specified separator character `c`. They handle
  * memory allocation and duplication of substrings, resulting in an array of
  * dynamically allocated strings representing the words in the input string */
@@ -283,5 +283,13 @@ char			*ft_strncpy(char *dest, char *src, unsigned int n);
 
 /* Is used to return the absolute value of a number */
 static int		ft_abs(int nbr);
+
+/* duplicates the first `length` characters from the input string `src` and
+ * returns a new dynamically allocated string containing this substring. It
+ * allocates memory for the new string, copies the specified characters from
+ * `src` to the new string, adds a null-terminator, and then returns the newly
+ * created string. If memory allocation fails, it returns `NULL`. Note that
+ * there's a typo in the code; it should be `char *dst` instead of `*dst` */
+static char		*ft_strndup(const char *src, size_t length)
 
 #endif

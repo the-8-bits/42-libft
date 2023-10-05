@@ -12,46 +12,25 @@
 
 #include "../libft.h"
 
-void	bufferoverflow_exit(void)
+void ft_putchar_fd(char c, int fd)
 {
-	write(fd, "Buffer Overflow", 15);
-	return ;
+    write(fd, &c, 1);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void recursion(int n, int fd)
 {
-	int		length;
-	char	str[13]; // Sufficient space for an int and possible sign
+    if (n < 0) {
+        ft_putchar_fd('-', fd);
+        n = -n; // Make n positive for the recursion
+    }
+    if (n >= 10)
+        recursion(n / 10, fd); // Recursive call for the quotient
+    ft_putchar_fd('0' + (n % 10), fd); // Print the last digit
+}
 
-	length = 0;
-	ft_bzero(str, 13); // Initialize the string buff with zeros
-	if (n < 0)
-	{
-		if (length < 13)
-			str[length++] = '-';
-		else
-			bufferoverflow_exit(void);
-	}
+void ft_putnbr_fd(int n, int fd) {
+    if (n == 0)
+        ft_putchar_fd('0', fd);
 	else
-	{
-		if (n == 0)
-		{
-			str[0] = '0';
-			length++;
-		}
-		else
-		{ // Ensure there's enough space in the buffer and handle int conversion
-			while (n != 0 && length < 13) // Prevent buff overflower conversion
-			{
-				str[length++] = '0' + ft_abs(n % 10);
-				n = n / 10;
-			}
-			if (n != 0) // If the buffer is full, indicate bufferoverflow
-				bufferoverflow_exit(void);
-		}
-	}
-	while (length > 0)
-	{
-		write(fd, &str[--length], 1); // Write each character of the string
-	}
+        recursion(n, fd);
 }
