@@ -1,79 +1,64 @@
-➜  libft git:(42) ✗ fran     
+➜  libft git:(42) ✗ fran
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                Welcome to Francinette, a 42 tester framework!                ║
 ╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
                         ║             libft            ║
                         ╚══════════════════════════════╝
 ✔ Preparing framework
-✖ Executing: norminette
-libft.h: Error!
-Error: TOO_MANY_TABS_FUNC   (line: 293, col:  13):	extra tabs before function name
-bonus/ft_lstiter.c: OK!
-bonus/ft_lstdelone.c: OK!
-bonus/ft_lstmap.c: Error!
-Error: WRONG_SCOPE_VAR      (line:  25, col:   1):	Variable declared in incorrect scope
-Error: SPACE_REPLACE_TAB    (line:  25, col:  13):	Found space when expecting tab
-Error: DECL_ASSIGN_LINE     (line:  25, col:  20):	Declaration and assignation on a single line
-Error: WRONG_SCOPE_VAR      (line:  26, col:   1):	Variable declared in incorrect scope
-Error: SPACE_REPLACE_TAB    (line:  26, col:  15):	Found space when expecting tab
-Error: MISALIGNED_VAR_DECL  (line:  26, col:  16):	Misaligned variable declaration
-Error: ASSIGN_IN_CONTROL    (line:  28, col:  24):	Assignment in control structure
-bonus/ft_lstadd_back.c: OK!
-bonus/ft_lstlast.c: OK!
-bonus/ft_lstadd_front.c: OK!
-bonus/ft_lstclear.c: OK!
-bonus/ft_lstsize.c: OK!
-bonus/ft_lstnew.c: Error!
-Error: ASSIGN_IN_CONTROL    (line:  19, col:  20):	Assignment in control structure
-Error: SPACE_AFTER_KW       (line:  19, col:  23):	Missing space after keyword
-other/ft_strncpy.c: OK!
-other/ft_strcat.c: OK!
-other/ft_abs.c: OK!
-other/ft_strndup.c: Error!
-Error: BRACE_SHOULD_EOL     (line:  27, col:   1):	Expected newline after brace
-part1/ft_isalpha.c: OK!
-part1/ft_toupper.c: OK!
-part1/ft_isascii.c: OK!
-part1/ft_strlcat.c: OK!
-part1/ft_memcmp.c: OK!
-part1/ft_strnstr.c: OK!
-part1/ft_strlcpy.c: OK!
-part1/ft_isdigit.c: OK!
-part1/ft_strlen.c: OK!
-part1/ft_atoi.c: OK!
-part1/ft_strdup.c: OK!
-part1/ft_strchr.c: OK!
-part1/ft_isalnum.c: OK!
-part1/ft_strncmp.c: OK!
-part1/ft_calloc.c: OK!
-part1/ft_bzero.c: OK!
-part1/ft_memchr.c: OK!
-part1/ft_memset.c: OK!
-part1/ft_strrchr.c: OK!
-part1/ft_memcpy.c: OK!
-part1/ft_memmove.c: OK!
-part1/ft_tolower.c: OK!
-part1/ft_isprint.c: OK!
-part2/ft_strjoin.c: Error!
-Error: EMPTY_LINE_FUNCTION  (line:  23, col:   1):	Empty line in function
-part2/ft_striteri.c: OK!
-part2/ft_putchar_fd.c: OK!
-part2/ft_itoa.c: OK!
-part2/ft_putstr_fd.c: OK!
-part2/ft_putendl_fd.c: OK!
-part2/ft_strmapi.c: OK!
-part2/ft_split.c: Error!
-Error: TOO_FEW_TAB          (line:  62, col:   1):	Missing tabs for indent level
-Error: BRACE_SHOULD_EOL     (line:  67, col:   1):	Expected newline after brace
-part2/ft_putnbr_fd.c: Error!
-Error: SPACE_BEFORE_FUNC    (line:  15, col:   5):	space before function name
-Error: SPACE_BEFORE_FUNC    (line:  20, col:   5):	space before function name
-Error: NO_SPC_AFR_PAR       (line:  22, col:  14):	Extra space after parenthesis (brace/bracket)
-Error: TOO_FEW_TAB          (line:  22, col:  16):	Missing tabs for indent level
-Error: SPACE_BEFORE_FUNC    (line:  31, col:   5):	space before function name
-Error: BRACE_NEWLINE        (line:  31, col:  34):	Expected newline before brace
-part2/ft_strtrim.c: OK!
-part2/ft_substr.c: OK!
+✔ Executing: norminette
+✔ Executing: make fclean all (no bonus)
+ℹ Executing: libft-war-machine (https://github.com/y3ll0w42/libft-war-machine)
+--------------------------------------------------------------------------------
+|                              COMPILING LIBFT                                 |
+--------------------------------------------------------------------------------
+rules:
+all        $(NAME)       fclean       re           clean       bonus     libft.a
+ok         ok            ok           ok           ok          missing   found
 
-✖ Executing: make fclean all (no bonus)
-make: *** No rule to make target 'ft_isalpha.o', needed by 'libft.a'.  Stop.
+FUNCTION         TESTS                RESULT
+ft_isalpha       compil. failed       KO
+ft_isdigit       compil. failed       KO
+ft_isalnum       compil. failed       KO
+ft_isascii       compil. failed       KO
+ft_isprint       compil. failed       KO
+ft_strlen        compil. failed       KO
+ft_memset        compil. failed       KO
+ft_bzero         compil. failed       KO
+ft_memcpy        compil. failed       KO
+ft_memmove       compil. failed       KO
+ft_strlcpy       compil. failed       KO
+ft_strlcat       compil. failed       KO
+ft_toupper       compil. failed       KO
+ft_tolower       compil. failed       KO
+ft_strchr        compil. failed       KO
+ft_strrchr       compil. failed       KO
+ft_strncmp       compil. failed       KO
+ft_memchr        compil. failed       KO
+ft_memcmp        compil. failed       KO
+ft_strnstr       compil. failed       KO
+ft_atoi          compil. failed       KO
+ft_calloc        compil. failed       KO
+ft_strdup        compil. failed       KO
+ft_substr        compil. failed       KO
+ft_strjoin       compil. failed       KO
+ft_strtrim       compil. failed       KO
+ft_split         compil. failed       KO
+ft_itoa          compil. failed       KO
+ft_strmapi       compil. failed       KO
+ft_striteri      compil. failed       KO
+ft_putchar_fd    compil. failed       KO
+ft_putstr_fd     compil. failed       KO
+ft_putendl_fd    compil. failed       KO
+ft_putnbr_fd     compil. failed       KO
+
+✖ Executing: make fclean all bonus
+ft_strlcpy.c:29:20: error: passing 'const char *' to parameter of type 'char *' discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+        return (ft_strlen(src));
+                          ^~~
+./libft.h:59:30: note: passing argument to parameter 'str' here
+unsigned int    ft_strlen(char *str);
+                                ^
+1 error generated.
+make: *** [<builtin>: ft_strlcpy.o] Error 1
+
+Problem creating the library

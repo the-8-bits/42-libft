@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 14:11:20 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:10:18 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_list
  * string processing or parsing operations. Is particularly useful when working
  * with text processing tasks where you need to manipulate and extract
  * substrings from a larger text or data */
-typedef structs_split_next
+typedef struct structs_split_next
 {
 	size_t	start;
 	size_t	length;
@@ -282,7 +282,7 @@ char			*ft_strcat(char *dest, const char *src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 
 /* Is used to return the absolute value of a number */
-static int		ft_abs(int nbr);
+int				ft_abs(int nbr);
 
 /* duplicates the first `length` characters from the input string `src` and
  * returns a new dynamically allocated string containing this substring. It
@@ -290,6 +290,6 @@ static int		ft_abs(int nbr);
  * `src` to the new string, adds a null-terminator, and then returns the newly
  * created string. If memory allocation fails, it returns `NULL`. Note that
  * there's a typo in the code; it should be `char *dst` instead of `*dst` */
-static char	*ft_strndup(const char *src, size_t length)
+char			*ft_strndup(const char *src, size_t length);
 
 #endif
