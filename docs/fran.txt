@@ -1,4 +1,4 @@
-fran
+➜  libft git:(42) ✗ fran     
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                Welcome to Francinette, a 42 tester framework!                ║
 ╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
@@ -6,7 +6,8 @@ fran
                         ╚══════════════════════════════╝
 ✔ Preparing framework
 ✖ Executing: norminette
-libft.h: OK!
+libft.h: Error!
+Error: TOO_MANY_TABS_FUNC   (line: 293, col:  13):	extra tabs before function name
 bonus/ft_lstiter.c: OK!
 bonus/ft_lstdelone.c: OK!
 bonus/ft_lstmap.c: Error!
@@ -17,194 +18,62 @@ Error: WRONG_SCOPE_VAR      (line:  26, col:   1):	Variable declared in incorrec
 Error: SPACE_REPLACE_TAB    (line:  26, col:  15):	Found space when expecting tab
 Error: MISALIGNED_VAR_DECL  (line:  26, col:  16):	Misaligned variable declaration
 Error: ASSIGN_IN_CONTROL    (line:  28, col:  24):	Assignment in control structure
-Error: WRONG_SCOPE_COMMENT  (line:  30, col:  13):	Comment is invalid in this scope
 bonus/ft_lstadd_back.c: OK!
 bonus/ft_lstlast.c: OK!
 bonus/ft_lstadd_front.c: OK!
 bonus/ft_lstclear.c: OK!
-bonus/ft_lstsize.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  19, col:  16):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  19, col:  16):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  18):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  18):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:  21):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:  21):	Comment is invalid in this scope
+bonus/ft_lstsize.c: OK!
 bonus/ft_lstnew.c: Error!
 Error: ASSIGN_IN_CONTROL    (line:  19, col:  20):	Assignment in control structure
 Error: SPACE_AFTER_KW       (line:  19, col:  23):	Missing space after keyword
-other/ft_strncpy.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  19, col:  25):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  19, col:  25):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:   9):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  28, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  32, col:   9):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  36, col:  26):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  36, col:  26):	Comment is invalid in this scope
-other/ft_strcat.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:   5):	Comment is invalid in this scope
+other/ft_strncpy.c: OK!
+other/ft_strcat.c: OK!
 other/ft_abs.c: OK!
+other/ft_strndup.c: Error!
+Error: BRACE_SHOULD_EOL     (line:  27, col:   1):	Expected newline after brace
 part1/ft_isalpha.c: OK!
-part1/ft_toupper.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  33):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  33):	Comment is invalid in this scope
+part1/ft_toupper.c: OK!
 part1/ft_isascii.c: OK!
 part1/ft_strlcat.c: OK!
-part1/ft_memcmp.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  13):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  31, col:  17):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  31, col:  17):	Comment is invalid in this scope
-part1/ft_strnstr.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:   9):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  31, col:  17):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  37, col:  20):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  37, col:  20):	Comment is invalid in this scope
-part1/ft_strlcpy.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  30, col:   5):	Comment is invalid in this scope
+part1/ft_memcmp.c: OK!
+part1/ft_strnstr.c: OK!
+part1/ft_strlcpy.c: OK!
 part1/ft_isdigit.c: OK!
 part1/ft_strlen.c: OK!
-part1/ft_atoi.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:  15):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:  15):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  29, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  29, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  32, col:   5):	Comment is invalid in this scope
-part1/ft_strdup.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  33):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  33):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  19):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  19):	Comment is invalid in this scope
-part1/ft_strchr.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:  33):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:  33):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  14):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  14):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:  29):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:  29):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  20):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  20):	Comment is invalid in this scope
+part1/ft_atoi.c: OK!
+part1/ft_strdup.c: OK!
+part1/ft_strchr.c: OK!
 part1/ft_isalnum.c: OK!
 part1/ft_strncmp.c: OK!
-part1/ft_calloc.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  29):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  29):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:   5):	Comment is invalid in this scope
+part1/ft_calloc.c: OK!
 part1/ft_bzero.c: OK!
-part1/ft_memchr.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:  15):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  20, col:  15):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  32):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  32):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:  35):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  25, col:  35):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  28, col:  20):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  28, col:  20):	Comment is invalid in this scope
+part1/ft_memchr.c: OK!
 part1/ft_memset.c: OK!
-part1/ft_strrchr.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  19, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:  34):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:  34):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  28, col:   9):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  30, col:   5):	Comment is invalid in this scope
+part1/ft_strrchr.c: OK!
 part1/ft_memcpy.c: OK!
 part1/ft_memmove.c: OK!
-part1/ft_tolower.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  33):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  33):	Comment is invalid in this scope
+part1/ft_tolower.c: OK!
 part1/ft_isprint.c: OK!
 part2/ft_strjoin.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  27):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  27):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  27):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  27):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  25):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  25):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  28, col:  25):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  28, col:  25):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  29, col:  19):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  29, col:  19):	Comment is invalid in this scope
-part2/ft_striteri.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:  13):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  18):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  18):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  22):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  22):	Comment is invalid in this scope
+Error: EMPTY_LINE_FUNCTION  (line:  23, col:   1):	Empty line in function
+part2/ft_striteri.c: OK!
 part2/ft_putchar_fd.c: OK!
-part2/ft_itoa.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  43, col:   5):	Comment is invalid in this scope
-Error: TOO_MANY_TAB         (line:  46, col:   1):	Extra tabs for indent level
+part2/ft_itoa.c: OK!
 part2/ft_putstr_fd.c: OK!
-part2/ft_putendl_fd.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  30):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  23, col:  30):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  20):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  20):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  28):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  27, col:  28):	Comment is invalid in this scope
-part2/ft_strmapi.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  17):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  21, col:  17):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  41):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  26, col:  41):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  29, col:  19):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  29, col:  19):	Comment is invalid in this scope
+part2/ft_putendl_fd.c: OK!
+part2/ft_strmapi.c: OK!
 part2/ft_split.c: Error!
-Error: TOO_MANY_LINES       (line:  80, col:   1):	Function has more than 25 lines
+Error: TOO_FEW_TAB          (line:  62, col:   1):	Missing tabs for indent level
+Error: BRACE_SHOULD_EOL     (line:  67, col:   1):	Expected newline after brace
 part2/ft_putnbr_fd.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  19, col:  22):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  19, col:  22):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  30, col:   9):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  31, col:  39):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  31, col:  39):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  36, col:  21):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  36, col:  21):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  54, col:  39):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  54, col:  39):	Comment is invalid in this scope
-Error: TOO_MANY_LINES       (line:  56, col:   1):	Function has more than 25 lines
-part2/ft_strtrim.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  38, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  38, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  41, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  44, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  47, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  49, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  52, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  52, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  53, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  57, col:  26):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  57, col:  26):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  58, col:  19):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  58, col:  19):	Comment is invalid in this scope
-Error: TOO_MANY_LINES       (line:  59, col:   1):	Function has more than 25 lines
-part2/ft_substr.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  22, col:   9):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  24, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  29, col:   5):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  32, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  32, col:  24):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  33, col:  37):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  33, col:  37):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  34, col:  22):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  34, col:  22):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  35, col:  19):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line:  35, col:  19):	Comment is invalid in this scope
+Error: SPACE_BEFORE_FUNC    (line:  15, col:   5):	space before function name
+Error: SPACE_BEFORE_FUNC    (line:  20, col:   5):	space before function name
+Error: NO_SPC_AFR_PAR       (line:  22, col:  14):	Extra space after parenthesis (brace/bracket)
+Error: TOO_FEW_TAB          (line:  22, col:  16):	Missing tabs for indent level
+Error: SPACE_BEFORE_FUNC    (line:  31, col:   5):	space before function name
+Error: BRACE_NEWLINE        (line:  31, col:  34):	Expected newline before brace
+part2/ft_strtrim.c: OK!
+part2/ft_substr.c: OK!
 
 ✖ Executing: make fclean all (no bonus)
 make: *** No rule to make target 'ft_isalpha.o', needed by 'libft.a'.  Stop.

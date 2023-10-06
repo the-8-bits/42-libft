@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:43 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 16:16:39 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:16:47 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;
+	void	*data;
 
 	if (!f || !del)
 		return (NULL);
 	first = NULL;
 	while (lst)
 	{
-		void *data = (*f)(lst->content);
-		t_list new_node;
-
-		if (!(new_node = ft_lstnew(data)))
+		*data = (*f)(lst->content);
+		new_node = ft_lstnew(data);
+		if (!(new_node))
 		{
-			// Free the newly created list and its data if an error occurs
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}

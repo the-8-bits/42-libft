@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:38 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:10:35 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:07:53 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*s != '\0')
 	{
 		if (*s == (char)c)
-			return ((char *)s); // Found the character, return its pointer
-		s++; // Move to the next character in the string
+			return ((char *)s);
+		s++;
 	}
-	// Check for the null terminator (end of string)
 	if ((char)c == '\0')
-		return ((char *)s); // Character is the null terminator
-	return (NULL); // Character not found in the string
+		return ((char *)s);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:19 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/04 14:49:17 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:04:18 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,20 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*str;
 
 	if (!s1 || !set)
-		return (NULL); // Return NULL if either s1 or set is NULL
+		return (NULL);
 	start = 0;
 	end = strlen(s1);
-	// Find the start position by skipping chars in set from the beginning of s1
 	while (s1[start] && ft_char_in_set(s1[start], set))
 		start++;
-	// Find the end position by skipping characters in set from the end of s1
 	while (end > start && ft_char_in_set(s1[end - 1], set))
 		end--;
-	// Calculate the length of the trimmed string
 	trimmed_len = end - start;
-	// Allocate memory for the trimmed string plus a null terminator
 	*str = (char *)malloc(trimmed_len + 1);
 	if (!str)
-		return (NULL); // Return NULL if memory allocation fails
-	// Copy the trimmed characters from s1 to str
+		return (NULL);
 	counter = 0;
 	while (start < end)
 		str[counter++] = s1[start++];
-	str[counter] = '\0'; // Null-terminate the trimmed string
-	return (str); // Return a pointer to the trimmed string
+	str[counter] = '\0';
+	return (str);
 }

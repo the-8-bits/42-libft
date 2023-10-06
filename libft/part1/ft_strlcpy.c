@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:32 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:01:30 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:07:23 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 		size--;
 	}
 	*d = '\0';
-	// Calculate the length of the source string
 	return (ft_strlen(src));
 }

@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 16:11:51 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:11:20 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,6 +290,6 @@ static int		ft_abs(int nbr);
  * `src` to the new string, adds a null-terminator, and then returns the newly
  * created string. If memory allocation fails, it returns `NULL`. Note that
  * there's a typo in the code; it should be `char *dst` instead of `*dst` */
-static char		*ft_strndup(const char *src, size_t length)
+static char	*ft_strndup(const char *src, size_t length)
 
 #endif

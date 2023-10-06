@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:22 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/04 15:48:06 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:22:36 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	h_count_words(const char *s, char c)
 
 void	h_actual_split(s, c, split, split_index)
 {
-	size_t	word_length; // Length of the current word.
+	size_t	word_length;
 
 	word_length = 0;
 	while (s[word_length] && s[word_length] != c)
@@ -46,8 +46,8 @@ void	h_actual_split(s, c, split, split_index)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split; // Array of strings
-	size_t	split_index; // Index of the current string in the array
+	char	**split;
+	size_t	split_index;
 
 	if (!s)
 		return (NULL);
@@ -58,7 +58,7 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		if (*s != c)
-			h_actual_split(s, c, split, split_index)
+			h_actual_split(s, c, split, split_index);
 		else
 			s++;
 	}
