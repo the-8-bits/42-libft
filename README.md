@@ -106,9 +106,12 @@ Used for building a static library named `libft.a` from the collection of C sour
 
 7. `all: $(NAME)`: This is the default target, which means that when you run `make` without specifying a target, it will build the `$(NAME)` target, which is the static library.
 
-8. `$(NAME): $(OBJ)`: This rule specifies how to build the static library `$(NAME)` from the object files `$(OBJ)`. It uses the `ar` command to create the library.
+8. `$(NAME): $(OBJ)`: This rule specifies how to build the static library `$(NAME)` from the object files `$(OBJ)`. It uses the [`ar` command](https://www.mkssoftware.com/docs/man1/ar.1.asp) to create the library with the flags:
+    - `-r`, replaces or adds file to archive. If archive does not exist, `ar` creates it and prints a message. When `ar` replaces an existing member, it does not change the archive order. If file is not replacing a member, `ar` adds it to the end of the archive (unless you specify `-a`, `-b`, or `-i`). This option regenerates the symbol table.
+    - `-c`, suppresses the message ar normally prints when it creates a new archive file. You can only use this in conjunction with the `-r` and `-q` options.
+    - `-s`, regenerates the symbol table regardless of whether the command modifies the archive.
 
-9. `%.o: %.c`: This is a generic rule for building object files from C source files. It specifies that any `.o` file depends on a corresponding `.c` file, and it compiles the `.c` file into an object file.
+9.  `%.o: %.c`: This is a generic rule for building object files from C source files. It specifies that any `.o` file depends on a corresponding `.c` file, and it compiles the `.c` file into an object file.
 
 10. `clean`: This target removes all object files (`.o` files) generated during the compilation process.
 
@@ -116,7 +119,7 @@ Used for building a static library named `libft.a` from the collection of C sour
 
 12. `re: fclean all`: This target performs a clean (`fclean`) operation and then rebuilds the library (`all`).
 
-13. `.PHONY` targets: These are special targets that are not files but are used to specify that the associated targets (`clean`, `fclean`, `all`, `re`) are not filenames and should always be executed, even if a file with the same name exists.
+13. [`.PHONY` targets](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html): These are special targets that are not files but are used to specify that the associated targets (`clean`, `fclean`, `all`, `re`) are not filenames and should always be executed, even if a file with the same name exists.
 
 To build the static library `libft.a`, you can simply run `make`. If you want to clean up generated files, you can use `make clean` or `make fclean` to remove object files and the library, respectively. To rebuild everything from scratch, you can use `make re`.
 
