@@ -46,24 +46,16 @@ dependences:
 
 This is one of the functions developed during the Piscine, this one though has a slight modification.
 
--   **Loop Condition**: Instead of initializing a counter variable `i` to 0 and using `str[i]` to access characters, we directly use a pointer `str` and loop while the value it points to is not the null terminator (`'\0'`). The null terminator marks the end of the string.
--   **Character Validation Condition**: In the original version, the condition for checking whether a character is an alphabetic character was complex and involved two separate logical conditions. In the optimized version, this condition is simplified. It uses logical operators (`&&` and `||`) to combine the checks for lowercase and uppercase alphabetic characters.
-    The original condition:
-    ```c
-    if ((str[i] <= 'a' || str[i] >= 'z') && (str[i] <= 'A' || str[i] >= 'Z'))
-    ```
-    
-    The optimized condition:
-    ```c
-    if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
-    ```
-    
-    This optimized condition first checks whether the character is not within the range of lowercase (`'a'` to `'z'`) and not within the range of uppercase (`'A'` to `'Z'`) alphabetic characters. If either of these conditions is true (using `||`), it means the character is not an alphabetic character, so the `if` statement is satisfied.
--   **Incrementing Pointer**: After checking the current character, whether it's alphabetic or not, we increment the `str` pointer to point to the next character in the string.
--   **Return Value**: Remains the same:
-	- if the loop completes without encountering any non-alphabetic characters, the function returns `1`, indicating that the entire string consists of alphabetic characters.
-	- If the loop encounters a non-alphabetic character, it immediately returns `0` to indicate that the string contains non-alphabetic characters.
+It now checks only for one character, as described in the man:
 
+> [!QUOTE]
+> checks for an alphabetic character; in the standard "C" locale, it is equivalent to (isupper(c) || islower(c)). In some locales, there may be additional characters for which isalpha() is true-letters which are neither upper case nor lower case.
+
+-   **Return Value**: the logigal result of:
+
+    ```c
+    ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    ```
 
 ## [ft_isdigit](./ft_isdigit.c)
 

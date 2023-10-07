@@ -43,7 +43,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (end > start && ft_char_in_set(s1[end - 1], set))
 		end--;
 	trimmed_len = end - start;
-	*str = (char *)malloc(trimmed_len + 1);
+	str = (char *)malloc(trimmed_len + 1);
 	if (!str)
 		return (NULL);
 	counter = 0;

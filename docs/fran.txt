@@ -1,4 +1,4 @@
-➜  libft git:(42) ✗ fran
+@see7e ➜ /workspaces/42-libft/libft (42) $ ~/francinette/tester.sh
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                Welcome to Francinette, a 42 tester framework!                ║
 ╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
@@ -6,59 +6,577 @@
                         ╚══════════════════════════════╝
 ✔ Preparing framework
 ✔ Executing: norminette
-✔ Executing: make fclean all (no bonus)
+✔ Executing: make fclean all bonus
 ℹ Executing: libft-war-machine (https://github.com/y3ll0w42/libft-war-machine)
 --------------------------------------------------------------------------------
 |                              COMPILING LIBFT                                 |
 --------------------------------------------------------------------------------
 rules:
 all        $(NAME)       fclean       re           clean       bonus     libft.a
-ok         ok            ok           ok           ok          missing   found
+ok         ok            ok           ok           ok          ok        found
 
 FUNCTION         TESTS                RESULT
-ft_isalpha       compil. failed       KO
+ft_isalpha       ✓✓✓✓✓✓✓              OK
 ft_isdigit       compil. failed       KO
 ft_isalnum       compil. failed       KO
-ft_isascii       compil. failed       KO
+ft_isascii       ✓✓✓✓✓✓✓✓             OK
 ft_isprint       compil. failed       KO
-ft_strlen        compil. failed       KO
-ft_memset        compil. failed       KO
-ft_bzero         compil. failed       KO
-ft_memcpy        compil. failed       KO
-ft_memmove       compil. failed       KO
-ft_strlcpy       compil. failed       KO
-ft_strlcat       compil. failed       KO
+ft_strlen        ✓✓✓✓✓✓               OK
+ft_memset        ✓✓✓✓                 OK
+ft_bzero         ✓✓                   OK
+ft_memcpy        ✓✓✓                  OK
+ft_memmove       ✓✓✓✓✓                OK
+ft_strlcpy       ✓✓✓✓✓                OK
+ft_strlcat       ✓✓✓✓✓✓✓✓✓            OK
 ft_toupper       compil. failed       KO
 ft_tolower       compil. failed       KO
-ft_strchr        compil. failed       KO
-ft_strrchr       compil. failed       KO
-ft_strncmp       compil. failed       KO
-ft_memchr        compil. failed       KO
-ft_memcmp        compil. failed       KO
-ft_strnstr       compil. failed       KO
-ft_atoi          compil. failed       KO
+ft_strchr        ✓✓✓✓✓✓               OK
+ft_strrchr       ✓✓✓✓✓✓✓✓             OK
+ft_strncmp       ✓✓✓✓✓✓✓✓✓✓✗          KO
+ft_memchr        ✓✓✓✓✓✓               OK
+ft_memcmp        ✓✓✓✓✓✓✓✓✓            OK
+ft_strnstr       ✓✓✓✓✓✓✓✓✓✓           OK
+ft_atoi          ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓  OK
 ft_calloc        compil. failed       KO
 ft_strdup        compil. failed       KO
 ft_substr        compil. failed       KO
-ft_strjoin       compil. failed       KO
-ft_strtrim       compil. failed       KO
+ft_strjoin       ✗✗✗✓                 KO
+ft_strtrim       ✓✓✓✓✓                OK
 ft_split         compil. failed       KO
 ft_itoa          compil. failed       KO
 ft_strmapi       compil. failed       KO
-ft_striteri      compil. failed       KO
-ft_putchar_fd    compil. failed       KO
-ft_putstr_fd     compil. failed       KO
-ft_putendl_fd    compil. failed       KO
-ft_putnbr_fd     compil. failed       KO
+ft_striteri      ✓                    OK
+ft_putchar_fd    ✓✓✓✓✓✓✓              OK
+ft_putstr_fd     ✓✓✓✓                 OK
+ft_putendl_fd    ✓✓✓✓                 OK
+ft_putnbr_fd     ✓✓✓✓✓✓✓✓✗            KO
+ft_lstnew        ✓✓✓                  OK
+ft_lstadd_front  ✓                    OK
+ft_lstsize       ✗                    KO
+ft_lstlast       ✓                    OK
+ft_lstadd_back   ✓                    OK
+ft_lstdelone     ✓                    OK
+ft_lstclear      ✓                    OK
+ft_lstiter       ✓                    OK
+ft_lstmap        ✓                    OK
 
-✖ Executing: make fclean all bonus
-ft_strlcpy.c:29:20: error: passing 'const char *' to parameter of type 'char *' discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
-        return (ft_strlen(src));
-                          ^~~
-./libft.h:59:30: note: passing argument to parameter 'str' here
-unsigned int    ft_strlen(char *str);
+Abort: A  Bus error: B  Segmentation fault: S  Timeout: T
+
+More information in: /home/codespace/francinette/temp/libft/war-machine/deepthought
+
+Errors in strncmp: /home/codespace/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strncmp
+Test 11:
+    ft_print_result(ft_strncmp("test\200", "test\0", 6));
+Expected (cat -e test11.output):
+1
+Your result (cat -e user_output_test11):
+-1
+Errors in strjoin: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_strjoin
+Test 1:
+    if (!(strjoin = ft_strjoin(s1, s2)))
+        ft_print_result("NULL");
+    else
+        ft_print_result(strjoin);
+    if (strjoin == s1 || strjoin == s2)
+        ft_print_result("\nA new string was not returned");
+Expected (cat -e test01.output):
+lorem ipsumdolor sit amet
+Your result (cat -e user_output_test01):
+
+Test 2:
+    s1[0] = '\0';
+    if (!(strjoin = ft_strjoin(s1, s2)))
+        ft_print_result("NULL");
+    else
+        ft_print_result(strjoin);
+    if (strjoin == s1 || strjoin == s2)
+        ft_print_result("\nA new string was not returned");
+Expected (cat -e test02.output):
+dolor sit amet
+Your result (cat -e user_output_test02):
+
+Test 3:
+    s2[0] = '\0';
+    if (!(strjoin = ft_strjoin(s1, s2)))
+        ft_print_result("NULL");
+    else
+        ft_print_result(strjoin);
+    if (strjoin == s1 || strjoin == s2)
+        ft_print_result("\nA new string was not returned");
+Expected (cat -e test03.output):
+lorem ipsum
+Your result (cat -e user_output_test03):
+
+Errors in putnbr_fd: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_putnbr_fd
+Test 9:
+    ft_putnbr_fd(-2147483648LL, 2);
+Expected (cat -e test09.output):
+-2147483648
+Your result (cat -e user_output_test09):
+-(
+...
+
+File too large. To see full report open: /home/codespace/francinette/temp/libft/war-machine/errors.log
+
+✖ Compiling tests: libftTester (https://github.com/Tripouille/libftTester)
+tests/ft_isdigit_test.cpp:19:17: error: no matching function for call to 'ft_isdigit'
+        /* 1 */ check(!ft_isdigit('0' - 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:46:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isdigit(char *str);
                                 ^
-1 error generated.
-make: *** [<builtin>: ft_strlcpy.o] Error 1
+tests/ft_isdigit_test.cpp:20:16: error: no matching function for call to 'ft_isdigit'
+        /* 2 */ check(ft_isdigit('0')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:46:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isdigit(char *str);
+                                ^
+tests/ft_isdigit_test.cpp:21:17: error: no matching function for call to 'ft_isdigit'
+        /* 3 */ check(!ft_isdigit('9' + 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:46:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isdigit(char *str);
+                                ^
+tests/ft_isdigit_test.cpp:22:16: error: no matching function for call to 'ft_isdigit'
+        /* 4 */ check(ft_isdigit('9')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:46:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isdigit(char *str);
+                                ^
+4 errors generated.
+tests/ft_isalnum_test.cpp:19:17: error: no matching function for call to 'ft_isalnum'
+        /* 1 */ check(!ft_isalnum('a' - 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:20:16: error: no matching function for call to 'ft_isalnum'
+        /* 2 */ check(ft_isalnum('a')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:21:17: error: no matching function for call to 'ft_isalnum'
+        /* 3 */ check(!ft_isalnum('z' + 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:22:16: error: no matching function for call to 'ft_isalnum'
+        /* 4 */ check(ft_isalnum('z')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:23:17: error: no matching function for call to 'ft_isalnum'
+        /* 5 */ check(!ft_isalnum('A' - 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:24:16: error: no matching function for call to 'ft_isalnum'
+        /* 6 */ check(ft_isalnum('A')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:25:17: error: no matching function for call to 'ft_isalnum'
+        /* 7 */ check(!ft_isalnum('Z' + 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:26:16: error: no matching function for call to 'ft_isalnum'
+        /* 8 */ check(ft_isalnum('Z')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:27:17: error: no matching function for call to 'ft_isalnum'
+        /* 9 */ check(!ft_isalnum('0' - 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:28:17: error: no matching function for call to 'ft_isalnum'
+        /* 10 */ check(ft_isalnum('0')); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:29:18: error: no matching function for call to 'ft_isalnum'
+        /* 11 */ check(!ft_isalnum('9' + 1)); showLeaks();
+                        ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+tests/ft_isalnum_test.cpp:30:17: error: no matching function for call to 'ft_isalnum'
+        /* 12 */ check(ft_isalnum('9')); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:49:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isalnum(char *str);
+                                ^
+12 errors generated.
+tests/ft_isprint_test.cpp:19:17: error: no matching function for call to 'ft_isprint'
+        /* 1 */ check(!ft_isprint(' ' - 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:56:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isprint(char *str);
+                                ^
+tests/ft_isprint_test.cpp:20:16: error: no matching function for call to 'ft_isprint'
+        /* 2 */ check(ft_isprint(' ')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:56:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isprint(char *str);
+                                ^
+tests/ft_isprint_test.cpp:21:17: error: no matching function for call to 'ft_isprint'
+        /* 3 */ check(!ft_isprint('~' + 1)); showLeaks();
+                       ^~~~~~~~~~
+./libft.h:56:8: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+int                             ft_isprint(char *str);
+                                ^
+tests/ft_isprint_test.cpp:22:16: error: no matching function for call to 'ft_isprint'
+        /* 4 */ check(ft_isprint('~')); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:56:8: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+int                             ft_isprint(char *str);
+                                ^
+4 errors generated.
+tests/ft_strlcat_test.cpp:39:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 10 */ check(ft_strlcat(dest, "", 15) == 10 && !strcmp(dest, "1111111111")); showLeaks();
+                                        ^
+tests/ft_strlcat_test.cpp:41:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 11 */ check(ft_strlcat(dest, "", 42) == 0 && !strcmp(dest, "")); showLeaks();
+                                        ^
+tests/ft_strlcat_test.cpp:43:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 12 */ check(ft_strlcat(dest, "", 0) == 0 && !strcmp(dest, "")); showLeaks();
+                                        ^
+tests/ft_strlcat_test.cpp:45:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 13 */ check(ft_strlcat(dest, "123", 1) == 3 && !strcmp(dest, "")); showLeaks();
+                                        ^
+tests/ft_strlcat_test.cpp:47:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 14 */ check(ft_strlcat(dest, "123", 2) == 3 && !strcmp(dest, "1")); showLeaks();
+                                        ^
+tests/ft_strlcat_test.cpp:49:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 15 */ check(ft_strlcat(dest, "123", 3) == 3 && !strcmp(dest, "12")); showLeaks();
+                                        ^
+tests/ft_strlcat_test.cpp:51:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 16 */ check(ft_strlcat(dest, "123", 4) == 3 && !strcmp(dest, "123")); showLeaks();
+                                        ^
+tests/ft_strlcat_test.cpp:53:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 17 */ check(ft_strlcat(dest, "123", 0) == 3 && !strcmp(dest, "")); showLeaks();
+                                        ^
+8 warnings generated.
+tests/ft_toupper_test.cpp:19:16: error: no matching function for call to 'ft_toupper'
+        /* 1 */ check(ft_toupper('a' - 1) == 'a' - 1); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:94:9: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+char                    *ft_toupper(char *str);
+                         ^
+tests/ft_toupper_test.cpp:20:16: error: no matching function for call to 'ft_toupper'
+        /* 2 */ check(ft_toupper('a') == 'A'); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:94:9: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+char                    *ft_toupper(char *str);
+                         ^
+tests/ft_toupper_test.cpp:21:16: error: no matching function for call to 'ft_toupper'
+        /* 3 */ check(ft_toupper('z' + 1) == 'z' + 1); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:94:9: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+char                    *ft_toupper(char *str);
+                         ^
+tests/ft_toupper_test.cpp:22:16: error: no matching function for call to 'ft_toupper'
+        /* 4 */ check(ft_toupper('z') == 'Z'); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:94:9: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+char                    *ft_toupper(char *str);
+                         ^
+4 errors generated.
+tests/ft_tolower_test.cpp:19:16: error: no matching function for call to 'ft_tolower'
+        /* 1 */ check(ft_tolower('A' - 1) == 'A' - 1); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:99:9: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+char                    *ft_tolower(char *str);
+                         ^
+tests/ft_tolower_test.cpp:20:16: error: no matching function for call to 'ft_tolower'
+        /* 2 */ check(ft_tolower('A') == 'a'); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:99:9: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+char                    *ft_tolower(char *str);
+                         ^
+tests/ft_tolower_test.cpp:21:16: error: no matching function for call to 'ft_tolower'
+        /* 3 */ check(ft_tolower('Z' + 1) == 'Z' + 1); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:99:9: note: candidate function not viable: no known conversion from 'int' to 'char *' for 1st argument
+char                    *ft_tolower(char *str);
+                         ^
+tests/ft_tolower_test.cpp:22:16: error: no matching function for call to 'ft_tolower'
+        /* 4 */ check(ft_tolower('Z') == 'z'); showLeaks();
+                      ^~~~~~~~~~
+./libft.h:99:9: note: candidate function not viable: no known conversion from 'char' to 'char *' for 1st argument
+char                    *ft_tolower(char *str);
+                         ^
+4 errors generated.
+tests/ft_strncmp_test.cpp:19:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 1 */ check(ft_strncmp("t", "", 0) == 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:19:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 1 */ check(ft_strncmp("t", "", 0) == 0); showLeaks();
+                                      ^
+tests/ft_strncmp_test.cpp:20:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 2 */ check(ft_strncmp("1234", "1235", 3) == 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:20:35: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 2 */ check(ft_strncmp("1234", "1235", 3) == 0); showLeaks();
+                                         ^
+tests/ft_strncmp_test.cpp:21:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 3 */ check(ft_strncmp("1234", "1235", 4) < 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:21:35: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 3 */ check(ft_strncmp("1234", "1235", 4) < 0); showLeaks();
+                                         ^
+tests/ft_strncmp_test.cpp:22:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 4 */ check(ft_strncmp("1234", "1235", -1) < 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:22:35: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 4 */ check(ft_strncmp("1234", "1235", -1) < 0); showLeaks();
+                                         ^
+tests/ft_strncmp_test.cpp:23:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 5 */ check(ft_strncmp("", "", 42) == 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:23:31: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 5 */ check(ft_strncmp("", "", 42) == 0); showLeaks();
+                                     ^
+tests/ft_strncmp_test.cpp:24:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 6 */ check(ft_strncmp("Tripouille", "Tripouille", 42) == 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:24:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 6 */ check(ft_strncmp("Tripouille", "Tripouille", 42) == 0); showLeaks();
+                                               ^
+tests/ft_strncmp_test.cpp:25:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 7 */ check(ft_strncmp("Tripouille", "tripouille", 42) < 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:25:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 7 */ check(ft_strncmp("Tripouille", "tripouille", 42) < 0); showLeaks();
+                                               ^
+tests/ft_strncmp_test.cpp:26:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 8 */ check(ft_strncmp("Tripouille", "TriPouille", 42) > 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:26:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 8 */ check(ft_strncmp("Tripouille", "TriPouille", 42) > 0); showLeaks();
+                                               ^
+tests/ft_strncmp_test.cpp:27:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 9 */ check(ft_strncmp("Tripouille", "TripouillE", 42) > 0); showLeaks();
+                                 ^
+tests/ft_strncmp_test.cpp:27:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 9 */ check(ft_strncmp("Tripouille", "TripouillE", 42) > 0); showLeaks();
+                                               ^
+tests/ft_strncmp_test.cpp:28:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 10 */ check(ft_strncmp("Tripouille", "TripouilleX", 42) < 0); showLeaks();
+                                  ^
+tests/ft_strncmp_test.cpp:28:42: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 10 */ check(ft_strncmp("Tripouille", "TripouilleX", 42) < 0); showLeaks();
+                                                ^
+tests/ft_strncmp_test.cpp:29:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 11 */ check(ft_strncmp("Tripouille", "Tripouill", 42) > 0); showLeaks();
+                                  ^
+tests/ft_strncmp_test.cpp:29:42: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 11 */ check(ft_strncmp("Tripouille", "Tripouill", 42) > 0); showLeaks();
+                                                ^
+tests/ft_strncmp_test.cpp:30:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 12 */ check(ft_strncmp("", "1", 0) == 0); showLeaks();
+                                  ^
+tests/ft_strncmp_test.cpp:30:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 12 */ check(ft_strncmp("", "1", 0) == 0); showLeaks();
+                                      ^
+tests/ft_strncmp_test.cpp:31:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 13 */ check(ft_strncmp("1", "", 0) == 0); showLeaks();
+                                  ^
+tests/ft_strncmp_test.cpp:31:33: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 13 */ check(ft_strncmp("1", "", 0) == 0); showLeaks();
+                                       ^
+tests/ft_strncmp_test.cpp:32:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 14 */ check(ft_strncmp("", "1", 1) < 0); showLeaks();
+                                  ^
+tests/ft_strncmp_test.cpp:32:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 14 */ check(ft_strncmp("", "1", 1) < 0); showLeaks();
+                                      ^
+tests/ft_strncmp_test.cpp:33:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 15 */ check(ft_strncmp("1", "", 1) > 0); showLeaks();
+                                  ^
+tests/ft_strncmp_test.cpp:33:33: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 15 */ check(ft_strncmp("1", "", 1) > 0); showLeaks();
+                                       ^
+tests/ft_strncmp_test.cpp:34:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 16 */ check(ft_strncmp("", "", 1) == 0); showLeaks();
+                                  ^
+tests/ft_strncmp_test.cpp:34:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 16 */ check(ft_strncmp("", "", 1) == 0); showLeaks();
+                                      ^
+32 warnings generated.
+tests/ft_atoi_test.cpp:22:16: error: no matching function for call to 'ft_atoi'
+        /* 1 */ check(ft_atoi((e + "1").c_str()) == 1); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:23:16: error: no matching function for call to 'ft_atoi'
+        /* 2 */ check(ft_atoi((e + "a1").c_str()) == 0); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:24:16: error: no matching function for call to 'ft_atoi'
+        /* 3 */ check(ft_atoi((e + "--1").c_str()) == 0); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:25:16: error: no matching function for call to 'ft_atoi'
+        /* 4 */ check(ft_atoi((e + "++1").c_str()) == 0); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:26:16: error: no matching function for call to 'ft_atoi'
+        /* 5 */ check(ft_atoi((e + "+1").c_str()) == 1); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:27:16: error: no matching function for call to 'ft_atoi'
+        /* 6 */ check(ft_atoi((e + "-1").c_str()) == -1); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:28:16: error: no matching function for call to 'ft_atoi'
+        /* 7 */ check(ft_atoi((e + "0").c_str()) == 0); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:29:16: error: no matching function for call to 'ft_atoi'
+        /* 8 */ check(ft_atoi((e + "+42lyon").c_str()) == 42); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:30:16: error: no matching function for call to 'ft_atoi'
+        /* 9 */ check(ft_atoi((e + "+101").c_str()) == 101); showLeaks();
+                      ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:31:17: error: no matching function for call to 'ft_atoi'
+        /* 10 */ check(ft_atoi((e + to_string(INT_MAX)).c_str()) == INT_MAX); showLeaks();
+                       ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:32:17: error: no matching function for call to 'ft_atoi'
+        /* 11 */ check(ft_atoi((e + to_string(INT_MIN)).c_str()) == INT_MIN); showLeaks();
+                       ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:33:25: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 12 */ check(ft_atoi("-+42") == 0); showLeaks();
+                               ^
+tests/ft_atoi_test.cpp:34:25: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        /* 13 */ check(ft_atoi("+-42") == 0); showLeaks();
+                               ^
+tests/ft_atoi_test.cpp:35:17: error: no matching function for call to 'ft_atoi'
+        /* 14 */ check(ft_atoi((string("+") + e + "42").c_str()) == 0); showLeaks();
+                       ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:36:17: error: no matching function for call to 'ft_atoi'
+        /* 15 */ check(ft_atoi((string("-") + e + "42").c_str()) == 0); showLeaks();
+                       ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:37:17: error: no matching function for call to 'ft_atoi'
+        /* 16 */ check(ft_atoi((string("1") + e + "42").c_str()) == 1); showLeaks();
+                       ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+tests/ft_atoi_test.cpp:38:17: error: no matching function for call to 'ft_atoi'
+        /* 17 */ check(ft_atoi((string("-1") + e + "42").c_str()) == -1); showLeaks();
+                       ^~~~~~~
+./libft.h:144:8: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+int                             ft_atoi(char *str);
+                                ^
+2 warnings and 15 errors generated.
 
-Problem creating the library
+Problem compiling tests
+✖ Compiling tests: libft-unit-test (https://github.com/alelievr/libft-unit-test)
+/usr/bin/ld: ft_putnbr_fd.o: in function `ft_putchar_fd':
+ft_putnbr_fd.c:(.text+0x0): multiple definition of `ft_putchar_fd'; ft_putchar_fd.o:ft_putchar_fd.c:(.text+0x0): first defined here
+collect2: error: ld returned 1 exit status
+make[1]: *** [Makefile:99: so] Error 1
+make: *** [Makefile:161: libft.so] Error 2
+
+Problem compiling tests
+✖ Compiling tests: fsoares (my own)
+In file included from test_isdigit.c:2:
+test_isdigit.c: In function ‘test_isdigit’:
+my_utils.h:26:27: error: passing argument 1 of ‘ft_isdigit’ makes pointer from integer without a cast [-Werror=int-conversion]
+   26 |    if (!fn(c) != !ft_##fn(c))                                              \
+      |                           ^
+      |                           |
+      |                           int
+test_isdigit.c:4:1: note: in expansion of macro ‘create_test_ctype’
+    4 | create_test_ctype(isdigit);
+      | ^~~~~~~~~~~~~~~~~
+In file included from my_utils.h:17,
+                 from test_isdigit.c:2:
+libft.h:46:25: note: expected ‘char *’ but argument is of type ‘int’
+   46 | int    ft_isdigit(char *str);
+      |                   ~~~~~~^~~
+In file included from test_isdigit.c:2:
+my_utils.h:30:40: error: passing argument 1 of ‘ft_isdigit’ makes pointer from integer without a cast [-Werror=int-conversion]
+   30 |       c, escape_chr(c), fn(c), ft_##fn(c));                       \
+      |                                        ^
+      |                                        |
+      |                                        int
+test_isdigit.c:4:1: note: in expansion of macro ‘create_test_ctype’
+    4 | create_test_ctype(isdigit);
+      | ^~~~~~~~~~~~~~~~~
+In file included from my_utils.h:17,
+                 from test_isdigit.c:2:
+libft.h:46:25: note: expected ‘char *’ but argument is of type ‘int’
+   46 | int    ft_isdigit(char *str);
+      |                   ~~~~~~^~~
+test_isdigit.c:4:1: error: passing argument 1 of ‘ft_isdigit’ makes pointer from integer without a cast [-Werror=int-conversion]
+    4 | create_test_ctype(isdigit);
+      | ^~~~~~~~~~~~~~~~~
+      | |
+      | int
+In file included from my_utils.h:17,
+                 from test_isdigit.c:2:
+libft.h:46:25: note: expected ‘char *’ but argument is of type ‘int’
+   46 | int    ft_isdigit(char *str);
+      |                   ~~~~~~^~~
+test_isdigit.c:4:1: error: passing argument 1 of ‘ft_isdigit’ makes pointer from integer without a cast [-Werror=int-conversion]
+    4 | create_test_ctype(isdigit);
+      | ^~~~~~~~~~~~~~~~~
+      | |
+      | int
+In file included from my_utils.h:17,
+                 from test_isdigit.c:2:
+libft.h:46:25: note: expected ‘char *’ but argument is of type ‘int’
+   46 | int    ft_isdigit(char *str);
+      |                   ~~~~~~^~~
+cc1: all warnings being treated as errors
+
+Problem compiling the tests
+
+Summary: 
+
+Failed tests: lstsize, libft-unit-test, libftTester, fsoares, strjoin, putnbr_fd, strncmp
+
+Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, memcpy, memmove, strlcpy, strlcat, toupper, tolower, strchr, strrchr, memchr, memcmp, strnstr, atoi, calloc, strdup, substr, strtrim, split, itoa, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, lstnew, lstadd_front, lstlast, lstadd_back, lstdelone, lstclear, lstiter, lstmap

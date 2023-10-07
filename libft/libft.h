@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:10:18 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/07 12:26:33 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ typedef struct structs_split_next
 
 /* Part 1 */
 
-/* Verifies if the string input is an alphabetic character */
-int				ft_isalpha(char *str);
+/* Determine whether a given integer corresponds to an alphabetic character. It
+ * is commonly used in C programs that need to process text data, such as
+ * parsers, compilers, and text editors. */
+int				ft_isalpha(int c);
 
 /* Verifies if the string input is a nummeric character */
 int				ft_isdigit(char *str);
@@ -56,7 +58,7 @@ int				ft_isascii(int c);
 int				ft_isprint(char *str);
 
 /* This function returns the lengh of the string */
-unsigned int	ft_strlen(char *str);
+unsigned int	ft_strlen(const char *s);
 
 /* It fills a given block of memory with a specified value up to a certain
  * length */

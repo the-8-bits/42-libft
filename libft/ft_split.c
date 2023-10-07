@@ -33,7 +33,7 @@ static size_t	h_count_words(const char *s, char c)
 	return (count);
 }
 
-void	h_actual_split(s, c, split, split_index)
+void	h_actual_split(char const *s, char c, char **split, size_t split_index)
 {
 	size_t	word_length;
 

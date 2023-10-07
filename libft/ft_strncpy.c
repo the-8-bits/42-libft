@@ -16,7 +16,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	char	*dest_start;
 
-	*dest_start = dest;
+	dest_start = dest;
 	while (n > 0 && *src != '\0')
 	{
 		*dest++ = *src++;

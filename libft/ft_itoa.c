@@ -19,14 +19,14 @@ static void	ft_strrev(char *str)
 	size_t	end;
 	char	temp;
 
-	length = strlen(str);
+	length = ft_strlen(str);
 	start = 0;
 	end = length - 1;
 	while (start < end)
 	{
-		tmp = str[start];
+		temp = str[start];
 		str[start] = str[end];
-		str[end] = tmp;
+		str[end] = temp;
 		start++;
 		end--;
 	}
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 
 	length = 0;
 	is_negative = (n < 0);
-	str = char *)malloc(12 + is_negative);
+	str = (char *)malloc(12 + is_negative);
 	if (!(str))
 		return (NULL);
 	if (n == 0)

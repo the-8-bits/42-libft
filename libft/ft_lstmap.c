@@ -20,10 +20,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!f || !del)
 		return (NULL);
-	first = NULL;
+	new_list = NULL;
 	while (lst)
 	{
-		*data = (*f)(lst->content);
+		data = (*f)(lst->content);
 		new_node = ft_lstnew(data);
 		if (!(new_node))
 		{

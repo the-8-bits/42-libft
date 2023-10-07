@@ -14,17 +14,23 @@
 
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
-	unsigned int	idx;
+	size_t	idx;
+	size_t	len;
 
 	idx = 0;
-	if (size != 0)
+	len = 0;
+	if (!dest || !src)
+		return (0);
+	while (src[len])
+		len++;
+	if (size > 0)
 	{
-		while (src [idx] != '\0' && idx < size - 1)
+		while ((src[idx]) && (idx < (size - 1)))
 		{
 			dest[idx] = src[idx];
 			idx++;
 		}
 		dest[idx] = '\0';
 	}
-	return (ft_strlen(src));
+	return (len);
 }
