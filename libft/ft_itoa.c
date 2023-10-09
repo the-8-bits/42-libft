@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:16 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/09 14:03:30 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ static void	ft_strrev(char *str)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		is_negative;
 	size_t	length;
+	int		is_negative;
 
 	length = 0;
 	is_negative = (n < 0);
+	//str = (char *)malloc(ft_numlen(n) + is_negative + 1);
 	str = (char *)malloc(12 + is_negative);
 	if (!(str))
 		return (NULL);

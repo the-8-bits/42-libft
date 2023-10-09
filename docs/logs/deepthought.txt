@@ -3,7 +3,7 @@ $> hostname; uname -msr
 codespaces-e0bacf
 Linux 5.15.0-1041-azure x86_64
 $> date
-Mon Oct  9 10:23:45 UTC 2023
+Mon Oct  9 14:01:58 UTC 2023
 $> gcc --version
 gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
 Copyright (C) 2019 Free Software Foundation, Inc.
@@ -56,10 +56,11 @@ cc -Wall -Werror -Wextra -I. -c   -c -o ft_strcat.o ft_strcat.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strncpy.o ft_strncpy.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_abs.o ft_abs.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strndup.o ft_strndup.c
+cc -Wall -Werror -Wextra -I. -c   -c -o ft_numlen.o ft_numlen.c
 ------------------------------------
 Compiling the Library (no bonus)
 ------------------------------------
-ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o 
+ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o 
 
 $> make libft.a
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_isalpha.o ft_isalpha.c
@@ -100,16 +101,17 @@ cc -Wall -Werror -Wextra -I. -c   -c -o ft_strcat.o ft_strcat.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strncpy.o ft_strncpy.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_abs.o ft_abs.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strndup.o ft_strndup.c
+cc -Wall -Werror -Wextra -I. -c   -c -o ft_numlen.o ft_numlen.c
 ------------------------------------
 Compiling the Library (no bonus)
 ------------------------------------
-ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o 
+ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o 
 
 $> make fclean
 ------------------------------------
 Cleaning the object files
 ------------------------------------
-rm -f ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o
+rm -f ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o
 ------------------------------------
 Cleaning the object files and the library
 ------------------------------------
@@ -119,7 +121,7 @@ $> make re
 ------------------------------------
 Cleaning the object files
 ------------------------------------
-rm -f ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o
+rm -f ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o
 ------------------------------------
 Cleaning the object files and the library
 ------------------------------------
@@ -162,16 +164,17 @@ cc -Wall -Werror -Wextra -I. -c   -c -o ft_strcat.o ft_strcat.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strncpy.o ft_strncpy.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_abs.o ft_abs.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strndup.o ft_strndup.c
+cc -Wall -Werror -Wextra -I. -c   -c -o ft_numlen.o ft_numlen.c
 ------------------------------------
 Compiling the Library (no bonus)
 ------------------------------------
-ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o 
+ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o 
 
 $> make clean
 ------------------------------------
 Cleaning the object files
 ------------------------------------
-rm -f ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o
+rm -f ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o
 
 $> make bonus
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_isalpha.o ft_isalpha.c
@@ -221,13 +224,14 @@ cc -Wall -Werror -Wextra -I. -c   -c -o ft_strcat.o ft_strcat.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strncpy.o ft_strncpy.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_abs.o ft_abs.c
 cc -Wall -Werror -Wextra -I. -c   -c -o ft_strndup.o ft_strndup.c
+cc -Wall -Werror -Wextra -I. -c   -c -o ft_numlen.o ft_numlen.c
 ------------------------------------
 Compiling the Library (w/ bonus)
 ------------------------------------
-ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o 
+ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o 
 
 $> ls -la libft.a
--rw-rw-rw- 1 codespace codespace 79226 Oct  9 10:23 /home/codespace/francinette/temp/libft/war-machine/dirlibft/libft.a
+-rw-rw-rw- 1 codespace codespace 80836 Oct  9 14:02 /home/codespace/francinette/temp/libft/war-machine/dirlibft/libft.a
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address main.c libft.a -o user_exe
 
 = Test 1 ===================================================
@@ -1202,8 +1206,13 @@ Diff OK :D
 = Test 9 ===================================================
 $> ./user_exe 09
 $> diff -U 3 user_output_test09 test09.output
+--- /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_itoa/user_output_test09	2023-10-09 14:02:14.269967072 +0000$
++++ /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_itoa/test09.output	2023-10-06 17:01:45.979199962 +0000$
+@@ -0,0 +1 @@$
++-2147483648$
+\ No newline at end of file$
 
-Diff OK :D
+Diff KO :(
 = Test 10 ==================================================
 $> ./user_exe 10
 $> diff -U 3 user_output_test10 test10.output
@@ -1380,14 +1389,8 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address main.c libft.a -o user_exe
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /home/codespace/francinette/temp/libft/war-machine/tests/Bonus_functions/ft_lstsize/user_output_test01	2023-10-09 10:24:04.017503227 +0000$
-+++ /home/codespace/francinette/temp/libft/war-machine/tests/Bonus_functions/ft_lstsize/test01.output	2023-10-06 17:01:45.971199962 +0000$
-@@ -0,0 +1,3 @@$
-+4$
-+1$
-+0$
 
-Diff KO :(
+Diff OK :D
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address main.c libft.a -o user_exe
 
 = Test 1 ===================================================

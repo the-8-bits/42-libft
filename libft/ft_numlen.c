@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 16:05:43 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/09 13:08:44 by codespace        ###   ########.fr       */
+/*   Created: 2023/10/09 13:29:29 by codespace         #+#    #+#             */
+/*   Updated: 2023/10/09 13:34:43 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *target, const void *source, size_t n)
+size_t	ft_numlen(int n)
 {
-	size_t	i;
-	char	*ptr;
-	char	*ptr2;
+	size_t	len;
 
-	if (!target || !source)
-		return (NULL);
-	ptr = target;
-	ptr2 = (char *)source;
-	i = -1;
-	while (++i < n)
-		*(ptr + i) = *(ptr2 + i);
-	return (ptr);
+	len = 0;
+	if (n <= 0)
+	{
+		len++;
+		n = -n;
+	}
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/09 09:26:39 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/09 13:29:02 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -292,5 +292,9 @@ int				ft_abs(int nbr);
  * created string. If memory allocation fails, it returns `NULL`. Note that
  * there's a typo in the code; it should be `char *dst` instead of `*dst` */
 char			*ft_strndup(const char *src, size_t length);
+
+/* Is used to calculate the length of the integer n in order to easily allocate
+ * memory using `malloc` or `calloc`. */
+size_t			ft_numlen(int n);
 
 #endif

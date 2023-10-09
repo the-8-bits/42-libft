@@ -6,7 +6,7 @@
 #    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:29:39 by gabrodri          #+#    #+#              #
-#    Updated: 2023/10/09 08:31:55 by codespace        ###   ########.fr        #
+#    Updated: 2023/10/09 13:26:57 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 OBJ_BONUS	= $(BONUS:.c=.o)
 
 # PERSONAL is the personal functions to be coded
-PERSONAL	= ft_strcat.c ft_strncpy.c ft_abs.c ft_strndup.c
+PERSONAL	= ft_strcat.c ft_strncpy.c ft_abs.c ft_strndup.c ft_numlen.c
 
 # OBJ_PERSONAL is the object files for the personal functions
 OBJ_PERSONAL	= $(PERSONAL:.c=.o)
