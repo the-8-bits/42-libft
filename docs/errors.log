@@ -1,0 +1,188 @@
+Errors in strncmp: /home/codespace/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strncmp
+Test 11:
+    ft_print_result(ft_strncmp("test\200", "test\0", 6));
+Expected (cat -e test11.output):
+1
+Your result (cat -e user_output_test11):
+-1
+Errors in strjoin: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_strjoin
+Test 1:
+    if (!(strjoin = ft_strjoin(s1, s2)))
+        ft_print_result("NULL");
+    else
+        ft_print_result(strjoin);
+    if (strjoin == s1 || strjoin == s2)
+        ft_print_result("\nA new string was not returned");
+Expected (cat -e test01.output):
+lorem ipsumdolor sit amet
+Your result (cat -e user_output_test01):
+
+Test 2:
+    s1[0] = '\0';
+    if (!(strjoin = ft_strjoin(s1, s2)))
+        ft_print_result("NULL");
+    else
+        ft_print_result(strjoin);
+    if (strjoin == s1 || strjoin == s2)
+        ft_print_result("\nA new string was not returned");
+Expected (cat -e test02.output):
+dolor sit amet
+Your result (cat -e user_output_test02):
+
+Test 3:
+    s2[0] = '\0';
+    if (!(strjoin = ft_strjoin(s1, s2)))
+        ft_print_result("NULL");
+    else
+        ft_print_result(strjoin);
+    if (strjoin == s1 || strjoin == s2)
+        ft_print_result("\nA new string was not returned");
+Expected (cat -e test03.output):
+lorem ipsum
+Your result (cat -e user_output_test03):
+
+Errors in split: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_split
+Test 2:
+    if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
+        ft_print_result("NULL");
+    else
+    {
+        while (tabstr[i] != NULL)
+        {
+            ft_print_result(tabstr[i]);
+            write(1, "\n", 1);
+            i++;
+        }
+    }
+Expected (cat -e test02.output):
+lorem$
+ipsum$
+dolor$
+sit$
+amet,$
+consectetur$
+adipiscing$
+elit.$
+Sed$
+non$
+risus.$
+Suspendisse$
+
+Your result (cat -e user_output_test02):
+
+Test 3:
+    if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
+        ft_print_result("NULL");
+    else
+    {
+        while (tabstr[i] != NULL)
+        {
+            ft_print_result(tabstr[i]);
+            write(1, "\n", 1);
+            i++;
+        }
+    }
+Expected (cat -e test03.output):
+lorem$
+ipsum$
+dolor$
+sit$
+amet,$
+consectetur$
+adipiscing$
+elit.$
+Sed$
+non$
+risus.$
+Suspendisse$
+
+Your result (cat -e user_output_test03):
+
+Test 4:
+    if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
+        ft_print_result("NULL");
+    else
+    {
+        while (tabstr[i] != NULL)
+        {
+            ft_print_result(tabstr[i]);
+            write(1, "\n", 1);
+            i++;
+        }
+    }
+Expected (cat -e test04.output):
+lorem $
+psum dolor s$
+t amet, consectetur ad$
+p$
+sc$
+ng el$
+t. Sed non r$
+sus. Suspend$
+sse lectus tortor, d$
+gn$
+ss$
+m s$
+t amet, ad$
+p$
+sc$
+ng nec, ultr$
+c$
+es sed, dolor. Cras elementum ultr$
+c$
+es d$
+am. Maecenas l$
+gula massa, var$
+us a, semper congue, eu$
+smod non, m$
+.$
+
+Your result (cat -e user_output_test04):
+
+Test 5:
+    if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
+        ft_print_result("NULL");
+    else
+    {
+        while (tabstr[i] != NULL)
+        {
+            ft_print_result(tabstr[i]);
+            write(1, "\n", 1);
+            i++;
+        }
+    }
+Expected (cat -e test05.output):
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.$
+
+Your result (cat -e user_output_test05):
+
+Errors in putnbr_fd: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_putnbr_fd
+Test 9:
+    ft_putnbr_fd(-2147483648LL, 2);
+Expected (cat -e test09.output):
+-2147483648
+Your result (cat -e user_output_test09):
+-(
+Errors in lstsize: /home/codespace/francinette/temp/libft/war-machine/tests/Bonus_functions/ft_lstsize
+Test 1:
+    elem->next = elem2;
+    elem2->next = elem3;
+    elem3->next = elem4;
+    c = ft_lstsize(elem) + 48;
+    write(1, &c, 1);
+    write(1, "\n", 1);
+    elem->next = NULL;
+    c = ft_lstsize(elem) + 48;
+    write(1, &c, 1);
+    write(1, "\n", 1);
+    elem = NULL;
+    c = ft_lstsize(elem) + 48;
+    write(1, &c, 1);
+    write(1, "\n", 1);
+Expected (cat -e test01.output):
+4$
+1$
+0$
+
+Your result (cat -e user_output_test01):
+

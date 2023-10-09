@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+         #
+#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:29:39 by gabrodri          #+#    #+#              #
-#    Updated: 2023/10/06 18:17:09 by gabrodri         ###   ########.fr        #
+#    Updated: 2023/10/09 08:31:55 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ PART_1	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 			ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 			ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
 			ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
-			ft_atoi.c
+			ft_atoi.c ft_calloc.c ft_strdup.c
 
 # OBJ_1 is the object files for the first part of the mandatory functions
 OBJ_1	= $(PART_1:.c=.o)
@@ -43,7 +43,7 @@ BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 OBJ_BONUS	= $(BONUS:.c=.o)
 
 # PERSONAL is the personal functions to be coded
-PERSONAL	= ft_strcat.c ft_strncpy.c
+PERSONAL	= ft_strcat.c ft_strncpy.c ft_abs.c ft_strndup.c
 
 # OBJ_PERSONAL is the object files for the personal functions
 OBJ_PERSONAL	= $(PERSONAL:.c=.o)

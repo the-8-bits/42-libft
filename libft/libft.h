@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/07 12:26:33 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/09 08:17:20 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,19 @@ typedef struct structs_split_next
  * parsers, compilers, and text editors. */
 int				ft_isalpha(int c);
 
-/* Verifies if the string input is a nummeric character */
-int				ft_isdigit(char *str);
+/* Verifies if a given integer is a nummeric character */
+int				ft_isdigit(int c);
 
-/* Verifies if the string input is an alpha-nummeric character */
-int				ft_isalnum(char *str);
+/* Is commonly used in string manipulation functions. Is used to check
+ * whether a character is alphanumeric in the ASCII character set. */
+int				ft_isalnum(int c);
 
 /* Takes an integer `c` as input. The return statement directly evaluates the
  * condition `(c >= 0 && c <= 127)` */
 int				ft_isascii(int c);
 
 /* Verifies if the string input is a printable character */
-int				ft_isprint(char *str);
+int				ft_isprint(int c);
 
 /* This function returns the lengh of the string */
 unsigned int	ft_strlen(const char *s);
@@ -90,15 +91,13 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
  * string, which can be useful for various string manipulation tasks */
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 
-/* Is a simple utility function for converting all lowercase letters in a string
- * to uppercase letters. It operates in place, directly modifying the input
- * string */
-char			*ft_toupper(char *str);
+/* Is a simple and efficient way to convert a lowercase letter to uppercase.
+ * However, it only works for single characters and does not handle strings. */
+int				ft_toupper(int c);
 
-/* Is a simple utility function for converting all uppercase letters in a string
- * to lowercase
- * letters. It operates in place, directly modifying the input string */
-char			*ft_tolower(char *str);
+/*  Is a simple and efficient way to convert a uppercase letter to lowercase.
+ * However, it only works for single characters and does not handle strings. */
+int				ft_tolower(int c);
 
 /* Provides a straightforward way to search for a character in a string and
  * return a pointer to its first occurrence. If the character is not found, it

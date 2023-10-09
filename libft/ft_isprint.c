@@ -3,22 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:47 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:11:33 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	while (*str)
-	{
-		if (*str < 32 || *str > 126)
-			return (0);
-		str++;
-	}
+	if (c < 32 || c > 126)
+		return (0);
 	return (1);
 }

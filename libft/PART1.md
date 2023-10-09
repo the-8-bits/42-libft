@@ -60,30 +60,16 @@ It now checks only for one character, as described in the man:
 ## [ft_isdigit](./ft_isdigit.c)
 
 Same as `isalpha()` situation:
--   **Loop Condition**: Just like before, we use a pointer `str` to traverse the string while the character it points to is not the null terminator (`'\0'`).
--   **Character Validation Condition**: The condition for checking whether a character is a digit is simplified using logical operators (`&&` and `!`).
-    The original condition:
-    ```c
-    if (str[i] <= '0' || str[i] >= '9')
-    ```
-    
-    The optimized condition:
-    ```c
-    if (!(*str >= '0' && *str <= '9'))
-    ```
-    
-    The optimized condition checks if the character is not within the range of digits (`'0'` to `'9'`). If this condition is true, it means the character is not a digit, and the `if` statement is satisfied.
--   **Incrementing Pointer**: Similar to the previous optimized version, we increment the `str` pointer to point to the next character in the string.
--   **Return Value**: 
-	- If the loop completes without encountering any non-digit characters, the function returns `1`, indicating that the entire string consists of digits.
-	- If the loop encounters a non-digit character, it immediately returns `0` to indicate that the string contains non-digit characters.
+
+    The function first checks if the input character c is greater than or equal to the character '0' and less than or equal to the character '9'.
+
+-   **Return Value**: If this condition is true, the function returns 1, indicating that the input character is a digit. Otherwise, the function returns 0, indicating that the input character is not a digit.
 
 ## [ft_isalnum](./ft_isalnum.c)
 
 I think now you already got it, don't you?
 
--   **Loop Condition**: Just like before, we use a pointer `str` to traverse the string while the character it points to is not the null terminator (`'\0'`).
--   **Character Validation Condition**: The condition for checking whether a character is an alphanumeric character is simplified using logical operators (`&&`, `||`, and `!`).
+-   **Integer Validation Condition**: The condition for checking whether a Integer is an alphanumeric Integer is simplified using logical operators (`&&`, `||`, and `!`).
     
     The original condition:
     ```c
@@ -94,11 +80,9 @@ I think now you already got it, don't you?
     
     The optimized condition:
     ```c
-    if (!(((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')) ||
-          (*str >= '0' && *str <= '9')))
+    if (!(((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) ||
+          (c >= '0' && c <= '9')))
     ```
-    
-    The optimized condition combines checks for both alphabetic characters and digits using logical operators. If this combined condition is true, it means the character is not an alphanumeric character, and the `if` statement is satisfied.
 
 ## [ft_isascii](./ft_isascii.c)
 
@@ -108,7 +92,9 @@ The `ft_isascii` function takes an integer `c` as input. The return statement di
 
 ## [ft_isprint](./ft_isprint.c)
 
-The difference is now the range, checking whether a character is a printable ASCII character is kept the same.
+This is a C function called ft_isprint that takes an integer `c` as input and returns an integer as output. The purpose of this function is to determine whether the given input character is a printable character or not.
+
+The function first checks if the input character is less than 32 or greater than 126. These values correspond to the ASCII codes for non-printable characters such as control characters and extended ASCII characters. If the input character falls outside of this range, the function returns 0, indicating that it is not a printable character.
 
 The original condition:
 ```c
@@ -117,10 +103,10 @@ if (str[i] < 32 || str[i] > 126)
 
 The optimized condition:
 ```c
-if (*str < 32 || *str > 126)
+if (c < 32 || c > 126)
 ```
 
-The optimized condition directly checks whether the character `*str` (the value pointed to by `str`) is less than 32 or greater than 126, which corresponds to the non-printable and extended ASCII range. If this condition is true, it means the character is not printable, and the `if` statement is satisfied.
+If the input character is within the range of printable characters, the function returns 1, indicating that it is a printable character.
 
 ## [ft_strlen](./ft_strlen.c)
 
