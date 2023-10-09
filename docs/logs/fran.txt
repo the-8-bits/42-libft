@@ -32,7 +32,7 @@ ft_toupper       ✓✓✓✓✓✓✓              OK
 ft_tolower       ✓✓✓✓✓✓✓              OK
 ft_strchr        ✓✓✓✓✓✓               OK
 ft_strrchr       ✓✓✓✓✓✓✓✓             OK
-ft_strncmp       ✓✓✓✓✓✓✓✓✓✓✗          KO
+ft_strncmp       ✓✓✓✓✓✓✓✓✓✓✓          OK
 ft_memchr        ✓✓✓✓✓✓               OK
 ft_memcmp        ✓✓✓✓✓✓✓✓✓            OK
 ft_strnstr       ✓✓✓✓✓✓✓✓✓✓           OK
@@ -40,83 +40,25 @@ ft_atoi          ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓  OK
 ft_calloc        ✓                    OK
 ft_strdup        ✓                    OK
 ft_substr        ✓✓✓✓✓                OK
-ft_strjoin       ✗✗✗✓                 KO
+ft_strjoin       ✓✓✓✓                 OK
 ft_strtrim       ✓✓✓✓✓                OK
-ft_split         ✓TTTT✓               KO
-ft_itoa          compil. failed       KO
+ft_split         ✓✓✓✓✓✓               OK
+ft_itoa          ✓✓✓✓✓✓✓✓✓✓           OK
 ft_strmapi       ✓                    OK
 ft_striteri      ✓                    OK
 ft_putchar_fd    ✓✓✓✓✓✓✓              OK
 ft_putstr_fd     ✓✓✓✓                 OK
 ft_putendl_fd    ✓✓✓✓                 OK
-ft_putnbr_fd     ✓✓✓✓✓✓✓✓✗            KO
+ft_putnbr_fd     ✓✓✓✓✓✓✓✓✓            OK
 ft_lstnew        ✓✓✓                  OK
 ft_lstadd_front  ✓                    OK
-ft_lstsize       ✗                    KO
+ft_lstsize       ✓                    OK
 ft_lstlast       ✓                    OK
 ft_lstadd_back   ✓                    OK
 ft_lstdelone     ✓                    OK
 ft_lstclear      ✓                    OK
 ft_lstiter       ✓                    OK
 ft_lstmap        ✓                    OK
-
-Abort: A  Bus error: B  Segmentation fault: S  Timeout: T
-
-More information in: /home/codespace/francinette/temp/libft/war-machine/deepthought
-
-Errors in strncmp: /home/codespace/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strncmp
-Test 11:
-    ft_print_result(ft_strncmp("test\200", "test\0", 6));
-Expected (cat -e test11.output):
-1
-Your result (cat -e user_output_test11):
--1
-Errors in strjoin: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_strjoin
-Test 1:
-    if (!(strjoin = ft_strjoin(s1, s2)))
-        ft_print_result("NULL");
-    else
-        ft_print_result(strjoin);
-    if (strjoin == s1 || strjoin == s2)
-        ft_print_result("\nA new string was not returned");
-Expected (cat -e test01.output):
-lorem ipsumdolor sit amet
-Your result (cat -e user_output_test01):
-
-Test 2:
-    s1[0] = '\0';
-    if (!(strjoin = ft_strjoin(s1, s2)))
-        ft_print_result("NULL");
-    else
-        ft_print_result(strjoin);
-    if (strjoin == s1 || strjoin == s2)
-        ft_print_result("\nA new string was not returned");
-Expected (cat -e test02.output):
-dolor sit amet
-Your result (cat -e user_output_test02):
-
-Test 3:
-    s2[0] = '\0';
-    if (!(strjoin = ft_strjoin(s1, s2)))
-        ft_print_result("NULL");
-    else
-        ft_print_result(strjoin);
-    if (strjoin == s1 || strjoin == s2)
-        ft_print_result("\nA new string was not returned");
-Expected (cat -e test03.output):
-lorem ipsum
-Your result (cat -e user_output_test03):
-
-Errors in split: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_split
-Test 2:
-    if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
-        ft_print_result("NULL");
-    else
-    {
-        while (tabstr[i] != NULL)
-...
-
-File too large. To see full report open: /home/codespace/francinette/temp/libft/war-machine/errors.log
 
 ✖ Compiling tests: libftTester (https://github.com/Tripouille/libftTester)
 tests/ft_strlcat_test.cpp:39:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
@@ -144,103 +86,6 @@ tests/ft_strlcat_test.cpp:53:34: warning: ISO C++11 does not allow conversion fr
         /* 17 */ check(ft_strlcat(dest, "123", 0) == 3 && !strcmp(dest, "")); showLeaks();
                                         ^
 8 warnings generated.
-tests/ft_strncmp_test.cpp:19:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 1 */ check(ft_strncmp("t", "", 0) == 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:19:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 1 */ check(ft_strncmp("t", "", 0) == 0); showLeaks();
-                                      ^
-tests/ft_strncmp_test.cpp:20:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 2 */ check(ft_strncmp("1234", "1235", 3) == 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:20:35: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 2 */ check(ft_strncmp("1234", "1235", 3) == 0); showLeaks();
-                                         ^
-tests/ft_strncmp_test.cpp:21:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 3 */ check(ft_strncmp("1234", "1235", 4) < 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:21:35: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 3 */ check(ft_strncmp("1234", "1235", 4) < 0); showLeaks();
-                                         ^
-tests/ft_strncmp_test.cpp:22:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 4 */ check(ft_strncmp("1234", "1235", -1) < 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:22:35: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 4 */ check(ft_strncmp("1234", "1235", -1) < 0); showLeaks();
-                                         ^
-tests/ft_strncmp_test.cpp:23:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 5 */ check(ft_strncmp("", "", 42) == 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:23:31: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 5 */ check(ft_strncmp("", "", 42) == 0); showLeaks();
-                                     ^
-tests/ft_strncmp_test.cpp:24:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 6 */ check(ft_strncmp("Tripouille", "Tripouille", 42) == 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:24:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 6 */ check(ft_strncmp("Tripouille", "Tripouille", 42) == 0); showLeaks();
-                                               ^
-tests/ft_strncmp_test.cpp:25:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 7 */ check(ft_strncmp("Tripouille", "tripouille", 42) < 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:25:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 7 */ check(ft_strncmp("Tripouille", "tripouille", 42) < 0); showLeaks();
-                                               ^
-tests/ft_strncmp_test.cpp:26:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 8 */ check(ft_strncmp("Tripouille", "TriPouille", 42) > 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:26:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 8 */ check(ft_strncmp("Tripouille", "TriPouille", 42) > 0); showLeaks();
-                                               ^
-tests/ft_strncmp_test.cpp:27:27: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 9 */ check(ft_strncmp("Tripouille", "TripouillE", 42) > 0); showLeaks();
-                                 ^
-tests/ft_strncmp_test.cpp:27:41: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 9 */ check(ft_strncmp("Tripouille", "TripouillE", 42) > 0); showLeaks();
-                                               ^
-tests/ft_strncmp_test.cpp:28:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 10 */ check(ft_strncmp("Tripouille", "TripouilleX", 42) < 0); showLeaks();
-                                  ^
-tests/ft_strncmp_test.cpp:28:42: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 10 */ check(ft_strncmp("Tripouille", "TripouilleX", 42) < 0); showLeaks();
-                                                ^
-tests/ft_strncmp_test.cpp:29:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 11 */ check(ft_strncmp("Tripouille", "Tripouill", 42) > 0); showLeaks();
-                                  ^
-tests/ft_strncmp_test.cpp:29:42: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 11 */ check(ft_strncmp("Tripouille", "Tripouill", 42) > 0); showLeaks();
-                                                ^
-tests/ft_strncmp_test.cpp:30:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 12 */ check(ft_strncmp("", "1", 0) == 0); showLeaks();
-                                  ^
-tests/ft_strncmp_test.cpp:30:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 12 */ check(ft_strncmp("", "1", 0) == 0); showLeaks();
-                                      ^
-tests/ft_strncmp_test.cpp:31:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 13 */ check(ft_strncmp("1", "", 0) == 0); showLeaks();
-                                  ^
-tests/ft_strncmp_test.cpp:31:33: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 13 */ check(ft_strncmp("1", "", 0) == 0); showLeaks();
-                                       ^
-tests/ft_strncmp_test.cpp:32:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 14 */ check(ft_strncmp("", "1", 1) < 0); showLeaks();
-                                  ^
-tests/ft_strncmp_test.cpp:32:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 14 */ check(ft_strncmp("", "1", 1) < 0); showLeaks();
-                                      ^
-tests/ft_strncmp_test.cpp:33:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 15 */ check(ft_strncmp("1", "", 1) > 0); showLeaks();
-                                  ^
-tests/ft_strncmp_test.cpp:33:33: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 15 */ check(ft_strncmp("1", "", 1) > 0); showLeaks();
-                                       ^
-tests/ft_strncmp_test.cpp:34:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 16 */ check(ft_strncmp("", "", 1) == 0); showLeaks();
-                                  ^
-tests/ft_strncmp_test.cpp:34:32: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        /* 16 */ check(ft_strncmp("", "", 1) == 0); showLeaks();
-                                      ^
-32 warnings generated.
 tests/ft_atoi_test.cpp:22:16: error: no matching function for call to 'ft_atoi'
         /* 1 */ check(ft_atoi((e + "1").c_str()) == 1); showLeaks();
                       ^~~~~~~
@@ -340,23 +185,157 @@ int                             ft_atoi(char *str);
 2 warnings and 15 errors generated.
 
 Problem compiling tests
-✖ Compiling tests: libft-unit-test (https://github.com/alelievr/libft-unit-test)
-/usr/bin/ld: ft_putnbr_fd.o: in function `ft_putchar_fd':
-ft_putnbr_fd.c:(.text+0x0): multiple definition of `ft_putchar_fd'; ft_putchar_fd.o:ft_putchar_fd.c:(.text+0x0): first defined here
-collect2: error: ld returned 1 exit status
-make[1]: *** [Makefile:99: so] Error 1
-make: *** [Makefile:161: libft.so] Error 2
+✔ Compiling tests: libft-unit-test (https://github.com/alelievr/libft-unit-test)
+ℹ Testing:
+ft_isalpha      : [OK] 
+ft_isdigit      : [OK] 
+ft_isalnum      : [OK] 
+ft_isascii      : [OK] 
+ft_isprint      : [OK] 
+ft_strlen       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memset       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_bzero        : [OK] [OK] [OK] [OK] 
+ft_memcpy       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] 
+[crash]: your memcpy does not behave well with NULL as both params with size
 
-Problem compiling tests
-✖ Compiling tests: fsoares (my own)
-/usr/bin/ld: ./libft.a(ft_itoa.o): in function `ft_itoa':
-/home/codespace/francinette/temp/libft/__my_srcs/ft_itoa.c:52: undefined reference to `ft_abs'
-collect2: error: ld returned 1 exit status
+ft_memmove      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [OK] 
+[crash]: your memmove does not well with NULL as both parameters and size
 
-Problem compiling the tests
+ft_strlcpy      : [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] 
+[no crash]: your strlcpy doe not segfault when null parameter is sent
+
+ft_strlcat      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_toupper      : [OK] 
+ft_tolower      : [OK] 
+ft_strchr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strrchr      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strncmp      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memchr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memcmp       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strnstr      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_atoi         : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_calloc       : [OK] [OK] [OK] [OK] [OK] 
+ft_strdup       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_substr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strjoin      : [OK] [OK] [OK] [OK] [OK] 
+ft_strtrim      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_split        : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_itoa         : [OK] [OK] [OK] [OK] [OK] [OK] [KO] [KO] [OK] 
+[KO]: your itoa does not allocate the good size so the \0 test may be false
+[KO]: your itoa does not allocate the good size so the \0 test may be false
+
+ft_strmapi      : [OK] [OK] [OK] [OK] [OK] 
+ft_striteri     : [OK] [OK] 
+ft_putchar_fd   : [OK] [OK] 
+ft_putstr_fd    : [OK] [OK] 
+ft_putendl_fd   : [OK] [OK] 
+ft_putnbr_fd    : [OK] [OK] [OK] [OK] [OK] 
+ft_lstnew       : [OK] [OK] [OK] [OK] 
+ft_lstadd_front : [OK] [OK] [OK] 
+ft_lstsize      : [OK] [OK] 
+ft_lstlast      : [OK] [OK] 
+ft_lstadd_back  : [OK] [OK] [OK] 
+ft_lstdelone    : [OK] 
+ft_lstclear     : [OK] [OK] [OK] 
+ft_lstiter      : [OK] 
+ft_lstmap       : [OK] 
+
+\xe2\x9a\xa0 : your libft is using forbidden functions so the result may not be relevant !
+
+
+[crash]: your memcpy does not behave well with NULL as both params with size
+ Test code:
+        ft_memcpy(((void*)0), ((void*)0), 3);
+ 
+ 
+ [crash]: your memmove does not well with NULL as both parameters and size
+ Test code:
+        ft_memmove(((void*)0), ((void*)0), 5);
+ 
+ 
+ [no crash]: your strlcpy doe not segfault when null parameter is sent
+ Test code:
+        ft_strlcpy(((void*)0), ((void*)0), 10);
+ 
+ 
+ [KO]: your itoa does not allocate the good size so the \0 test may be false
+ Test code:
+        int size;
+ 
+        ft_itoa(-5859);
+        size = get_last_malloc_size();
+        if (size == 6)
+                exit(TEST_SUCCESS);
+        exit(TEST_KO);
+ 
+ Diffs:
+         itoa: |6|
+      ft_itoa: |13|
+ 
+ [KO]: your itoa does not allocate the good size so the \0 test may be false
+ Test code:
+        int size;
+ 
+        ft_itoa(0);
+        size = get_last_malloc_size();
+        if (size == 2)
+                exit(TEST_SUCCESS);
+        exit(TEST_KO);
+ 
+ Diffs:
+         itoa: |2|
+      ft_itoa: |12|
+ 
+✔ Compiling tests: fsoares (my own)
+ℹ Testing:
+ft_isalpha      : OK
+ft_isdigit      : OK
+ft_isalnum      : OK
+ft_isascii      : OK
+ft_isprint      : OK
+ft_strlen       : OK
+ft_memset       : OK
+ft_bzero        : OK
+ft_memcpy       : OK
+ft_memmove      : OK
+ft_strlcpy      : OK
+ft_strlcat      : OK
+ft_toupper      : OK
+ft_tolower      : OK
+ft_strchr       : OK
+ft_strrchr      : OK
+ft_strncmp      : OK
+ft_memchr       : OK
+ft_memcmp       : OK
+ft_strnstr      : OK
+ft_atoi         : OK
+ft_calloc       : OK
+ft_strdup       : OK
+ft_substr       : OK
+ft_strjoin      : OK
+ft_strtrim      : OK
+ft_split        : OK
+ft_itoa         : OK
+ft_strmapi      : OK
+ft_striteri     : OK
+ft_putchar_fd   : OK
+ft_putstr_fd    : OK
+ft_putendl_fd   : OK
+ft_putnbr_fd    : OK
+ft_lstnew       : OK
+ft_lstadd_front : OK
+ft_lstsize      : OK
+ft_lstlast      : OK
+ft_lstadd_back  : OK
+ft_lstdelone    : OK
+ft_lstclear     : OK
+ft_lstiter      : OK
+ft_lstmap       : OK
+
+Want some more thorough tests? run 'francinette --strict'.
 
 Summary: 
 
-Failed tests: split, lstsize, strjoin, fsoares, strncmp, libft-unit-test, libftTester, putnbr_fd
+Failed tests: memcpy, memmove, libftTester, itoa, strlcpy
 
-Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, memcpy, memmove, strlcpy, strlcat, toupper, tolower, strchr, strrchr, memchr, memcmp, strnstr, atoi, calloc, strdup, substr, strtrim, itoa, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, lstnew, lstadd_front, lstlast, lstadd_back, lstdelone, lstclear, lstiter, lstmap
+Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, strlcat, toupper, tolower, strchr, strrchr, strncmp, memchr, memcmp, strnstr, atoi, calloc, strdup, substr, strjoin, strtrim, split, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, putnbr_fd, lstnew, lstadd_front, lstsize, lstlast, lstadd_back, lstdelone, lstclear, lstiter, lstmap

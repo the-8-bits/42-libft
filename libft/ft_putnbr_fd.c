@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:48:29 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:25:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 void	recursion(int n, int fd)
 {
@@ -31,8 +26,19 @@ void	recursion(int n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == 0)
-		ft_putchar_fd('0', fd);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+	}
 	else
-		recursion(n, fd);
+	{
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = -n;
+		}
+		if (n >= 10)
+			recursion(n / 10, fd);
+		ft_putchar_fd('0' + (n % 10), fd);
+	}
 }

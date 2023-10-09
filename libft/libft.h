@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/09 08:17:20 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/09 09:26:39 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ char			*ft_strrchr(const char *s, int c);
  * is lexicographically smaller than s2, and a positive value if s1 is
  * lexicographically greater than s2. It allows for controlled string
  * comparison, which can be useful in sorting or searching algorithms */
-int				ft_strncmp(char *s1, char *s2, unsigned int n);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /* Provides a way to search for a specific character within a memory block of a
  * specified size. It returns a pointer to the first occurrence of the character

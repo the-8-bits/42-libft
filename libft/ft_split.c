@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:22 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/09 08:14:14 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/09 10:07:31 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,35 +33,31 @@ static size_t	h_count_words(const char *s, char c)
 	return (count);
 }
 
-void	h_actual_split(char const *s, char c, char **split, size_t split_index)
-{
-	size_t	word_length;
-
-	word_length = 0;
-	while (s[word_length] && s[word_length] != c)
-		word_length++;
-	split[split_index++] = ft_strndup(s, word_length);
-	s += word_length;
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t	split_index;
+	size_t	i;
+	size_t	j;
 
 	if (!s)
 		return (NULL);
-	split = (char **)malloc(sizeof(char *) * (h_count_words(s, c) + 1));
+	split = malloc(sizeof(char *) * (h_count_words(s, c) + 1));
 	if (!split)
 		return (NULL);
-	split_index = 0;
+	i = 0;
 	while (*s)
 	{
-		if (*s != c)
-			h_actual_split(s, c, split, split_index);
-		else
+		if (*s == c)
 			s++;
+		else
+		{
+			j = 0;
+			while (s[j] && s[j] != c)
+				j++;
+			split[i++] = ft_substr(s, 0, j);
+			s += j;
+		}
 	}
-	split[split_index] = NULL;
+	split[i] = NULL;
 	return (split);
 }
