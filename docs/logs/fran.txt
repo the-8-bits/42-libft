@@ -1,4 +1,4 @@
-@see7e ➜ /workspaces/42-libft/libft (42) $ ~/francinette/tester.sh
+➜  libft git:(42) ✗ fran     
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                Welcome to Francinette, a 42 tester framework!                ║
 ╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
@@ -43,7 +43,7 @@ ft_substr        ✓✓✓✓✓                OK
 ft_strjoin       ✓✓✓✓                 OK
 ft_strtrim       ✓✓✓✓✓                OK
 ft_split         ✓✓✓✓✓✓               OK
-ft_itoa          ✓✓✓✓✓✓✓✓✗✓           KO
+ft_itoa          ✓✓✓✓✓✓✓✓✓✓           OK
 ft_strmapi       ✓                    OK
 ft_striteri      ✓                    OK
 ft_putchar_fd    ✓✓✓✓✓✓✓              OK
@@ -59,19 +59,6 @@ ft_lstdelone     ✓                    OK
 ft_lstclear      ✓                    OK
 ft_lstiter       ✓                    OK
 ft_lstmap        ✓                    OK
-
-Abort: A  Bus error: B  Segmentation fault: S  Timeout: T
-
-More information in: /home/codespace/francinette/temp/libft/war-machine/deepthought
-
-Errors in itoa: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_itoa
-Test 9:
-    char *res = ft_itoa(-2147483648LL);
-    ft_print_result(res);
-    free(res);
-Expected (cat -e test09.output):
--2147483648
-Your result (cat -e user_output_test09):
 
 ✖ Compiling tests: libftTester (https://github.com/Tripouille/libftTester)
 tests/ft_strlcat_test.cpp:39:34: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
@@ -208,10 +195,7 @@ ft_isprint      : [OK]
 ft_strlen       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_memset       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_bzero        : [OK] [OK] [OK] [OK] 
-ft_memcpy       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] [NO CRASH] [OK] [OK] 
-[no crash]: your memcpy does not segv with NULL on first params
-[no crash]: your memcpy does not segv with NULL on second params
-
+ft_memcpy       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_memmove      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [OK] 
 [crash]: your memmove does not well with NULL as both parameters and size
 
@@ -234,9 +218,7 @@ ft_substr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
 ft_strjoin      : [OK] [OK] [OK] [OK] [OK] 
 ft_strtrim      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_split        : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_itoa         : [OK] [OK] [OK] [OK] [OK] [OK] [KO] [OK] [OK] 
-[KO]: your itoa does not allocate the good size so the \0 test may be false
-
+ft_itoa         : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strmapi      : [OK] [OK] [OK] [OK] [OK] 
 ft_striteri     : [OK] [OK] 
 ft_putchar_fd   : [OK] [OK] 
@@ -256,39 +238,15 @@ ft_lstmap       : [OK]
 \xe2\x9a\xa0 : your libft is using forbidden functions so the result may not be relevant !
 
 
-[no crash]: your memcpy does not segv with NULL on first params
+[crash]: your memmove does not well with NULL as both parameters and size
  Test code:
-        ft_memcpy(((void*)0), "segfaulter tu dois", 17);
- 
- 
- [no crash]: your memcpy does not segv with NULL on second params
- Test code:
-        ft_memcpy("            ", ((void*)0), 17);
- 
- 
- [crash]: your memmove does not well with NULL as both parameters and size
- Test code:
-        ft_memmove(((void*)0), ((void*)0), 5);
+ 	ft_memmove(((void*)0), ((void*)0), 5);
  
  
  [no crash]: your strlcpy doe not segfault when null parameter is sent
  Test code:
-        ft_strlcpy(((void*)0), ((void*)0), 10);
+ 	ft_strlcpy(((void*)0), ((void*)0), 10);
  
- 
- [KO]: your itoa does not allocate the good size so the \0 test may be false
- Test code:
-        int size;
- 
-        ft_itoa(-5859);
-        size = get_last_malloc_size();
-        if (size == 6)
-                exit(TEST_SUCCESS);
-        exit(TEST_KO);
- 
- Diffs:
-         itoa: |6|
-      ft_itoa: |7|
  
 ✔ Compiling tests: fsoares (my own)
 ℹ Testing:
@@ -319,13 +277,13 @@ ft_substr       : OK
 ft_strjoin      : OK
 ft_strtrim      : OK
 ft_split        : OK
-ft_itoa         : KO
+ft_itoa         : OK
 ft_strmapi      : OK
 ft_striteri     : OK
 ft_putchar_fd   : OK
 ft_putstr_fd    : OK
 ft_putendl_fd   : OK
-ft_putnbr_fd    : OK
+ft_putnbr_fd    : KO
 ft_lstnew       : OK
 ft_lstadd_front : OK
 ft_lstsize      : OK
@@ -337,18 +295,16 @@ ft_lstiter      : OK
 ft_lstmap       : OK
 
 Errors found:
-For ft_itoa, in /home/codespace/francinette/tests/libft/fsoares/test_itoa.c:
+For ft_putnbr_fd, in 
+/nfs/homes/gabrodri/francinette/tests/libft/fsoares/test_putnbr_fd.c:
 
-Error in test 5: ft_itoa(-2147483648): not enough memory allocated, needed: 12, 
-reserved: 3
-Error in test 5: ft_itoa(-2147483648): 
-Memory leak: 0x5574b4bee8b0 - 4096 bytes
-You failed to free the memory allocated at:
+Error in test 5: ft_putnbr_fd(-2147483648, fd: -1): expected: 
+"0\n10000043\n-10000043\n2147483647\n-2147483648\n", content of the file: ""
 
 
 
 Summary: 
 
-Failed tests: itoa, memcpy, memmove, libftTester, strlcpy
+Failed tests: strlcpy, libftTester, memmove, putnbr_fd
 
-Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, strlcat, toupper, tolower, strchr, strrchr, strncmp, memchr, memcmp, strnstr, atoi, calloc, strdup, substr, strjoin, strtrim, split, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, putnbr_fd, lstnew, lstadd_front, lstsize, lstlast, lstadd_back, lstdelone, lstclear, lstiter, lstmap
+Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, memcpy, strlcat, toupper, tolower, strchr, strrchr, strncmp, memchr, memcmp, strnstr, atoi, calloc, strdup, substr, strjoin, strtrim, split, itoa, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, lstnew, lstadd_front, lstsize, lstlast, lstadd_back, lstdelone, lstclear, lstiter, lstmap

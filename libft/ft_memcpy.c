@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:43 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/09 13:08:44 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/10 18:51:17 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *target, const void *source, size_t n)
 	char	*ptr;
 	char	*ptr2;
 
-	if (!target || !source)
+	if (!target && !source)
 		return (NULL);
 	ptr = target;
 	ptr2 = (char *)source;

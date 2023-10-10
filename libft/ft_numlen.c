@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 13:29:29 by codespace         #+#    #+#             */
-/*   Updated: 2023/10/09 13:34:43 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/10 20:41:15 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen(int n)
+unsigned int	ft_numlen(int n)
 {
-	size_t	len;
+	unsigned int	len;
+	long			buffer;
 
-	len = 0;
-	if (n <= 0)
+	len = 1;
+	buffer = n;
+	if (n < 0)
 	{
+		buffer *= -1;
 		len++;
-		n = -n;
 	}
-	while (n > 0)
+	while (buffer >= 10)
 	{
+		buffer /= 10;
 		len++;
-		n /= 10;
 	}
 	return (len);
 }

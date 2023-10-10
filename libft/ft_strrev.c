@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 16:06:16 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/10 20:22:21 by gabrodri         ###   ########.fr       */
+/*   Created: 2023/10/10 18:31:42 by gabrodri          #+#    #+#             */
+/*   Updated: 2023/10/10 18:36:13 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strrev(char *str)
 {
-	unsigned int	nb;
-	int				length;
-	char			*str;
+	size_t	length;
+	size_t	start;
+	size_t	end;
+	char	temp;
 
-	length = ft_numlen(n);
-	str = (char *)malloc(length + 1);
-	if (!str)
-		return (NULL);
-	if (n < 0)
-		nb = -n;
-	else
-		nb = n;
-	if (n == 0)
-		str[0] = '0';
-	str[length--] = '\0';
-	while (nb > 0)
+	length = ft_strlen(str);
+	start = 0;
+	end = length - 1;
+	while (start < end)
 	{
-		str[length--] = '0' + nb % 10;
-		nb /= 10;
+		temp = str[start];
+		str[start++] = str[end];
+		str[end--] = temp;
 	}
-	if (n < 0)
-		str[0] = '-';
 	return (str);
 }
