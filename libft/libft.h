@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrodri <gabrodri@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/10 20:29:47 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/11 13:07:37 by gabrodri        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
 /* Provides a safe way to concatenate strings while preventing buffer overflows
  * by specifying a size limit. It returns the total length of the concatenated
  * string, which can be useful for various string manipulation tasks */
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
 
 /* Is a simple and efficient way to convert a lowercase letter to uppercase.
  * However, it only works for single characters and does not handle strings. */
@@ -142,7 +142,7 @@ char			*ft_strnstr(const char *big, const char *little, size_t len);
  * value, considering signs and leading whitespace characters. It's a commonly
  * used function for converting user input or text-based data into numerical
  * values in C programming */
-int				ft_atoi(char *str);
+int				ft_atoi(const char *str);
 
 /* Is used to allocate memory for an array of elements and initialize that
  * memory to zero. It's a useful function when you want to ensure that allocated

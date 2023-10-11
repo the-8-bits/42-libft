@@ -1,188 +1,74 @@
-Errors in strncmp: /home/codespace/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strncmp
-Test 11:
-    ft_print_result(ft_strncmp("test\200", "test\0", 6));
-Expected (cat -e test11.output):
-1
-Your result (cat -e user_output_test11):
--1
-Errors in strjoin: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_strjoin
-Test 1:
-    if (!(strjoin = ft_strjoin(s1, s2)))
-        ft_print_result("NULL");
-    else
-        ft_print_result(strjoin);
-    if (strjoin == s1 || strjoin == s2)
-        ft_print_result("\nA new string was not returned");
-Expected (cat -e test01.output):
-lorem ipsumdolor sit amet
-Your result (cat -e user_output_test01):
+For ft_split, in /home/gabrodri/francinette/tests/libft/fsoares/test_split.c:
 
-Test 2:
-    s1[0] = '\0';
-    if (!(strjoin = ft_strjoin(s1, s2)))
-        ft_print_result("NULL");
-    else
-        ft_print_result(strjoin);
-    if (strjoin == s1 || strjoin == s2)
-        ft_print_result("\nA new string was not returned");
-Expected (cat -e test02.output):
-dolor sit amet
-Your result (cat -e user_output_test02):
+Error in test 1: ft_split("hello!", 32:' '):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 2: ft_split("xxxxxxxxhello!", 120:'x'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 3: ft_split("hello!zzzzzzzz", 122:'z'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 4: ft_split("\t\t\t\thello!\t\t\t\t", 9:'\t'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 2th malloc:
+: 
+Memory leak: 0x557d2fa671e0 - 4 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67200 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67220 - 4 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 3th malloc:
+: 
+Memory leak: 0x557d2fa67240 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67280 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa672a0 - 4 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 3th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 4th malloc:
+: 
+Memory leak: 0x557d2fa672c0 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa672e0 - 4 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67320 - 4 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 4th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 5th malloc:
+: 
+Memory leak: 0x557d2fa67340 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67360 - 4 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67380 - 2 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 5th malloc:
+: Should return NULL
+Error in test 8: ft_split("nonempty", 0:'\0'):
+malloc protection check for 2th malloc:
+: Should return NULL
 
-Test 3:
-    s2[0] = '\0';
-    if (!(strjoin = ft_strjoin(s1, s2)))
-        ft_print_result("NULL");
-    else
-        ft_print_result(strjoin);
-    if (strjoin == s1 || strjoin == s2)
-        ft_print_result("\nA new string was not returned");
-Expected (cat -e test03.output):
-lorem ipsum
-Your result (cat -e user_output_test03):
+For ft_lstmap, in /home/gabrodri/francinette/tests/libft/fsoares/test_lstmap.c:
 
-Errors in split: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_split
-Test 2:
-    if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
-        ft_print_result("NULL");
-    else
-    {
-        while (tabstr[i] != NULL)
-        {
-            ft_print_result(tabstr[i]);
-            write(1, "\n", 1);
-            i++;
-        }
-    }
-Expected (cat -e test02.output):
-lorem$
-ipsum$
-dolor$
-sit$
-amet,$
-consectetur$
-adipiscing$
-elit.$
-Sed$
-non$
-risus.$
-Suspendisse$
+Error in test 2: ft_lstmap(<list: {node: "hello!"}->(null)>, [s => __strlen(s)], [x => free(x)]): different lists
+Expected: <list: {node: "__6"}->(null)>
+Result  : <list: {node: ""}->(null)>
 
-Your result (cat -e user_output_test02):
-
-Test 3:
-    if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
-        ft_print_result("NULL");
-    else
-    {
-        while (tabstr[i] != NULL)
-        {
-            ft_print_result(tabstr[i]);
-            write(1, "\n", 1);
-            i++;
-        }
-    }
-Expected (cat -e test03.output):
-lorem$
-ipsum$
-dolor$
-sit$
-amet,$
-consectetur$
-adipiscing$
-elit.$
-Sed$
-non$
-risus.$
-Suspendisse$
-
-Your result (cat -e user_output_test03):
-
-Test 4:
-    if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
-        ft_print_result("NULL");
-    else
-    {
-        while (tabstr[i] != NULL)
-        {
-            ft_print_result(tabstr[i]);
-            write(1, "\n", 1);
-            i++;
-        }
-    }
-Expected (cat -e test04.output):
-lorem $
-psum dolor s$
-t amet, consectetur ad$
-p$
-sc$
-ng el$
-t. Sed non r$
-sus. Suspend$
-sse lectus tortor, d$
-gn$
-ss$
-m s$
-t amet, ad$
-p$
-sc$
-ng nec, ultr$
-c$
-es sed, dolor. Cras elementum ultr$
-c$
-es d$
-am. Maecenas l$
-gula massa, var$
-us a, semper congue, eu$
-smod non, m$
-.$
-
-Your result (cat -e user_output_test04):
-
-Test 5:
-    if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
-        ft_print_result("NULL");
-    else
-    {
-        while (tabstr[i] != NULL)
-        {
-            ft_print_result(tabstr[i]);
-            write(1, "\n", 1);
-            i++;
-        }
-    }
-Expected (cat -e test05.output):
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.$
-
-Your result (cat -e user_output_test05):
-
-Errors in putnbr_fd: /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_putnbr_fd
-Test 9:
-    ft_putnbr_fd(-2147483648LL, 2);
-Expected (cat -e test09.output):
--2147483648
-Your result (cat -e user_output_test09):
--(
-Errors in lstsize: /home/codespace/francinette/temp/libft/war-machine/tests/Bonus_functions/ft_lstsize
-Test 1:
-    elem->next = elem2;
-    elem2->next = elem3;
-    elem3->next = elem4;
-    c = ft_lstsize(elem) + 48;
-    write(1, &c, 1);
-    write(1, "\n", 1);
-    elem->next = NULL;
-    c = ft_lstsize(elem) + 48;
-    write(1, &c, 1);
-    write(1, "\n", 1);
-    elem = NULL;
-    c = ft_lstsize(elem) + 48;
-    write(1, &c, 1);
-    write(1, "\n", 1);
-Expected (cat -e test01.output):
-4$
-1$
-0$
-
-Your result (cat -e user_output_test01):
-
+You are trying to free a pointer that was already freed
+Error in test 2: ft_lstmap(<list: {node: "hello!"}->(null)>, [s => __strlen(s)], [x => free(x)]): Memory problems!

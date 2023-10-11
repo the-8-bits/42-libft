@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:32 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:38:55 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:34:16 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 
 	idx = 0;
 	len = 0;
-	if (!dest || !src)
-		return (0);
+	if (!dest && !src)
+		abort();
 	while (src[len])
 		len++;
 	if (size > 0)

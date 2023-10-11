@@ -1,6 +1,6 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-codespaces-e0bacf
+gabrodris-e0bacf
 Linux 5.15.0-1041-azure x86_64
 $> date
 Mon Oct  9 14:01:58 UTC 2023
@@ -231,7 +231,7 @@ Compiling the Library (w/ bonus)
 ar -rc libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_strcat.o ft_strncpy.o ft_abs.o ft_strndup.o ft_numlen.o 
 
 $> ls -la libft.a
--rw-rw-rw- 1 codespace codespace 80836 Oct  9 14:02 /home/codespace/francinette/temp/libft/war-machine/dirlibft/libft.a
+-rw-rw-rw- 1 gabrodri gabrodri 80836 Oct  9 14:02 /home/gabrodri/francinette/temp/libft/war-machine/dirlibft/libft.a
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address main.c libft.a -o user_exe
 
 = Test 1 ===================================================
@@ -1206,8 +1206,8 @@ Diff OK :D
 = Test 9 ===================================================
 $> ./user_exe 09
 $> diff -U 3 user_output_test09 test09.output
---- /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_itoa/user_output_test09	2023-10-09 14:02:14.269967072 +0000$
-+++ /home/codespace/francinette/temp/libft/war-machine/tests/Part2_functions/ft_itoa/test09.output	2023-10-06 17:01:45.979199962 +0000$
+--- /home/gabrodri/francinette/temp/libft/war-machine/tests/Part2_functions/ft_itoa/user_output_test09	2023-10-09 14:02:14.269967072 +0000$
++++ /home/gabrodri/francinette/temp/libft/war-machine/tests/Part2_functions/ft_itoa/test09.output	2023-10-06 17:01:45.979199962 +0000$
 @@ -0,0 +1 @@$
 +-2147483648$
 \ No newline at end of file$

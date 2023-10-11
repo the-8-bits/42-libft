@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:22 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/09 10:07:31 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/11 14:40:54 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,26 @@ static size_t	h_count_words(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t	i;
-	size_t	j;
+	size_t	idx;
+	size_t	len;
 
-	if (!s)
-		return (NULL);
 	split = malloc(sizeof(char *) * (h_count_words(s, c) + 1));
-	if (!split)
+	if (!s || !split)
 		return (NULL);
-	i = 0;
+	idx = 0;
 	while (*s)
 	{
 		if (*s == c)
 			s++;
 		else
 		{
-			j = 0;
-			while (s[j] && s[j] != c)
-				j++;
-			split[i++] = ft_substr(s, 0, j);
-			s += j;
+			len = 0;
+			while (s[len] && s[len] != c)
+				len++;
+			split[idx++] = ft_substr(s, 0, len);
+			s += len;
 		}
 	}
-	split[i] = NULL;
+	split[idx] = NULL;
 	return (split);
 }

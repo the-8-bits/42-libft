@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:18 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/09 08:00:41 by codespace        ###   ########.fr       */
+/*   Updated: 2023/10/11 14:33:32 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
