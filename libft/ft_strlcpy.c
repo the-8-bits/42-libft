@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:32 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:01:30 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:50:32 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
-	char		*d;
-	const char	*s;
+	size_t	idx;
+	size_t	len;
 
-	if (size == 0)
-		return (ft_strlen(src));
-	*d = dest;
-	*s = src;
-	while (*s && (size - 1) > 0)
+	idx = 0;
+	len = 0;
+	if (!dest && !src)
+		abort();
+	while (src[len])
+		len++;
+	if (size > 0)
 	{
-		*d++ = *s++;
-		size--;
+		while ((src[idx]) && (idx < (size - 1)))
+		{
+			dest[idx] = src[idx];
+			idx++;
+		}
+		dest[idx] = '\0';
 	}
-	*d = '\0';
-	// Calculate the length of the source string
-	return (ft_strlen(src));
+	return (len);
 }

@@ -46,52 +46,30 @@ dependences:
 
 This is one of the functions developed during the Piscine, this one though has a slight modification.
 
--   **Loop Condition**: Instead of initializing a counter variable `i` to 0 and using `str[i]` to access characters, we directly use a pointer `str` and loop while the value it points to is not the null terminator (`'\0'`). The null terminator marks the end of the string.
--   **Character Validation Condition**: In the original version, the condition for checking whether a character is an alphabetic character was complex and involved two separate logical conditions. In the optimized version, this condition is simplified. It uses logical operators (`&&` and `||`) to combine the checks for lowercase and uppercase alphabetic characters.
-    The original condition:
-    ```c
-    if ((str[i] <= 'a' || str[i] >= 'z') && (str[i] <= 'A' || str[i] >= 'Z'))
-    ```
-    
-    The optimized condition:
-    ```c
-    if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
-    ```
-    
-    This optimized condition first checks whether the character is not within the range of lowercase (`'a'` to `'z'`) and not within the range of uppercase (`'A'` to `'Z'`) alphabetic characters. If either of these conditions is true (using `||`), it means the character is not an alphabetic character, so the `if` statement is satisfied.
--   **Incrementing Pointer**: After checking the current character, whether it's alphabetic or not, we increment the `str` pointer to point to the next character in the string.
--   **Return Value**: Remains the same:
-	- if the loop completes without encountering any non-alphabetic characters, the function returns `1`, indicating that the entire string consists of alphabetic characters.
-	- If the loop encounters a non-alphabetic character, it immediately returns `0` to indicate that the string contains non-alphabetic characters.
+It now checks only for one character, as described in the man:
 
+> [!QUOTE]
+> checks for an alphabetic character; in the standard "C" locale, it is equivalent to (isupper(c) || islower(c)). In some locales, there may be additional characters for which isalpha() is true-letters which are neither upper case nor lower case.
+
+-   **Return Value**: the logigal result of:
+
+    ```c
+    ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    ```
 
 ## [ft_isdigit](./ft_isdigit.c)
 
 Same as `isalpha()` situation:
--   **Loop Condition**: Just like before, we use a pointer `str` to traverse the string while the character it points to is not the null terminator (`'\0'`).
--   **Character Validation Condition**: The condition for checking whether a character is a digit is simplified using logical operators (`&&` and `!`).
-    The original condition:
-    ```c
-    if (str[i] <= '0' || str[i] >= '9')
-    ```
-    
-    The optimized condition:
-    ```c
-    if (!(*str >= '0' && *str <= '9'))
-    ```
-    
-    The optimized condition checks if the character is not within the range of digits (`'0'` to `'9'`). If this condition is true, it means the character is not a digit, and the `if` statement is satisfied.
--   **Incrementing Pointer**: Similar to the previous optimized version, we increment the `str` pointer to point to the next character in the string.
--   **Return Value**: 
-	- If the loop completes without encountering any non-digit characters, the function returns `1`, indicating that the entire string consists of digits.
-	- If the loop encounters a non-digit character, it immediately returns `0` to indicate that the string contains non-digit characters.
+
+    The function first checks if the input character c is greater than or equal to the character '0' and less than or equal to the character '9'.
+
+-   **Return Value**: If this condition is true, the function returns 1, indicating that the input character is a digit. Otherwise, the function returns 0, indicating that the input character is not a digit.
 
 ## [ft_isalnum](./ft_isalnum.c)
 
 I think now you already got it, don't you?
 
--   **Loop Condition**: Just like before, we use a pointer `str` to traverse the string while the character it points to is not the null terminator (`'\0'`).
--   **Character Validation Condition**: The condition for checking whether a character is an alphanumeric character is simplified using logical operators (`&&`, `||`, and `!`).
+-   **Integer Validation Condition**: The condition for checking whether a Integer is an alphanumeric Integer is simplified using logical operators (`&&`, `||`, and `!`).
     
     The original condition:
     ```c
@@ -102,11 +80,9 @@ I think now you already got it, don't you?
     
     The optimized condition:
     ```c
-    if (!(((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')) ||
-          (*str >= '0' && *str <= '9')))
+    if (!(((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) ||
+          (c >= '0' && c <= '9')))
     ```
-    
-    The optimized condition combines checks for both alphabetic characters and digits using logical operators. If this combined condition is true, it means the character is not an alphanumeric character, and the `if` statement is satisfied.
 
 ## [ft_isascii](./ft_isascii.c)
 
@@ -116,7 +92,9 @@ The `ft_isascii` function takes an integer `c` as input. The return statement di
 
 ## [ft_isprint](./ft_isprint.c)
 
-The difference is now the range, checking whether a character is a printable ASCII character is kept the same.
+This is a C function called ft_isprint that takes an integer `c` as input and returns an integer as output. The purpose of this function is to determine whether the given input character is a printable character or not.
+
+The function first checks if the input character is less than 32 or greater than 126. These values correspond to the ASCII codes for non-printable characters such as control characters and extended ASCII characters. If the input character falls outside of this range, the function returns 0, indicating that it is not a printable character.
 
 The original condition:
 ```c
@@ -125,10 +103,10 @@ if (str[i] < 32 || str[i] > 126)
 
 The optimized condition:
 ```c
-if (*str < 32 || *str > 126)
+if (c < 32 || c > 126)
 ```
 
-The optimized condition directly checks whether the character `*str` (the value pointed to by `str`) is less than 32 or greater than 126, which corresponds to the non-printable and extended ASCII range. If this condition is true, it means the character is not printable, and the `if` statement is satisfied.
+If the input character is within the range of printable characters, the function returns 1, indicating that it is a printable character.
 
 ## [ft_strlen](./ft_strlen.c)
 
@@ -229,25 +207,6 @@ Key Points:
 - `char *dest`: A pointer to the destination buffer where the string will be copied.
 - `const char *src`: A pointer to the source string that needs to be copied.
 - `unsigned int size`: The size of the destination buffer, indicating the maximum number of characters that can be copied (including the null-terminator).
-
-How it Works:
-- If `size` is zero, it returns the length of the source string using the `ft_strlen` function. This is a special case to handle.
-
-- It initializes pointers `d` (for destination) and `s` (for source) to the start of their respective strings.
-
-- It uses a loop to copy characters from `src` to `dest` one by one until one of the following conditions is met:
-  - The end of the source string (`*s` becomes `'\0'`).
-  - The destination buffer is full (`size - 1` characters copied).
-  
-- After the copy, it ensures that the destination string is null-terminated by setting `*d` to `'\0'`.
-
-- Finally, it calculates and returns the length of the source string using the `ft_strlen` function.
-
-Optimizations made of the previous Piscine code:
-
-1. We use pointer variables (`ptr`, `d`, and `s`) to navigate through the strings instead of integer indices, which can be more efficient.
-2. In `ft_strlcpy`, we check if `size` is $0$ upfront and return the length of the source string without copying if it is, which is the expected behavior of `strlcpy`.
-3. We use `const` for the `src` parameter in both functions because these functions should not modify the source string.
 
 ## [ft_strlcat](./ft_strlcat.c)
 

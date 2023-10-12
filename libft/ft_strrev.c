@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 16:06:48 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
+/*   Created: 2023/10/10 18:31:42 by gabrodri          #+#    #+#             */
+/*   Updated: 2023/10/10 18:36:13 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+char	*ft_strrev(char *str)
 {
-	if (alst)
+	size_t	length;
+	size_t	start;
+	size_t	end;
+	char	temp;
+
+	length = ft_strlen(str);
+	start = 0;
+	end = length - 1;
+	while (start < end)
 	{
-		if (*alst)
-			new->next = *alst;
-		*alst = new;
+		temp = str[start];
+		str[start++] = str[end];
+		str[end--] = temp;
 	}
+	return (str);
 }

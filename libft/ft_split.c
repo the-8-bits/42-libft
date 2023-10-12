@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:22 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/04 15:48:06 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:50:14 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,35 +33,29 @@ static size_t	h_count_words(const char *s, char c)
 	return (count);
 }
 
-void	h_actual_split(s, c, split, split_index)
-{
-	size_t	word_length; // Length of the current word.
-
-	word_length = 0;
-	while (s[word_length] && s[word_length] != c)
-		word_length++;
-	split[split_index++] = ft_strndup(s, word_length);
-	s += word_length;
-}
-
 char	**ft_split(char const *s, char c)
 {
-	char	**split; // Array of strings
-	size_t	split_index; // Index of the current string in the array
+	char	**split;
+	size_t	idx;
+	size_t	len;
 
-	if (!s)
+	split = malloc(sizeof(char *) * (h_count_words(s, c) + 1));
+	if (!s || !split)
 		return (NULL);
-	split = (char **)malloc(sizeof(char *) * (h_count_words(s, c) + 1));
-	if (!split)
-		return (NULL);
-	split_index = 0;
+	idx = 0;
 	while (*s)
 	{
-		if (*s != c)
-			h_actual_split(s, c, split, split_index)
-		else
+		if (*s == c)
 			s++;
+		else
+		{
+			len = 0;
+			while (s[len] && s[len] != c)
+				len++;
+			split[idx++] = ft_substr(s, 0, len);
+			s += len;
+		}
 	}
-	split[split_index] = NULL;
+	split[idx] = NULL;
 	return (split);
 }

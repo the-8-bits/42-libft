@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 16:06:48 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
+/*   Created: 2023/10/09 13:29:29 by gabrodri         #+#    #+#             */
+/*   Updated: 2023/10/10 20:41:15 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+unsigned int	ft_numlen(int n)
 {
-	if (alst)
+	unsigned int	len;
+	long			buffer;
+
+	len = 1;
+	buffer = n;
+	if (n < 0)
 	{
-		if (*alst)
-			new->next = *alst;
-		*alst = new;
+		buffer *= -1;
+		len++;
 	}
+	while (buffer >= 10)
+	{
+		buffer /= 10;
+		len++;
+	}
+	return (len);
 }

@@ -50,7 +50,7 @@ The objective of this repo is to register the progress during the 42 Cursus. Her
 
 I'll divide the code explanations in each Part's folder, to reduce the amount of text and make the documents more modular, to that please refer to the links in the headers of this table:
 
-| [Part 1](./libft/part1/PART1.md) |  #  | [Part 2](./libft/part2/PART2.md) |  #  | [Bonus](./libft/bonus/BONUS.md) |  #  | Other functions |
+| [Part 1](./libft/PART1.md) |  #  | [Part 2](./libft/PART2.md) |  #  | [Bonus](./libft/BONUS.md) |  #  | Other functions |
 | --------------------------------- |:---:| --------------------------------- |:---:| -------------------------------- |:---:| --------------- |
 | ft_isalpha                        | ✔️  | ft_substr                         | ✔️  | ft_lstnew                       | ✔️  | ft_strcat       |
 | ft_isdigit                        | ✔️  | ft_strjoin                        | ✔️  | ft_lstadd_front                 | ✔️  | ft_strncpy      |

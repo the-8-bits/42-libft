@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:19 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:45:37 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 
 	str = ft_strdup(s);
-	if (!(str)) // Duplicate the input str 's' using 'ft_strdup'
+	if (!(str))
 		return (NULL);
 	idx = 0;
 	while (str[idx])
 	{
-		str[idx] = (*f)(idx, str[idx]); // Apply the function 'f' to each char
+		str[idx] = (*f)(idx, str[idx]);
 		idx++;
 	}
-	return (str); // Return a pointer to the newly created str
+	return (str);
 }

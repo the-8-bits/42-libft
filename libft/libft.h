@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrodri <gabrodri@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:50:34 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 16:11:51 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/11 13:07:37 by gabrodri        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_list
  * string processing or parsing operations. Is particularly useful when working
  * with text processing tasks where you need to manipulate and extract
  * substrings from a larger text or data */
-typedef structs_split_next
+typedef struct structs_split_next
 {
 	size_t	start;
 	size_t	length;
@@ -39,24 +39,27 @@ typedef structs_split_next
 
 /* Part 1 */
 
-/* Verifies if the string input is an alphabetic character */
-int				ft_isalpha(char *str);
+/* Determine whether a given integer corresponds to an alphabetic character. It
+ * is commonly used in C programs that need to process text data, such as
+ * parsers, compilers, and text editors. */
+int				ft_isalpha(int c);
 
-/* Verifies if the string input is a nummeric character */
-int				ft_isdigit(char *str);
+/* Verifies if a given integer is a nummeric character */
+int				ft_isdigit(int c);
 
-/* Verifies if the string input is an alpha-nummeric character */
-int				ft_isalnum(char *str);
+/* Is commonly used in string manipulation functions. Is used to check
+ * whether a character is alphanumeric in the ASCII character set. */
+int				ft_isalnum(int c);
 
 /* Takes an integer `c` as input. The return statement directly evaluates the
  * condition `(c >= 0 && c <= 127)` */
 int				ft_isascii(int c);
 
 /* Verifies if the string input is a printable character */
-int				ft_isprint(char *str);
+int				ft_isprint(int c);
 
 /* This function returns the lengh of the string */
-unsigned int	ft_strlen(char *str);
+unsigned int	ft_strlen(const char *s);
 
 /* It fills a given block of memory with a specified value up to a certain
  * length */
@@ -86,17 +89,15 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
 /* Provides a safe way to concatenate strings while preventing buffer overflows
  * by specifying a size limit. It returns the total length of the concatenated
  * string, which can be useful for various string manipulation tasks */
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
 
-/* Is a simple utility function for converting all lowercase letters in a string
- * to uppercase letters. It operates in place, directly modifying the input
- * string */
-char			*ft_toupper(char *str);
+/* Is a simple and efficient way to convert a lowercase letter to uppercase.
+ * However, it only works for single characters and does not handle strings. */
+int				ft_toupper(int c);
 
-/* Is a simple utility function for converting all uppercase letters in a string
- * to lowercase
- * letters. It operates in place, directly modifying the input string */
-char			*ft_tolower(char *str);
+/*  Is a simple and efficient way to convert a uppercase letter to lowercase.
+ * However, it only works for single characters and does not handle strings. */
+int				ft_tolower(int c);
 
 /* Provides a straightforward way to search for a character in a string and
  * return a pointer to its first occurrence. If the character is not found, it
@@ -115,7 +116,7 @@ char			*ft_strrchr(const char *s, int c);
  * is lexicographically smaller than s2, and a positive value if s1 is
  * lexicographically greater than s2. It allows for controlled string
  * comparison, which can be useful in sorting or searching algorithms */
-int				ft_strncmp(char *s1, char *s2, unsigned int n);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /* Provides a way to search for a specific character within a memory block of a
  * specified size. It returns a pointer to the first occurrence of the character
@@ -141,7 +142,7 @@ char			*ft_strnstr(const char *big, const char *little, size_t len);
  * value, considering signs and leading whitespace characters. It's a commonly
  * used function for converting user input or text-based data into numerical
  * values in C programming */
-int				ft_atoi(char *str);
+int				ft_atoi(const char *str);
 
 /* Is used to allocate memory for an array of elements and initialize that
  * memory to zero. It's a useful function when you want to ensure that allocated
@@ -282,7 +283,7 @@ char			*ft_strcat(char *dest, const char *src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 
 /* Is used to return the absolute value of a number */
-static int		ft_abs(int nbr);
+int				ft_abs(int nbr);
 
 /* duplicates the first `length` characters from the input string `src` and
  * returns a new dynamically allocated string containing this substring. It
@@ -290,6 +291,14 @@ static int		ft_abs(int nbr);
  * `src` to the new string, adds a null-terminator, and then returns the newly
  * created string. If memory allocation fails, it returns `NULL`. Note that
  * there's a typo in the code; it should be `char *dst` instead of `*dst` */
-static char		*ft_strndup(const char *src, size_t length)
+char			*ft_strndup(const char *src, size_t length);
+
+/* Is used to calculate the length of the integer n in order to easily allocate
+ * memory using `malloc` or `calloc`. */
+unsigned int	ft_numlen(int n);
+
+/* Is used to revert the order of elements in the string returning the pointer
+ * the inuted string. */
+char			*ft_strrev(char *str);
 
 #endif
