@@ -143,7 +143,7 @@ Here's a breakdown of the members of the `t_split_next` structure:
 >}
 >```
 
-## [ft_lstnew](./ft_lstnew.c)
+## [ft_lstnew](../libft/ft_lstnew.c)
 
 The `ft_lstnew` function is used to create a new node for a singly-linked list. It allocates memory for the node, assigns the provided content to the node's `content` field, and initializes the `next` field to `NULL`. This function is typically used when you want to add a new element to the beginning of a linked list.
 
@@ -161,7 +161,7 @@ Here's a breakdown of how the `ft_lstnew` function works:
 
 - Finally, it returns a pointer to the newly created node, which can be used to add this node to a linked list or manipulate it further.
 
-## [ft_lstadd_front](./ft_lstadd_front.c)
+## [ft_lstadd_front](../libft/ft_lstadd_front.c)
 
 The `ft_lstadd_front` function is used to add a new node to the front (beginning) of a singly-linked list. It takes two arguments:
 
@@ -179,7 +179,7 @@ Here's a breakdown of how the `ft_lstadd_front` function works:
 
 - Finally, it updates the head pointer `*alst` to point to the `new` node, making the `new` node the new head of the list.
 
-## [ft_lstsize](./ft_lstsize.c)
+## [ft_lstsize](../libft/ft_lstsize.c)
 
 The `ft_lstsize` function is used to calculate and return the number of nodes (elements) in a singly-linked list. It takes a pointer to the head of the list (`t_list *lst`) as its argument and returns an integer representing the size of the list.
 
@@ -231,7 +231,7 @@ Here's a breakdown of how the `ft_lstsize` function works:
 >}
 >```
 
-## [ft_lstlast](./ft_lstlast.c)
+## [ft_lstlast](../libft/ft_lstlast.c)
 
 The `ft_lstlast` function is used to find and return a pointer to the last node in a singly-linked list. It takes a pointer to the head of the list (`t_list *lst`) as its argument and returns a pointer to the last node in the list. If the list is empty (i.e., `lst` is `NULL`), the function returns `NULL`.
 
@@ -288,7 +288,7 @@ Here's a breakdown of how the `ft_lstlast` function works:
 >}
 >```
 
-## [ft_lstadd_back](./ft_lstadd_back.c)
+## [ft_lstadd_back](../libft/ft_lstadd_back.c)
 
 The `ft_lstadd_back` function is used to add a new node to the end (tail) of a singly-linked list. It takes two arguments:
 
@@ -349,7 +349,7 @@ Here's a breakdown of how the `ft_lstadd_back` function works:
 >}
 >```
 
-## [ft_lstdelone](./ft_lstdelone.c)
+## [ft_lstdelone](../libft/ft_lstdelone.c)
 
 The `ft_lstdelone` function is used to delete (remove and deallocate memory for) a single node in a singly-linked list. It takes two arguments:
 
@@ -403,7 +403,7 @@ Here's a breakdown of how the `ft_lstdelone` function works:
 >}
 >```
 
-## [ft_lstclear](./ft_lstclear.c)
+## [ft_lstclear](../libft/ft_lstclear.c)
 
 The `ft_lstclear` function is used to clear (delete and deallocate memory for) an entire singly-linked list. It takes two arguments:
 
@@ -469,7 +469,7 @@ Here's a breakdown of how the `ft_lstclear` function works:
 >}
 >```
 
-## [ft_lstiter](./ft_lstiter.c)
+## [ft_lstiter](../libft/ft_lstiter.c)
 
 The `ft_lstiter` function is used to apply a given function `f` to the content of each node in a singly-linked list. It takes two arguments:
 
@@ -543,7 +543,7 @@ Here's a breakdown of how the `ft_lstiter` function works:
 >}
 >```
 
-## [ft_lstmap](./ft_lstmap.c)
+## [ft_lstmap](../libft/ft_lstmap.c)
 
 The `ft_lstmap` function is used to create a new linked list by applying a function `f` to each element of the original linked list `lst`. It also takes an additional function `del` to handle the deallocation of any resources if an error occurs during the process. Here's a breakdown of how the `ft_lstmap` function works:
 

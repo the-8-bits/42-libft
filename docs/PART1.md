@@ -13,7 +13,7 @@ dependences:
 >  Copied from [`42Porto`](https://www.42porto.com/) all rights reserved. Modified according to my understanding and to facilitate learning.  
 > If you spot something that isn't right, please open an [Issue](https://github.com/the-8-bits/42-libft/issues/new)
 
-- [Part 1](#part-1)
+- [Part 1 #to\_review](#part-1-to_review)
   - [ft\_isalpha](#ft_isalpha)
   - [ft\_isdigit](#ft_isdigit)
   - [ft\_isalnum](#ft_isalnum)
@@ -40,7 +40,7 @@ dependences:
 
 ---
 
-# Part 1
+# Part 1 #to_review
 
 ## [ft_isalpha](./ft_isalpha.c)
 

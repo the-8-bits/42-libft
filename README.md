@@ -36,8 +36,8 @@ dependences:
 - [**Libft**](#libft)
   - [Purpose](#purpose)
   - [Elements](#elements)
-    - [Helpers Functions](#helpers-functions)
-    - [Makefile](#makefile)
+    - [Helpers Functions #to\_review](#helpers-functions-to_review)
+    - [Makefile #to\_review](#makefile-to_review)
 
 </details>
 
@@ -50,7 +50,7 @@ The objective of this repo is to register the progress during the 42 Cursus. Her
 
 I'll divide the code explanations in each Part's folder, to reduce the amount of text and make the documents more modular, to that please refer to the links in the headers of this table:
 
-| [Part 1](./libft/part1/PART1.md) |  #  | [Part 2](./libft/part2/PART2.md) |  #  | [Bonus](./libft/bonus/BONUS.md) |  #  | Other functions |
+| [Part 1](./libft/docs/PART1.md) |  #  | [Part 2](./libft/docs/PART2.md) |  #  | [Bonus](./libft/docs/BONUS.md) |  #  | Other functions |
 | --------------------------------- |:---:| --------------------------------- |:---:| -------------------------------- |:---:| --------------- |
 | ft_isalpha                        | ✔️  | ft_substr                         | ✔️  | ft_lstnew                       | ✔️  | ft_strcat       |
 | ft_isdigit                        | ✔️  | ft_strjoin                        | ✔️  | ft_lstadd_front                 | ✔️  | ft_strncpy      |
@@ -74,7 +74,7 @@ I'll divide the code explanations in each Part's folder, to reduce the amount of
 | ft_strnstr                        | ✔️  |                                   |     |                                  |     |                 |
 | ft_atoi                           | ✔️  |                                   |     |                                  |     |                 |
 
-### Helpers Functions
+### Helpers Functions #to_review
 
 Are defined inside the "main" functions, maybe I'll add to the `libft.h` file as independent functions.
 
@@ -88,7 +88,7 @@ Are defined inside the "main" functions, maybe I'll add to the `libft.h` file as
 - Inside of `ft_itoa`
   - `static void ft_strrev (char *str)`, reverses the characters in a given string `str` in-place. It calculates the length of the string, then uses two pointers (`start` and `end`) to swap characters from the beginning and end of the string, moving towards the center of the string until they meet. This effectively reverses the order of characters in the `str` variable.
 
-### Makefile
+### Makefile #to_review
 
 Used for building a static library named `libft.a` from the collection of C source files. This file can be divided into a few parts as shown below:
 

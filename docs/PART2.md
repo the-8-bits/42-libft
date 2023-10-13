@@ -13,7 +13,7 @@ dependences:
 >  Copied from [`42Porto`](https://www.42porto.com/) all rights reserved. Modified according to my understanding and to facilitate learning.  
 > If you spot something that isn't right, please open an [Issue](https://github.com/the-8-bits/42-libft/issues/new)
 
-- [Part 2](#part-2)
+- [Part 2 #to\_review](#part-2-to_review)
   - [ft\_substr](#ft_substr)
   - [ft\_strjoin](#ft_strjoin)
   - [ft\_strtrim](#ft_strtrim)
@@ -28,9 +28,9 @@ dependences:
 
 ---
 
-# Part 2
+# Part 2 #to_review
 
-## [ft_substr](./ft_substr.c)
+## [ft_substr](../libft/ft_substr.c)
 
 The `ft_substr` function is designed to extract a substring from a given string `s` starting from a specified index `start` and of a specified length `len`. It allocates memory for the substring and returns a pointer to it.
 
@@ -59,7 +59,7 @@ How it Works:
 
 In summary, `ft_substr` is a utility function for extracting substrings from input strings, taking into account the starting index and the desired length. It handles memory allocation and ensures that the extracted substring is null-terminated, making it a valid C string.
 
-## [ft_strjoin](./ft_strjoin.c)
+## [ft_strjoin](../libft/ft_strjoin.c)
 
 Diferent from the Piscine code where `char	*ft_strjoin(int size, char **strs, char *sep)` had three args, now it has only two: The `ft_strjoin` function is designed to concatenate (join) two strings, `s1` and `s2`, into a new string and return a pointer to the newly created string. It allocates memory for the result and copies both input strings into it.
 
@@ -87,7 +87,7 @@ Here the updates made:
 
 2. In the `ft_strjoin` function, we use `ft_strcat` to copy `s1` into `str`, and then we append `s2` to `str` using `ft_strcat` again.
 
-## [ft_strtrim](./ft_strtrim.c)
+## [ft_strtrim](../libft/ft_strtrim.c)
 
 The `ft_strtrim` function is designed to create a new string by removing specified leading and trailing characters from the input string `s1`. It takes two arguments: the input string `s1` and a set of characters `set` that should be considered for removal. The resulting string is returned, and it is dynamically allocated.
 
@@ -151,7 +151,7 @@ How it Works:
 
 - Finally, it null-terminates the `str` to ensure it's a valid C string and returns a pointer to the trimmed string.
 
-## [ft_split](./ft_split.c)
+## [ft_split](../libft/ft_split.c)
 
 To achieve `ft_split` we need to use some helper functions:
 
@@ -242,7 +242,7 @@ Certainly! Let's break down the functionality of each function within the code:
   }
   ```
 
-## [ft_itoa](./ft_itoa.c)
+## [ft_itoa](../libft/ft_itoa.c)
 
 The `ft_itoa` function is designed to convert an integer `n` into a string representation of that integer. It dynamically allocates memory for the resulting string, handles negative numbers, and reverses the digits to create the correct string representation.
 
@@ -315,7 +315,7 @@ How it Works:
 
 - The function returns a pointer to the dynamically allocated string containing the integer's string representation.
 
-## [ft_strmapi](./ft_strmapi.c)
+## [ft_strmapi](../libft/ft_strmapi.c)
 
 The `ft_strmapi` function is designed to apply a given function `f` to each character of a string `s` and create a new string with the modified characters. It allocates memory for the resulting string and returns a pointer to it.
 
@@ -347,7 +347,7 @@ How it Works:
 
 - After processing all characters and applying the custom function to each of them, the function returns a pointer to the newly created string `str`.
 
-## [ft_striteri](./ft_striteri.c)
+## [ft_striteri](../libft/ft_striteri.c)
 
 The `ft_striteri` function is designed to apply a given function `f` to each character of a string `s`, passing both the character and its index to the function. It allows for in-place modification of the characters in the string.
 
@@ -485,7 +485,7 @@ The main difference between `ft_strmapi` and `ft_striteri` is that `ft_strmapi` 
      // After the call, my_string will contain "Hfnos"
      ```
 
-## [ft_putchar_fd](./ft_putchar_fd.c)
+## [ft_putchar_fd](../libft/ft_putchar_fd.c)
 
 A slight variation from ususal `ft_putchar` from Piscine. The `ft_putchar_fd` function is a simple utility function used to write a single character `c` to a specified file descriptor `fd`. It relies on the `write` system call or function to perform the actual output operation.
 
@@ -508,7 +508,7 @@ How it Works:
 
 - As a result, the `write` system call writes the character `c` to the specified file descriptor, allowing you to output characters to different destinations.
 
-## [ft_putstr_fd](./ft_putstr_fd.c)
+## [ft_putstr_fd](../libft/ft_putstr_fd.c)
 
 The `ft_putstr_fd` function is used to write a null-terminated string `s` to a specified file descriptor `fd`. It relies on the `write` system call or function to perform the actual output operation.
 
@@ -539,7 +539,7 @@ How it Works:
 
 In summary, `ft_putstr_fd` i.
 
-## [ft_putendl_fd](./ft_putendl_fd.c)
+## [ft_putendl_fd](../libft/ft_putendl_fd.c)
 
 The `ft_putendl_fd` function is a utility function used to write a null-terminated string `s` followed by a newline character (`'\n'`) to a specified file descriptor `fd`. It relies on the `write` system call or function to perform the actual output operation.
 
@@ -565,7 +565,7 @@ How it Works:
 
 - The newline character is added to produce the effect of a line break, making it convenient for printing messages and ensuring proper formatting when writing text to a file or standard output.
 
-## [ft_putnbr_fd](./ft_putnbr_fd.c)
+## [ft_putnbr_fd](../libft/ft_putnbr_fd.c)
 
 The two functions `ft_putnbr` from Piscine and `ft_putnbr_fd` serve a similar purpose: they convert an integer to a string representation and output that string to different destinations. However, they differ in a few key aspects:
 
