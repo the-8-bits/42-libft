@@ -61,6 +61,12 @@ In summary, `ft_substr` is a utility function for extracting substrings from inp
 
 ## [ft_strjoin](../libft/ft_strjoin.c)
 
+> Changes: added `ft_memset` to initialize the memory allocated for the new string, which resulted in undefined behaviours. `ft_memset` sets the memory to zero before copying the strings.  
+> `ft_memset` and `ft_bzero` are both functions that can be used to set a block of memory to a specific value. However, there is a key difference between the two functions.  
+> `ft_memset` sets a block of memory to a specific value, whereas `ft_bzero` sets a block of memory to zero.  
+> In the case of `ft_strjoin`, we need to set the memory to zero before copying the strings to avoid undefined behavior. Therefore, `ft_bzero` would be a good choice for this specific use case. However, `ft_memset` is a more general-purpose function that can be used to set a block of memory to any value, not just zero.  
+
+
 Diferent from the Piscine code where `char	*ft_strjoin(int size, char **strs, char *sep)` had three args, now it has only two: The `ft_strjoin` function is designed to concatenate (join) two strings, `s1` and `s2`, into a new string and return a pointer to the newly created string. It allocates memory for the result and copies both input strings into it.
 
 Usage Context:

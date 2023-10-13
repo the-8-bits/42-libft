@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:44 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 16:57:10 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*p1;
 	const unsigned char	*p2;
 
-	// Convert the pointers to unsigned char pointers
-	*p1 = (const unsigned char *)s1;
-	*p2 = (const unsigned char *)s2;
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
 	while (n-- > 0)
 	{
 		if (*p1 != *p2)
-			// Return the difference between the differing bytes
 			return (*p1 - *p2);
 		p1++;
 		p2++;
 	}
-	return (0); // Memory blocks are equal up to the specified number of bytes
+	return (0);
 }

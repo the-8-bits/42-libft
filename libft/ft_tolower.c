@@ -6,22 +6,15 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:09 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:23:20 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:51:02 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tolower(char *str)
+int	ft_tolower(int c)
 {
-	int	counter;
-
-	counter = 0;
-	while (str[counter] != '\0')
-	{
-		if (str[counter] >= 'A' && str[counter] <= 'Z' )
-			str[counter] += 32; // Convert uppercase letter to lowercase
-		counter++;
-	}
-	return (str);
+	if (c >= 'A' && c <= 'Z' )
+		c += 32;
+	return (c);
 }

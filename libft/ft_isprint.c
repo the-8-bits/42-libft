@@ -6,19 +6,15 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:47 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:24:09 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:49:55 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	while (*str)
-	{
-		if (*str < 32 || *str > 126)
-			return (0);
-		str++;
-	}
+	if (c < 32 || c > 126)
+		return (0);
 	return (1);
 }

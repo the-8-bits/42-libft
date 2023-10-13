@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:24 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:33:45 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_putendl_fd(const char *s, int fd)
 	{
 		while (*s)
 		{
-			write(fd, s, 1); // Write one character at a time
+			write(fd, s, 1);
 			s++;
 		}
-		nl = '\n'; // Newline character
-		write(fd, &nl, 1); // Write the newline character
+		nl = '\n';
+		write(fd, &nl, 1);
 	}
 }

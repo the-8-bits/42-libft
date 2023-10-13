@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:12 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/03 17:21:28 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last_occurrence;
 
-	// Initialize a pointer to track the last occurrence
-	*last_occurrence = NULL;
+	last_occurrence = NULL;
 	while (*s != '\0')
 	{
 		if (*s == (char)c)
-			last_occurrence = s; // Update the pointer when a match is found
+			last_occurrence = s;
 		s++;
 	}
 	if ((char)c == '\0')
-		// Return a pointer to the null terminator if c is '\0'
 		return ((char *)s);
-	// Return a pointer to the last occurrence or NULL if not found
 	return ((char *)last_occurrence);
 }
