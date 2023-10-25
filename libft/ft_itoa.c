@@ -12,6 +12,26 @@
 
 #include "libft.h"
 
+static unsigned int	ft_numlen(int n)
+{
+	unsigned int	len;
+	long			buffer;
+
+	len = 1;
+	buffer = n;
+	if (n < 0)
+	{
+		buffer *= -1;
+		len++;
+	}
+	while (buffer >= 10)
+	{
+		buffer /= 10;
+		len++;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
 	unsigned int	nb;

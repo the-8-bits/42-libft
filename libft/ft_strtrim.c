@@ -6,7 +6,7 @@
 /*   By: gabrodri <gabrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:06:19 by gabrodri          #+#    #+#             */
-/*   Updated: 2023/10/06 16:01:23 by gabrodri         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:45:59 by gabrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	end = strlen(s1);
+	end = ft_strlen(s1);
 	while (s1[start] && ft_char_in_set(s1[start], set))
 		start++;
 	while (end > start && ft_char_in_set(s1[end - 1], set))

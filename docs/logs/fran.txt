@@ -118,7 +118,9 @@ ft_memset       : [OK] [OK] [OK] [OK] [OK] [OK] [OK]
 ft_bzero        : [OK] [OK] [OK] [OK] 
 ft_memcpy       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_memmove      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strlcpy      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strlcpy      : [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] 
+[no crash]: your strlcpy doe not segfault when null parameter is sent
+
 ft_strlcat      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_toupper      : [OK] 
 ft_tolower      : [OK] 
@@ -152,9 +154,11 @@ ft_lstclear     : [OK] [OK] [OK]
 ft_lstiter      : [OK] 
 ft_lstmap       : [OK] 
 
-\xe2\x9a\xa0 : your libft is using forbidden functions so the result may not be relevant !
-
-
+[no crash]: your strlcpy doe not segfault when null parameter is sent
+ Test code:
+        ft_strlcpy(((void*)0), ((void*)0), 10);
+ 
+ 
 ✔ Compiling tests: fsoares (my own)
 ℹ Testing:
 ft_isalpha      : OK
@@ -203,6 +207,8 @@ ft_lstmap       : OK
 
 Want some more thorough tests? run 'francinette --strict'.
 
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                 🎉🥳 All tests passed! Congratulations! 🥳🎉                 ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+Summary: 
+
+Failed tests: strlcpy
+
+Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, memcpy, memmove, strlcat, toupper, tolower, strchr, strrchr, strncmp, memchr, memcmp, strnstr, atoi, calloc, strdup, substr, strjoin, strtrim, split, itoa, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, putnbr_fd, lstnew, lstadd_front, lstsize, lstlast, lstadd_back, lstdelone, lstclear, lstiter, lstmap
