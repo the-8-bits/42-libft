@@ -7,8 +7,8 @@ tags:
   - programação
   - common_core
 use: Documentation
-languages: 
-dependences:
+languages: C, Makefile
+dependences: 
 ---
 
 > [!INFO] 
