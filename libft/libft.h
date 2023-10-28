@@ -268,37 +268,4 @@ void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst,
 					void *(*f)(void *), void (*del)(void *));
 
-/* Other/Custom functions */
-/* Is used to concatenate two strings by appending the characters of the source
- * string `src` to the end of the destination string `dest`. It ensures that the
- * resulting string is null-terminated and returns a pointer to the modified
- * `dest` */
-char			*ft_strcat(char *dest, const char *src);
-
-/* Is used to copy a specified number of characters from a source string to a
- * destination string while ensuring that the destination string is null-
- - terminated within the specified limit. It provides control over the maximum
- * number of characters to copy and is useful in various string manipulation
- * tasks */
-char			*ft_strncpy(char *dest, char *src, unsigned int n);
-
-/* Is used to return the absolute value of a number */
-int				ft_abs(int nbr);
-
-/* duplicates the first `length` characters from the input string `src` and
- * returns a new dynamically allocated string containing this substring. It
- * allocates memory for the new string, copies the specified characters from
- * `src` to the new string, adds a null-terminator, and then returns the newly
- * created string. If memory allocation fails, it returns `NULL`. Note that
- * there's a typo in the code; it should be `char *dst` instead of `*dst` */
-char			*ft_strndup(const char *src, size_t length);
-
-/* Is used to calculate the length of the integer n in order to easily allocate
- * memory using `malloc` or `calloc`. */
-unsigned int	ft_numlen(int n);
-
-/* Is used to revert the order of elements in the string returning the pointer
- * the inuted string. */
-char			*ft_strrev(char *str);
-
 #endif

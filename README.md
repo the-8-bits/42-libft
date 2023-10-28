@@ -9,6 +9,8 @@ languages: C
 dependences:
 ---
 
+#to_review
+
 <p align="center">
   <picture>
     <img alt="List_logo" src="https://drive.google.com/uc?export=view&id=1rFqWh4miOnHABWGa2X7KTe2geXDhuD2S">
@@ -50,29 +52,29 @@ The objective of this repo is to register the progress during the 42 Cursus. Her
 
 I'll divide the code explanations in each Part's folder, to reduce the amount of text and make the documents more modular, to that please refer to the links in the headers of this table:
 
-| [Part 1](./libft/docs/PART1.md) |  #  | [Part 2](./libft/docs/PART2.md) |  #  | [Bonus](./libft/docs/BONUS.md) |  #  | Other functions |
-| --------------------------------- |:---:| --------------------------------- |:---:| -------------------------------- |:---:| --------------- |
-| ft_isalpha                        | ✔️  | ft_substr                         | ✔️  | ft_lstnew                       | ✔️  | ft_strcat       |
-| ft_isdigit                        | ✔️  | ft_strjoin                        | ✔️  | ft_lstadd_front                 | ✔️  | ft_strncpy      |
-| ft_isalnum                        | ✔️  | ft_strtrim                        | ✔️  | ft_lstsize                      | ✔️  | ft_abs          |
-| ft_isascii                        | ✔️  | ft_split                          | ✔️  | ft_lstlast                      | ✔️  | ft_strndup      |
-| ft_isprint                        | ✔️  | ft_itoa                           | ✔️  | ft_lstadd_back                  | ✔️  |                 |
-| ft_strlen                         | ✔️  | ft_strmapi                        | ✔️  | ft_lstdelone                    | ✔️  |                 |
-| ft_memset                         | ✔️  | ft_striteri                       | ✔️  | ft_lstclear                     | ✔️  |                 |
-| ft_bzero                          | ✔️  | ft_putchar_fd                     | ✔️  | ft_lstiter                      | ✔️  |                 |
-| ft_memcpy                         | ✔️  | ft_putstr_fd                      | ✔️  | ft_lstmap                       | ✔️  |                 |
-| ft_memmove                        | ✔️  | ft_putendl_fd                     | ✔️  |                                 | ✔️  |                 |
-| ft_strlcpy                        | ✔️  | ft_putnbr_fd                      | ✔️  |                                 |     |                 |
-| ft_strlcat                        | ✔️  |                                   |     |                                  |     |                 |
-| ft_toupper                        | ✔️  |                                   |     |                                  |     |                 |
-| ft_tolower                        | ✔️  |                                   |     |                                  |     |                 |
-| ft_strchr                         | ✔️  |                                   |     |                                  |     |                 |
-| ft_strrchr                        | ✔️  |                                   |     |                                  |     |                 |
-| ft_strncmp                        | ✔️  |                                   |     |                                  |     |                 |
-| ft_memchr                         | ✔️  |                                   |     |                                  |     |                 |
-| ft_memcmp                         | ✔️  |                                   |     |                                  |     |                 |
-| ft_strnstr                        | ✔️  |                                   |     |                                  |     |                 |
-| ft_atoi                           | ✔️  |                                   |     |                                  |     |                 |
+| [Part 1](./docs/PART1.md) |  #  | [Part 2](./docs/PART2.md) |  #  | [Bonus](./docs/BONUS.md) |  #  |
+| --------------------------------- |:---:| --------------------------------- |:---:| -------------------------------- |:---:|
+| ft_isalpha                        | ✔️  | ft_substr                         | ✔️  | ft_lstnew                       | ✔️  |
+| ft_isdigit                        | ✔️  | ft_strjoin                        | ✔️  | ft_lstadd_front                 | ✔️  |
+| ft_isalnum                        | ✔️  | ft_strtrim                        | ✔️  | ft_lstsize                      | ✔️  |
+| ft_isascii                        | ✔️  | ft_split                          | ✔️  | ft_lstlast                      | ✔️  |
+| ft_isprint                        | ✔️  | ft_itoa                           | ✔️  | ft_lstadd_back                  | ✔️  |
+| ft_strlen                         | ✔️  | ft_strmapi                        | ✔️  | ft_lstdelone                    | ✔️  |
+| ft_memset                         | ✔️  | ft_striteri                       | ✔️  | ft_lstclear                     | ✔️  |
+| ft_bzero                          | ✔️  | ft_putchar_fd                     | ✔️  | ft_lstiter                      | ✔️  |
+| ft_memcpy                         | ✔️  | ft_putstr_fd                      | ✔️  | ft_lstmap                       | ✔️  |
+| ft_memmove                        | ✔️  | ft_putendl_fd                     | ✔️  |                                 | ✔️  |
+| ft_strlcpy                        | ✔️  | ft_putnbr_fd                      | ✔️  |                                 |     |
+| ft_strlcat                        | ✔️  |                                   |     |                                  |     |
+| ft_toupper                        | ✔️  |                                   |     |                                  |     |
+| ft_tolower                        | ✔️  |                                   |     |                                  |     |
+| ft_strchr                         | ✔️  |                                   |     |                                  |     |
+| ft_strrchr                        | ✔️  |                                   |     |                                  |     |
+| ft_strncmp                        | ✔️  |                                   |     |                                  |     |
+| ft_memchr                         | ✔️  |                                   |     |                                  |     |
+| ft_memcmp                         | ✔️  |                                   |     |                                  |     |
+| ft_strnstr                        | ✔️  |                                   |     |                                  |     |
+| ft_atoi                           | ✔️  |                                   |     |                                  |     |
 
 ### Helpers Functions #to_review
 

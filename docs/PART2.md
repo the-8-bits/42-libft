@@ -43,7 +43,7 @@ Key Points:
 - `size_t len`: The maximum length of the extracted substring.
 
 How it Works:
-- The function first calculates the length of the input string `s` using the `strlen` function and stores it in `s_len`.
+- The function first calculates the length of the input string `s` using the `ft_strlen` function and stores it in `s_len`.
 
 - It checks if the `start` index is greater than or equal to `s_len`, which would mean that the starting index is beyond the end of the input string. In this case, it returns an empty string (a string containing only a null terminator) to indicate that there's nothing to extract.
 
@@ -89,7 +89,7 @@ How it Works:
 
 Here the updates made:
 
-1. We define our own `ft_strcat` function to concatenate two strings. It calculates the lengths of `dest` and `src` using `strlen`, then uses `memcpy` to copy `src` onto the end of `dest`, including the null terminator.
+1. We define our own `ft_strcat` function to concatenate two strings. It calculates the lengths of `dest` and `src` using `ft_strlen`, then uses `memcpy` to copy `src` onto the end of `dest`, including the null terminator.
 
 2. In the `ft_strjoin` function, we use `ft_strcat` to copy `s1` into `str`, and then we append `s2` to `str` using `ft_strcat` again.
 
@@ -112,7 +112,7 @@ How it Works:
 		return (NULL); // Return NULL if either s1 or set is NULL
   ```
 
-- It initializes two variables, `start` and `end`, to 0 and the length of `s1` (obtained using `strlen(s1)`), respectively. These variables will be used to determine the start and end positions of the trimmed string.
+- It initializes two variables, `start` and `end`, to 0 and the length of `s1` (obtained using `ft_strlen(s1)`), respectively. These variables will be used to determine the start and end positions of the trimmed string.
 
 - The function then enters two while loops:
   - The first while loop (starting from the beginning of `s1`) increments `start` while the characters in `s1` match characters in the `set`. This effectively skips leading characters that should be removed.

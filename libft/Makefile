@@ -42,19 +42,12 @@ BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 # OBJ_BONUS is the object files for the bonus part of the functions
 OBJ_BONUS	= $(BONUS:.c=.o)
 
-# PERSONAL is the personal functions to be coded
-PERSONAL	= ft_strcat.c ft_strncpy.c ft_abs.c ft_strndup.c ft_numlen.c \
-				ft_strrev.c
-
-# OBJ_PERSONAL is the object files for the personal functions
-OBJ_PERSONAL	= $(PERSONAL:.c=.o)
-
 # FILES is the list of all the files to be compiled
-FILES	= $(PART_1) $(PART_2) $(BONUS) $(PERSONAL)
+FILES	= $(PART_1) $(PART_2) $(BONUS)
 
 # OBJ is the list of all the object files to be created
-MANDT_OBJ	= $(OBJ_1) $(OBJ_2) $(OBJ_PERSONAL)
-BONUS_OBJ	= $(OBJ_1) $(OBJ_2) $(OBJ_BONUS) $(OBJ_PERSONAL)
+MANDT_OBJ	= $(OBJ_1) $(OBJ_2)
+BONUS_OBJ	= $(OBJ_1) $(OBJ_2) $(OBJ_BONUS)
 
 # The rule to compile all the files
 all: $(NAME)
