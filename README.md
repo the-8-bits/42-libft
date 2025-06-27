@@ -2,8 +2,8 @@
 title: Libft
 tags:
   - "42"
-  - programação
   - common_core
+  - programming
 use: README, Documentation
 languages: C
 dependences:
